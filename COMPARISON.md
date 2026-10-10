@@ -76,7 +76,26 @@ Consecuencia práctica: **en Mastra el agente es una pieza de una aplicación ma
 - **Los sub-agentes aislados repiten contexto**: cada `task` re-envía la instrucción y los resultados de tools que necesite; con muchos pasos puede gastar más tokens que el routing interno de Mastra (a cambio de un contexto del orquestador mucho más limpio).
 - **Workflows → prompts**: el briefing/comparativa "determinista" de Mastra aquí es el LLM siguiendo `write_todos`; más flexible, menos reproducible. La parte realmente determinista (matemática, catálogo) sigue siendo código en ambos.
 
-## 8. Conclusión
+## 8. Test real de contraste: análisis de la IPO de Anthropic
+
+Mismo prompt contra ambos agentes (`npm run test:ipo`, resultados en [`test-results/ipo-anthropic/report.md`](test-results/ipo-anthropic/report.md)). El caso es deliberadamente "difícil": Anthropic es privada, así que no hay datos estructurados y todo depende de investigación web con citas.
+
+| | Mastra | DeepAgents |
+|---|---|---|
+| Duración | **82,5 s** | 1.316 s (~16×) |
+| Tool calls (top-level) | 26 (marketNews×5, quote×5, secFilings, webFetch, agent-macroAnalyst…) | 31 (task(researcher-agent), task(market-analyst), market_news×6, web_search×6, write_todos×3, write_file) |
+| Tokens totales | 120.953 | **55.377 (–54%)** |
+| Respuesta | Informe completo con fuentes y fechas | Informe completo con fuentes y fechas + guardado en disco (`write_file`) |
+| Disclaimer | ✅ | ✅ |
+
+Lecturas del test:
+
+1. **Calidad comparable**, caminos distintos. Ambos entregan un informe con financiación, valoraciones, condiciones de mercado, riesgos y veredicto toro/oso. Mastra trabajo "en línea" (orquestador + sub-agentes en el mismo hilo); DeepAgents planificó con `write_todos`, delegó a `researcher-agent` y `market-analyst` en contextos aislados y guardó el informe final en disco.
+2. **El aislamiento de contexto ahorró la mitad de tokens** pese a hacer más llamadas: los resultados pesados de web quedaron en los contextos de los sub-agentes (y los resultados de tools grandes, descargados al filesystem), no en el hilo del orquestador. El coste: ~16× más de wall-time, porque cada sub-agente encadena sus propias generaciones largas con un modelo lento.
+3. **El `maxSteps` de Mastra es un parámetro crítico**: con su default, el análisis se corta a mitad y llega solo meta-comentarios ("voy a verificar…"). El test lo sube a 24 para una comparación justa.
+4. **Corrección que destiló el test**: el informe "guardado" por DeepAgents vivía en un filesystem virtual efímero; ahora el agente usa `FilesystemBackend` con `virtualMode: true` jaulado a `.agent-fs/` y el fichero existe de verdad en disco.
+
+## 9. Conclusión
 
 - Si el producto es **un agente conversacional experto que investiga, delega y escribe informes** → DeepAgents llega con más capacidades de serie y menos código propio (este repo es la prueba: paridad funcional en ~60% del código).
 - Si el producto necesita **workflows con aprobación humana, memoria multi-usuario y despliegue gestionado** → Mastra resuelve hoy lo que en DeepAgents es integración manual.

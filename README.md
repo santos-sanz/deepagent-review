@@ -20,7 +20,7 @@ La comparación detallada entre ambos frameworks está en [**COMPARISON.md**](./
 - **`createDeepAgent`** como orquestador único (sin registro de agentes ni workflows)
 - **Sub-agentes** declarativos (`subagents: [...]`): market-analyst, macro-analyst, researcher-agent, extractor-agent y product-analyst, cada uno con su prompt, sus tools y su propia ventana de contexto aislada (`mode: "isolated"`)
 - **Salida estructurada** vía `toolStrategy(schema)` en el extractor
-- **Sistema de archivos virtual** con tools `ls/read_file/write_file/edit_file/glob/grep` para notas e informes
+- **Sistema de archivos en disco** (`FilesystemBackend` con `virtualMode: true` jaulado a `.agent-fs/`): los informes que el agente escribe con `write_file` persisten de verdad
 - **Planificación** con `todoListMiddleware()` (`write_todos`) para análisis multi-paso
 - **Streaming** de updates (tool calls visibles en el REPL)
 
@@ -33,6 +33,7 @@ src/
 ├── index.ts                 → REPL interactivo con thread persistente (.sessions/)
 ├── test-agent.ts            → demo de memoria multi-turno (npm run chat)
 ├── test-extract.ts          → extracción estructurada (npm run extract)
+├── tests/ipo-anthropic.ts   → test comparativo Mastra vs DeepAgents (npm run test:ipo)
 ├── nan.ts                   → cliente gateway NaN (ChatOpenAI + embeddings/rerank/TTS/STT/imágenes)
 ├── disclaimer.ts            → disclaimer garantizado en la capa de app (equivale al output processor)
 ├── rag/
@@ -79,8 +80,11 @@ npm run repl -- --thread andres   # sesión persistente en .sessions/
 npm run extract         # demo de extracción estructurada
 npm run rag:index -- docs/conocimiento   # reindexar conocimiento
 npm run rag:search -- "qué es el beta de una acción"
+npm run test:ipo        # test comparativo: mismo prompt a Mastra y DeepAgents (IPO de Anthropic)
 npm run typecheck       # tsc --noEmit
 ```
+
+El test comparativo (`npm run test:ipo`) clona mastra-agent-review en `.tmp/` si no existe, ejecuta ambos agentes con el mismo prompt ("análisis de la IPO de Anthropic", un caso 100% cualitativo al ser empresa privada) y escribe en `test-results/ipo-anthropic/`: la respuesta de cada framework y un `report.md` con duración, tool calls y observaciones. Requiere solo `NAN_API_KEY`.
 
 ## Notas técnicas
 
