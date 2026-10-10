@@ -6,3 +6,4 @@ generated/
 .tmp/
 .agent-fs/
 *.log
+mastra.db
