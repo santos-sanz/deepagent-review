@@ -1,0 +1,39 @@
+{
+  "scenario": "memoria",
+  "mastra": {
+    "framework": "mastra",
+    "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 11565,
+    "toolCalls": [
+      {
+        "name": "updateWorkingMemory",
+        "count": 2
+      }
+    ],
+    "usage": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 38225
+    },
+    "turnMetrics": [
+      {
+        "durationMs": 6165
+      },
+      {
+        "durationMs": 5400
+      }
+    ]
+  },
+  "deepagents": {
+    "framework": "deepagents",
+    "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045.",
+    "durationMs": 5175,
+    "toolCalls": [],
+    "usage": {
+      "inputTokens": 21148,
+      "outputTokens": 136,
+      "totalTokens": 21284,
+      "llmCalls": 2
+    }
+  }
+}

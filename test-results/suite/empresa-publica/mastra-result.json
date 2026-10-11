@@ -1,0 +1,41 @@
+{
+  "framework": "mastra",
+  "text": "Voy a recopilar todos los datos en paralelo.# 🍎 Apple Inc. (AAPL) — Análisis\n\n## 1. Cotización actual\n\n| Métrica | Valor | Fuente / fecha |\n|---|---|---|\n| Precio | **336,64 USD** | Yahoo Finance, cierre ~09-oct-2026 20:00 UTC |\n| Variación diaria | −1,11% (−3,78 USD) | Yahoo Finance |\n| Rango del día | 330,70 – 338,61 | Yahoo Finance |\n| Rango 52 semanas | 243,42 – 345,34 | Yahoo Finance |\n| Volumen | ~37,8 M acciones | Yahoo Finance |\n| Capitalización | **~4,91 billones USD** | Yahoo Finance |\n\nNota: cotización del último cierre disponible; puede ir con retardo de hasta 15 minutos. El precio está a ~2,5% de su máximo de 52 semanas y muy cerca de máximos históricos.\n\n## 2. Fundamentales clave\n\n| Métrica | Valor | Lectura |\n|---|---|---|\n| P/E trailing | **38,6x** | Alto en absoluto, pero sostiene crecimiento |\n| P/E forward | **35,1x** | El mercado ya descuenta crecimiento sólido |\n| Beta | 1,07 | Ligeramente más volátil que el mercado |\n| Margen bruto | 48,65% | Sólido y en máximos del rango histórico |\n| Margen operativo | 32,62% | Excelente |\n| Margen neto | 27,62% | Estructura de costes muy eficiente |\n| ROE | **148,75%** | Distorsionado por el bajo patrimonio neto (recompras masivas) |\n| Crecimiento de ingresos | +16,4% | Aceleración notable para su tamaño |\n| Deuda/Patrimonio | 78,4% | Manejable |\n| Caja vs deuda | 62,4 B vs 84,3 B USD | Posición neta de deuda ~−22 B, pero con FCF enorme |\n\nFuente: Yahoo Finance (fundamentales, 09-oct-2026). Aviso sobre el ROE: cifras >100% no implican mejor negocio, sino capital propio reducido por programas de recompra; conviene mirar ROA y FCF.\n\n## 3. Rendimiento y volatilidad a 1 año\n\n| Métrica | Valor |\n|---|---|\n| Retorno 1 año | **+37,25%** |\n| Mínimo / Máximo | 245,27 / 341,07 USD |\n| Volatilidad anualizada | **24,5%** |\n| Puntos de datos | 251 (diario) |\n\nFuente: Yahoo Finance, serie diaria 1 año. Comparativamente, 24,5% de volatilidad es propia de una megacap arriesgada, no de un \"activo refugio\".\n\n## 4. Últimos filings de la SEC (cik 320193)\n\n| Formulario | Fecha | Periodo | Relevancia |\n|---|---|---|---|\n| **8-K/A** | 01-sep-2026 | 17-abr-2026 | Enmienda de un hecho relevante anterior |\n| **10-Q** | 31-jul-2026 | Trim. cerrado 27-jun-2026 | Estados financieros trimestrales (FQ3 2026) |\n| **8-K** | 30-jul-2026 | 30-jul-2026 | Publicación de resultados trimestrales |\n| **10-Q** | 01-may-2026 | Trim. cerrado 28-mar-2026 | Trimestrales (FQ2 2026) |\n| **8-K** | 20-abr-2026 | 17-abr-2026 | Hecho relevante |\n\nFuente: EDGAR/SEC vía Yahoo Finance. Los enlaces directos a los documentos están en el listado de filings. Es reseñable que **no aparece ningún 10-K** en la ventana devuelta (el anual suele presentarse en otoño), así que el último anual completo no está en esta muestra.\n\n## 5. Noticias recientes (2–3 destacadas)\n\n1. **Recorte de pedidos del iPhone 18 Pro ~15%** — reportado por TIKR.com (10-oct-2026) y recogido por TradingView (10-oct-2026) y Yahoo Finanzas (09-oct-2026). Es el catalizador bajista de las últimas sesiones y explica en parte la caída del viernes.\n2. **Fórmula 1 en exclusiva en Apple TV (EE. UU.)** — Simply Wall Street (09-oct-2026). Refuerza la estrategia de servicios y contenido como motor de ingresos recurrentes.\n3. **Debate sobre sobrevaloración** — Simply Wall Street (08-oct-2026) señala que la acción sube ~145% en cinco años y que el múltiplo ya podría estar exigente.\n\nFuente: Google News RSS / medios citados.\n\n## 6. Veredicto\n\n**⚖️ Sesgo toro con matices de valoración.**\n\n- 🐂 **Toro:** márgenes en máximos, ingresos acelerando (+16,4%), flujo de recompras sostiene el EPS, servicios diversificando, momentum de +37% anual y consenso de analistas en \"buy\".\n- 🐻 **Oso:** P/E ~38x y forward ~35x dejan poco margen de error; el **precio objetivo medio del consenso (328 USD) está por DEBAJO del precio actual (336,64)**, lo que sugiere que el mercado se ha adelantado a los analistas. El recorte de pedidos del iPhone 18 Pro y la beta >1 añaden riesgo de corrección.\n\nEn resumen: negocio de calidad excepcional, pero cotizando con prima exigente y con señales mixtas de corto plazo (recorte de pedidos vs. expansión de servicios).\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).\n\n¿Quieres que profundice en algo concreto — p. ej. el 10-Q del trimestre de junio, un comparativo con Microsoft/Alphabet, o el impacto de los aranceles en sus márgenes?",
+  "durationMs": 25357,
+  "toolCalls": [
+    {
+      "name": "quoteTool",
+      "count": 1
+    },
+    {
+      "name": "financialsTool",
+      "count": 1
+    },
+    {
+      "name": "historicalPricesTool",
+      "count": 1
+    },
+    {
+      "name": "secFilingsTool",
+      "count": 1
+    },
+    {
+      "name": "marketNewsTool",
+      "count": 1
+    },
+    {
+      "name": "updateWorkingMemory",
+      "count": 1
+    }
+  ],
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 37190
+  },
+  "turnMetrics": [
+    {
+      "durationMs": 25357
+    }
+  ]
+}

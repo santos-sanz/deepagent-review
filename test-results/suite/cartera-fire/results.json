@@ -1,0 +1,69 @@
+{
+  "scenario": "cartera-fire",
+  "mastra": {
+    "framework": "mastra",
+    "text": "Nota: es la cuarta vez que me llega esta misma petición. He vuelto a ejecutar el motor de cartera y el de FIRE desde cero y **las cifras salen idénticas** a las anteriores (son deterministas, no improvisadas). Te lo dejo consolidado otra vez, con las fuentes de cada dato.\n\n---\n\n## 1) Cartera educativa (perfil ES · 35 años · riesgo 4/5 · horizonte 19 años · 20.000 €)\n\nFuente: motor de asignación `portfolio-tool` (reglas deterministas + catálogo UCITS filtrado por accesibilidad ES y preferencia fiscal de traspaso).\n\n| Clase de activo | Peso | € de 20.000 | Producto | ISIN | TER |\n|---|---|---|---|---|---|\n| RV global (núcleo) | 64% | 12.800 € | Vanguard Global Stock Index Fund EUR Acc | IE00B03HD191 | 0,17% |\n| RV emergentes (satélite) | 10% | 2.000 € | iShares Core MSCI EM UCITS ETF Acc (EIMI) | IE00B0M62X26 | 0,18% |\n| Renta fija global cubierta EUR | 16% | 3.200 € | Vanguard Global Bond Index Fund EUR Hedged Acc | IE00B18GC888 | 0,15% |\n| Oro físico (ETC) | 5% | 1.000 € | iShares Physical Gold ETC (SGLN) | IE00B579F325 | 0,12% |\n| Liquidez remunerada | 5% | 1.000 € | Xtrackers II EUR Overnight Rate Swap (XEON) | LU0290358497 | 0,10% |\n\n**TER medio ponderado ≈ 0,16%** → sobre 20.000 € son ~32 €/año; sobre un corpus de 800.000 €, ~1.280 €/año.\n\n**Lógica del diseño**\n- Núcleo global: miles de empresas en una sola posición (diversificación máxima al menor coste).\n- Emergentes: sobreponderación deliberada vs. su peso en el MSCI World (~10-11%), asumiendo más volatilidad.\n- Renta fija **cubierta a EUR**: sin la cobertura, un 16% en bonos globales sería en realidad una apuesta divisa.\n- Oro vía ETC físico: cobertura de cola, no generador de rentas.\n- Liquidez: colchón para aportaciones graduales (DCA) y para evitar vender en caídas.\n\n**Advertencia fiscal clave (la más importante de todo el documento)**\nEl traspaso sin peaje fiscal español funciona **solo entre fondos de inversión**. Los ETFs (EIMI, XEON) y los ETCs (SGLN) tributan como **acciones**: venderlos materializa plusvalía, siempre. Si quieres maximizar la ventaja del traspaso, la parte \"traspasable\" de esta cartera son solo los dos fondos Vanguard (80% de la cartera). Fuente: `docs/conocimiento/fiscalidad.md`.\n\n---\n\n## 2) Plan FIRE neto de impuestos (objetivo: 2.500 €/mes netos)\n\nFuente: calculadora FIRE determinista. Supuestos: retorno real **6%** (después de inflación), regla de retirada **SWR 4%**, edad objetivo de independencia **54 años** (19 años de acumulación), escala del ahorro con tipo medio de retirada ~21% aplicada **solo a la fracción de ganancia**.\n\n**Corpus objetivo**\n- Retirada bruta necesaria: **2.719 €/mes**\n- Impuesto efectivo de retirada: **~9%** (porque con DCA ~43% del corpus es ganancia, y solo eso tributa)\n- Renta neta resultante: **2.473 €/mes** → prácticamente tus 2.500 €\n- **Corpus requerido ≈ 824.541 €**\n\n**Escenarios según tu ahorro anual (con aportaciones crecientes)**\n\n| Escenario | Aportación inicial | +anual | Corpus a los 54 | Base de coste | Renta neta/mes | Gap vs. objetivo |\n|---|---|---|---|---|---|---|\n| A | 12.000 €/año | +400 €/año | 564.032 € | 316.400 € | 1.707 € | −262.140 € |\n| B | 18.000 €/año | +600 €/año | 815.792 € | 464.600 € | 2.473 € | −8.749 € (**casi**) |\n| C | 24.000 €/año | +800 €/año | 1.067.552 € | 612.800 € | 3.240 € | **objetivo superado** |\n\n**Lecturas**\n- El **punto de equilibrio** está en torno a **1.550-1.600 €/mes de aportación sostenida** (~18.600-19.200 €/año).\n- En el escenario B te quedas a un pelo: subir la aportación un 3-4% o retrasar 6-12 meses la fecha cierra el gap. El escenario C te da colchón y flexibilidad para recortar aportaciones si la vida se complica.\n- El retorno real del 6% es la variable más frágil: si en vez de 6% es 4%, el corpus objetivo no cambia, pero la aportación necesaria sube de forma notable. Trátalo como escenario, no como promesa.\n\n---\n\n## 3) Fiscalidad española relevante\n\nFuente: `docs/conocimiento/fiscalidad.md` (base de conocimiento indexada). **Las reglas cambian: verifica con tu asesor y tu broker.**\n\n**a) Base del ahorro (tramos vigentes 2025-2026)**\n| Tramo | Tipo |\n|---|---|\n| 0 – 6.000 € | 19% |\n| 6.000 – 50.000 € | 21% |\n| 50.000 – 200.000 € | 23% |\n| 200.000 – 300.000 € | 27% |\n| > 300.000 € | 28% |\n\n**b) Solo tributa la ganancia, no el importe retirado.** En FIRE esto es enorme: no vendes 800.000 €, vendes participaciones cuya base de coste es ~57% del valor. De ahí que el impuesto efectivo de retirada sea ~9% y no 21%.\n\n**c) Traspasos.** Entre **fondos** de inversión: sin peaje fiscal, se hereda la antigüedad de la base. **No aplica** a ETFs, ETCs ni entre fondo y ETF.\n\n**d) Compensación de pérdidas.** Fondos compensan con fondos; acciones/ETFs entre sí. **Las dos bolsas no son intercambiables** (error clásico al rebalancear).\n\n**e) PRIIPs/KID.** Un retail europeo no puede comprar ETFs domiciliados en EE. UU. (no publican KID). Operamos UCITS irlandeses/luxemburgueses. Ventaja: un UCITS irlandés sufre **15% de retención** sobre dividendos de acciones US en vez del 30% estándar.\n\n**f) Acumulación vs. distribución.** Los vehículos de acumulación difieren el peaje fiscal; los de distribución te obligan a tributar el dividendo cada año aunque lo reinviertas. Para FIRE, acumulación.\n\n**g) Planes de pensiones: cuidado.** Deducen a tipo marginal, pero (1) están **bloqueados hasta la jubilación reglamentaria** y (2) al rescatarlos tributan como **rendimiento del trabajo** (progresivo). Es un conflicto estructural con jubilarse a los 54. Úsalos solo por la deducción, no como vehículo FIRE.\n\n**h) RSU / stock options** (si algún día aplica en tu caso). Tributan como rendimiento del trabajo en el **vesting**, a tipo marginal 24-47%. Después son activo patrimonial y su revalorización tributa en la base del ahorro.\n\n**i) Cripto.** Plusvalía del ahorro; obligación del **modelo 721** si superas 50.000 € en exchanges extranjeros.\n\n**j) Patrimonio.** Exento ~700.000 € + 300.000 € de vivienda habitual, con diferencias fuertes por CCAA (Madrid bonifica al 100%). Relevante si el plan FIRE sale muy bien.\n\n---\n\n## 4) Riesgos y catalizadores\n\n**Riesgos**\n- Secuencia de retornos adversa: dos años malos al inicio de la fase de retirada hacen mucho más daño que en la acumulación.\n- Retorno real por debajo del 6% → el escenario B se desangra.\n- Concentración en una cartera 64% RV global: es un activo correlacionado consigo mismo (todo EE. UU./tecnología por capitalización).\n- Disciplina: el mayor destructor de rentabilidad es vender en pánico, no el TER.\n\n**Catalizadores**\n- Ahorro anual creciente (subidas de sueldo → +aportación).\n- Horizonte de 19 años: el interés compuesto hace el trabajo pesado a partir del año 12-14.\n- Eficiencia fiscal ya internalizada (0,16% TER + acumulación + traspaso de fondos).\n\n## Veredicto\n**Toro**: con 18.000 €/año crecientes estás a 9.000 € del corpus objetivo y el plan es alcanzable a los 54 sin heroicidades. **Oso**: el margen es nulo, así que el plan depende de mantener la aportación y el retorno real; cualquier recorte del ahorro anual del 10% te empuja hacia el escenario A (1.707 €/mes).\n\n**Para afinar las cifras necesito**: tu CCAA (fiscalidad autonómica de patrimonio y tramos), tu ahorro anual real (no el hipotético) y si tienes RSU/stock options. Con eso recalculo el plan exacto en vez de por escenarios.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 27950,
+    "toolCalls": [
+      {
+        "name": "portfolioTool",
+        "count": 1
+      },
+      {
+        "name": "firePlanTool",
+        "count": 3
+      },
+      {
+        "name": "knowledgeSearchTool",
+        "count": 1
+      },
+      {
+        "name": "updateWorkingMemory",
+        "count": 1
+      }
+    ],
+    "usage": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 47083
+    },
+    "turnMetrics": [
+      {
+        "durationMs": 27950
+      }
+    ]
+  },
+  "deepagents": {
+    "framework": "deepagents",
+    "text": "# Plan FIRE — Español, 35 años, riesgo 4/5\n\nHe guardado el informe completo en **./.agent-fs/informe-fire-espana-35a.md**. Resumen:\n\n## 1. Cartera propuesta (20.000 €, perfil agresivo)\n\n| Sleeve | Peso | Producto | ISIN | TER |\n|---|---|---|---|---|\n| RV global | 64% | Vanguard Global Stock Index EUR Acc (fondo) | IE00B03HD191 | 0,17% |\n| RV emergentes | 10% | iShares Core MSCI EM ETF Acc | IE00B0M62X26 | 0,18% |\n| Renta fija | 16% | Vanguard Global Bond EUR Hedged Acc (fondo) | IE00B18GC888 | 0,15% |\n| Oro | 5% | iShares Physical Gold ETC | IE00B579F325 | 0,12% |\n| Liquidez | 5% | Xtrackers EUR Overnight Rate (XEON) | LU0290358497 | 0,10% |\n\nTER medio ≈ **0,16%**. El núcleo va en **fondos** (no ETFs) a propósito: en España solo los traspasos entre fondos no tributan. Los ETFs no traspasan, ni entre sí ni con fondos.\n\n## 2. Plan FIRE neto de impuestos\n\n**Caso base — retirada a los 55 (20 años), aportando 18.000 €/año creciendo 750 €/año, 5% real, retirada del 4%:**\n\n| Métrica | Valor |\n|---|---|\n| Capital aportado | 522.500 € |\n| Corpus a los 55 | **844.242 €** |\n| Fracción de ganancia | 38% |\n| Impuesto efectivo de retirada | ~8,0% |\n| Retirada bruta | 2.814 €/mes |\n| **Retirada neta** | **2.589 €/mes** |\n| Corpus necesario para 2.500 € netos | 815.245 € |\n\nLlegas, con ~29.000 € de holgura. Sensibilidad:\n\n| Escenario | Aportación | Retorno real | Edad | ¿Llega? |\n|---|---|---|---|---|\n| Base | 18.000 €/año | 5,0% | 55 | Sí |\n| Conservador | 18.000 €/año | 3,5% | 55 | **No, faltan 70.702 €** |\n| Menos aportación | 12.000 €/año | 5,0% | 60 | Sí |\n| Muy baja | 7.500 €/año | 5,0% | 65 | Sí |\n\n## 3. Fiscalidad española clave\n\n- **Escala del ahorro:** 19% / 21% / 23% / 27% / 28% (tramos 2025-2026, verifica vigencia).\n- **Solo tributa la ganancia**, no el importe retirado. De ahí que 815 k€ basten para rentas que un cálculo ingenuo situaría en ~900 k€.\n- **Traspaso entre fondos sin peaje** — el gran privilegio español; ETFs excluidos.\n- **Escalona las retiradas** para no saltar del 19-21% al 27-28%.\n- **Planes de pensiones: mal encaje con FIRE.** Deducen al aportar, pero tributan como rendimiento del trabajo (no escala del ahorro) y están bloqueados hasta la jubilación reglamentaria.\n- **Domicilio IE/LU** en todos los productos: retención del 15% en lugar del 30% sobre dividendos US.\n\n## 4. Contexto que condiciona el plan\n\n- **Banco Mundial (consultado 09-10-2026):** inflación 2025 2,67% (pico 8,39% en 2022), PIB +2,82%, desempleo 10,38%, deuda pública 105,64% del PIB (2024, último dato).\n- **Edad legal de jubilación: 67 años desde 2027** (Ley 27/2011). Una FIRE a los 55 implica **12 años sin pensión pública ni red**: todo capital propio.\n- La AIReF y Fedea advierten de que la reforma de pensiones no garantiza por sí sola la sostenibilidad (prensa, 2026). No planifiques los 2.500 € netos contando con la pensión.\n- **EUR/USD 1,1206** (BCE, 09-10-2026); en 2026 se movió ~1,20 → ~1,12. Riesgo divisa no compensado: por eso la renta fija va cubierta a EUR.\n- No he podido verificar el peso de España en el MSCI World con las herramientas, así que **no cito cifra**.\n\n## Riesgos / catalizadores\n- **Riesgo principal:** el plan depende de dos supuestos frágiles — 1.500 €/mes de aportación constante y 5% real. Al 3,5% real no llega.\n- **Riesgo fiscal:** la escala del ahorro y el régimen de traspasos son decisiones políticas, no derechos adquiridos.\n- **A favor:** estructura fiscalmente eficiente, TER bajo, y la aportación es la palanca que más adelanta la fecha de libertad.\n\n**Veredicto:** objetivo alcanzable en 20 años, pero sin margen para recortar mucho la aportación. Prioriza colchón de liquidez (6-12 meses) antes que optimizar productos.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 672647,
+    "toolCalls": [
+      {
+        "name": "portfolio_recommendation",
+        "count": 1
+      },
+      {
+        "name": "knowledge_search",
+        "count": 2
+      },
+      {
+        "name": "fire_plan",
+        "count": 4
+      },
+      {
+        "name": "task(macro-analyst)",
+        "count": 1
+      },
+      {
+        "name": "write_file",
+        "count": 1
+      }
+    ],
+    "usage": {
+      "inputTokens": 3614291,
+      "outputTokens": 34765,
+      "totalTokens": 3649056,
+      "llmCalls": 37
+    }
+  }
+}

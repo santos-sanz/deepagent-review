@@ -20,6 +20,9 @@ export function chatModel(): ChatOpenAI {
     model: CHAT_MODEL,
     apiKey: process.env.NAN_API_KEY ?? '',
     configuration: { baseURL: NAN_URL },
+    // Streaming obligatorio tras el gateway: las generaciones largas sin stream
+    // superan el Proxy Read Timeout de Cloudflare (error 524) en api.nan.builders
+    streaming: true,
     maxRetries: 3,
     timeout: 180_000,
   });
