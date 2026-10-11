@@ -63,7 +63,7 @@ export const webFetchTool = tool(
     description: 'Descarga una URL y devuelve su contenido en texto plano (HTML → texto). Úsala después de web_search para leer una página.',
     schema: z.object({
       url: z.string().url().describe('URL completa http(s) a leer'),
-      maxLength: z.number().int().min(500).max(50_000).default(8000).describe('Longitud máxima del texto devuelto'),
+      maxLength: z.number().int().min(500).max(20_000).default(8000).describe('Longitud máxima del texto devuelto'),
     }),
   },
 );

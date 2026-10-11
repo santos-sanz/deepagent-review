@@ -1,7 +1,7 @@
 {
   "framework": "mastra",
-  "text": "## Respuesta rápida\n\n**TikTok no cotiza en bolsa.** No existe ninguna acción de TikTok (ni de su matriz, ByteDance) con ticker ni precio público. Y **\"XYZABC123\" no es un símbolo válido**: no aparece en Yahoo Finance ni en ninguna fuente de mercado, así que **no hay datos fiables de ese \"precio actual\"** porque ese activo no existe en los mercados. Cualquier cifra que te diera sería inventada.\n\n---\n\n## Por qué no hay cotización de TikTok\n\n| Punto | Detalle |\n|---|---|\n| Estructura | ByteDance Ltd. es **privada** (fundada 2012, sede en Pekín; VIE en Islas Caimán). Wikipedia |\n| Cotización | **No hay IPO**. Sus acciones solo se mueven en mercados secundarios privados y recompras internas |\n| Por qué | Es una empresa china con fuerte escrutinio regulatorio (EE. UU., China), lo que complica un listing |\n| Dato clave reciente | El 22-ene-2026 se cerró el **joint venture de TikTok EE. UU.** (mayoría estadounidense, Oracle ~15%) — The Guardian, Deadline, Reuters |\n\n### Valuaciones de referencia (¡no son precio de cotización!)\n- **~550.000 M$**: propuesta de compra de acciones de General Atlantic, recogida por Forbes México / Yahoo, **25-feb-2026**.\n- **155.000 M$ de ingresos (2024)** y **~50.000 M$ de beneficio proyectado para 2025** (Bloomberg, 19-dic-2025, vía Wikipedia).\n- Participación de **Oracle en el JV de TikTok US valorada en ~2.000 M$** (Reuters, 11-mar-2026).\n\nEstas cifras son valoraciones de transacciones privadas o estimaciones de analistas, **no un precio de mercado continuo**, y suelen ir desactualizadas y con horquillas amplias.\n\n---\n\n## Cómo obtener exposición (vía indirecta)\n\nLa única forma de exposición \"boursátil\" es a través de empresas cotizadas vinculadas:\n\n| Vía | Ticker | Precio (Yahoo Finance, cierre 9-oct-2026) |\n|---|---|---|\n| Oracle (socio del JV en EE. UU.) | ORCL (NYSE) | **141,40 USD** (+4,59% ese día) |\n| Otros socios del JV / proveedores cloud | — | Depende del vehículo |\n\n⚠️ Ojo: ORCL es una empresa enorme de software/cloud; TikTok supone una fracción mínima de su valor y de su cotización. No es \"la acción de TikTok\".\n\n---\n\n## Sobre \"XYZABC123\"\n\n- Búsqueda en Yahoo Finance: **0 resultados**.\n- No cumple el formato de ningún ticker real (los símbolos suelen tener 1-5 caracteres + sufijo de mercado).\n- Conclusión: **es un código inexistente o inventado**. No puedo darte un precio fiable.\n\nSi tienes un código distinto (ISIN, ticker completo o nombre de empresa), pásamelo y lo busco de verdad.\n\n---\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-  "durationMs": 42999,
+  "text": "Voy a verificar ambos casos con las herramientas antes de responder.Voy a ser claro con ambos casos, porque ninguna de las dos consultas tiene una respuesta de mercado real.\n\n## 1. TikTok — **no cotiza en bolsa**\n\nTikTok **no es una empresa cotizada**. No existe ninguna acción de TikTok en el NYSE, el Nasdaq ni en ningún otro parqué, y por tanto **no hay cotización** que consultar.\n\n**Quién está detrás:**\n- TikTok es la app de vídeo corto operada por **ByteDance**, una empresa **privada** (constituida en Islas Caimán, con sede operativa en China). ByteDance tampoco cotiza.\n- Los resultados de mis herramientas lo confirman: al buscar \"TikTok\" y \"ByteDance\", el único match fue un token cripto llamado *\"#1 Tiktok Squirrel\"* (irrelevante, nada que ver) y **cero resultados** para ByteDance como valor listado.\n\n**Qué sí existe (contexto, sin cifras de cotización):**\n- Hay un proceso geopolítico en EE. UU. con la ley de \"divest-or-ban\" y la creación de una posible **joint venture estadounidense** (con participación de inversores como Oracle y otros), pero eso es **capital privado**, no una acción que puedas comprar en un bróker.\n- Aunque una parte del negocio estadounidense se escindiera, seguiría siendo una **empresa privada** hasta que hiciera una OPV real.\n\n**Conclusión:** no hay precio \"actual\" de la acción de TikTok porque no hay acción. Cualquier cifra que veas por ahí es una **valoración estimada de empresa privada** (rondas de financiación, valoraciones de analistas), que es algo distinto y sujeta a mucha incertidumbre.\n\n> Si quieres exposición indirecta, la vía sería comprar valores cotizados con participación en ByteDance (fondos o algunas gestoras/tecnológicas chinas expuestas). Sobre esto **sí** puedo darte datos cuantitativos si me lo pides.\n\n## 2. XYZABC123 — **símbolo inexistente / no localizable**\n\n- La búsqueda del ticker `XYZABC123` devolvió **cero resultados**. No corresponde a ningún activo real en Yahoo Finance.\n- \"XYZABC123\" tiene toda la pinta de ser un **ticker de ejemplo/placeholder** o inventado. No tengo ningún dato fiable: ni precio, ni empresa, ni mercado.\n\n**Por qué no te doy una cifra:** no hay fuente que la respalde. Inventar un precio aquí violaría lo más básico: no fabricar datos.\n\n---\n\n### Resumen honesto\n\n| Consulta | ¿Cotiza? | Precio actual | Motivo |\n|---|---|---|---|\n| **TikTok** | ❌ No | No existe | Empresa privada (ByteDance); sin acciones listadas |\n| **XYZABC123** | ❌ No | No disponible | Ticker inexistente en las fuentes de mercado |\n\nSi tienes el **nombre real de la empresa** detrás de \"XYZABC123\" o el activo que querías consultar (¿era una acción concreta, un ETF, una cripto?), dímelo y lo busco correctamente. También, si te interesa, puedo analizar qué **empresas cotizadas** dan exposición indirecta a ByteDance/TikTok.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+  "durationMs": 19115,
   "toolCalls": [
     {
       "name": "assetSearchTool",
@@ -9,33 +9,21 @@
     },
     {
       "name": "marketNewsTool",
-      "count": 3
-    },
-    {
-      "name": "webSearchTool",
-      "count": 2
-    },
-    {
-      "name": "webFetchTool",
       "count": 1
     },
     {
-      "name": "quoteTool",
-      "count": 2
-    },
-    {
-      "name": "updateWorkingMemory",
+      "name": "webSearchTool",
       "count": 1
     }
   ],
   "usage": {
     "inputTokens": 0,
     "outputTokens": 0,
-    "totalTokens": 115806
+    "totalTokens": 31201
   },
   "turnMetrics": [
     {
-      "durationMs": 42999
+      "durationMs": 19115
     }
   ]
 }

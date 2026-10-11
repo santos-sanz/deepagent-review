@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { toolStrategy } from 'langchain';
+import { modelCallLimitMiddleware, toolStrategy } from 'langchain';
 import type { SubAgent } from 'deepagents';
 import { assetSearchTool } from './tools/market/asset-search';
 import { quoteTool } from './tools/market/quote';
@@ -29,6 +29,14 @@ const extractionEnvelope = z.object({
   faltantes: z.array(z.string()).describe('Campos solicitados que no aparecen en el texto (se dejan fuera de `datos`)'),
 });
 
+/**
+ * Presupuesto de llamadas LLM por subagente: los sub-agentes NO heredan el
+ * middleware del orquestador, así que cada uno necesita su propio límite.
+ * Sin él, el researcher llegó a encadenar 57 llamadas re-leyendo su contexto
+ * (184k tokens) con solo 7 tool calls.
+ */
+const SUBAGENT_CALL_LIMIT = [modelCallLimitMiddleware({ runLimit: 25, exitBehavior: 'end' })];
+
 export const subagents: SubAgent[] = [
   {
     name: 'market-analyst',
@@ -48,6 +56,7 @@ export const subagents: SubAgent[] = [
       fxRatesTool,
       secFilingsTool,
     ],
+    middleware: SUBAGENT_CALL_LIMIT,
   },
   {
     name: 'macro-analyst',
@@ -58,14 +67,16 @@ export const subagents: SubAgent[] = [
       'Metodología: apóyate en macro_indicators (datos oficiales del Banco Mundial) para cifras por país, fx_rates (BCE) para divisas, knowledge_search para el glosario y metodología indexados, y market_news/web_search para el contexto actual (bancos centrales, decisiones de tipos, eventos).\n' +
       'Explica con claridad divulgativa sin perder rigor: define los términos técnicos, compara países cuando aporte contexto y distingue siempre entre dato oficial, estimación y opinión. Indica el año de cada cifra macro (los datos oficiales van con retraso). NUNCA narres tu proceso: tu respuesta final es el informe consolidado.',
     tools: [macroIndicatorsTool, fxRatesTool, marketNewsTool, knowledgeSearchTool, webSearchTool],
+    middleware: SUBAGENT_CALL_LIMIT,
   },
   {
     name: 'researcher-agent',
     description:
       'Investigador web. Delega aquí investigación cualitativa con citas: actualidad de empresas privadas, funding, valoraciones, prensa y verificación de hechos.',
     systemPrompt:
-      'Eres un agente investigador especializado en economía y mercados. Para actualidad usa market_news (noticias con fuente y fecha) y web_search/web_fetch para profundizar. Trabaja con hechos citables: cada afirmación debe llevar su URL de origen en formato markdown [fuente](url) y, si es posible, la fecha. Para empresas privadas busca rondas de financiación, valoraciones, prensa y datos oficiales del registro mercantil. Si no encuentras datos fiables, dilo explícitamente. NUNCA narres tu proceso ("voy a buscar", "ahora leo"): tu respuesta final es siempre un informe consolidado de hallazgos con citas, sin meta-comentarios.',
+      'Eres un agente investigador especializado en economía y mercados. Para actualidad usa market_news (noticias con fuente y fecha) y web_search/web_fetch para profundizar. Trabaja con hechos citables: cada afirmación debe llevar su URL de origen en formato markdown [fuente](url) y, si es posible, la fecha. Para empresas privadas busca rondas de financiación, valoraciones, prensa y datos oficiales del registro mercantil. Si no encuentras datos fiables, dilo explícitamente. Presupuesto: máximo 5-6 búsquedas/lecturas; NO repitas búsquedas equivalentes ni iteres sobre lo mismo: con lo que tengas, entrega ya el informe final señalando qué no pudiste verificar. NUNCA narres tu proceso ("voy a buscar", "ahora leo"): tu respuesta final es siempre un informe consolidado de hallazgos con citas, sin meta-comentarios.',
     tools: [marketNewsTool, webSearchTool, webFetchTool],
+    middleware: SUBAGENT_CALL_LIMIT,
   },
   {
     name: 'extractor-agent',
@@ -74,6 +85,7 @@ export const subagents: SubAgent[] = [
     systemPrompt:
       'Eres un agente extractor de datos. Del texto recibido, extrae fielmente los campos solicitados en `datos`. No inventes valores: si un dato no aparece, lista el campo en `faltantes`.',
     responseFormat: toolStrategy(extractionEnvelope),
+    middleware: SUBAGENT_CALL_LIMIT,
   },
   {
     name: 'product-analyst',
@@ -91,5 +103,6 @@ export const subagents: SubAgent[] = [
       '- Riesgos de la cartera y qué esperar en una caída del mercado según su peso en bolsa.\n\n' +
       'Límites duros: nunca prometas rentabilidades; nunca digas "te recomiendo comprar" en términos de asesoramiento personalizado — formula como "para un perfil como el descrito, las reglas del sistema proponen...". No narres tu proceso ("voy a consultar..."): tu respuesta final es directamente el informe. Cierra SIEMPRE con el disclaimer: "⚠️ Esto es información educativa, no asesoramiento financiero personalizado. Consulta a un asesor regulatoriamente autorizado y verifica la fiscalidad con un profesional."',
     tools: [knowledgeSearchTool, firePlanTool],
+    middleware: SUBAGENT_CALL_LIMIT,
   },
 ];

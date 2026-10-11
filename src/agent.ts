@@ -1,5 +1,5 @@
 import { createDeepAgent, FilesystemBackend } from 'deepagents';
-import { todoListMiddleware } from 'langchain';
+import { modelCallLimitMiddleware, todoListMiddleware } from 'langchain';
 import { join } from 'node:path';
 import { chatModel } from './nan';
 import { subagents } from './subagents';
@@ -75,7 +75,13 @@ export async function createAnalystAgent(opts?: { fetch?: typeof fetch }) {
     systemPrompt: SYSTEM_PROMPT,
     tools,
     subagents,
-    middleware: [todoListMiddleware()],
+    middleware: [
+      todoListMiddleware(),
+      // Presupuesto duro de llamadas LLM: con modelos reasoning, el loop abierto
+      // puede entrar en espiral (se observaron runs de 57-63 llamadas re-leyendo
+      // un contexto de hasta 240k tokens). 'end' cierra con lo que haya.
+      modelCallLimitMiddleware({ runLimit: 40, exitBehavior: 'end' }),
+    ],
     // Filesystem en disco (jaulado a .agent-fs con virtualMode): los informes que
     // el agente escribe con write_file persisten de verdad entre turnos y sesiones.
     backend: new FilesystemBackend({ rootDir: join(process.cwd(), '.agent-fs'), virtualMode: true }),

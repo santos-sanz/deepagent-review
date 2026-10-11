@@ -3,7 +3,7 @@
   "mastra": {
     "framework": "mastra",
     "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-    "durationMs": 12117,
+    "durationMs": 10584,
     "toolCalls": [
       {
         "name": "updateWorkingMemory",
@@ -13,43 +13,43 @@
     "usage": {
       "inputTokens": 0,
       "outputTokens": 0,
-      "totalTokens": 37483
+      "totalTokens": 37526
     },
     "turnMetrics": [
       {
-        "durationMs": 5732
+        "durationMs": 5672
       },
       {
-        "durationMs": 6385
+        "durationMs": 4912
       }
     ]
   },
   "deepagents": {
     "framework": "deepagents",
-    "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045.",
-    "durationMs": 4703,
+    "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045 (unos 19-20 años).",
+    "durationMs": 4739,
     "toolCalls": [],
     "usage": {
-      "input": 21203,
-      "output": 217,
+      "input": 21202,
+      "output": 231,
       "cacheRead": 20992,
-      "uncachedInput": 211,
-      "totalTokens": 21420,
+      "uncachedInput": 210,
+      "totalTokens": 21433,
       "calls": 2
     },
     "contextCurve": [
       10530,
-      10673
+      10672
     ],
     "perCall": [
       {
         "input": 10530,
-        "output": 192,
+        "output": 198,
         "cacheRead": 10496
       },
       {
-        "input": 10673,
-        "output": 25,
+        "input": 10672,
+        "output": 33,
         "cacheRead": 10496
       }
     ]

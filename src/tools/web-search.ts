@@ -111,6 +111,12 @@ async function keylessSearch(query: string, maxResults: number) {
   const shortKw = encodeURIComponent(keywords(query, 2));
   const wikiKwEnc = encodeURIComponent(wikiKw);
 
+  // Las APIs keyless no acotan el tamaño de sus campos (una description de
+  // GitHub llegó a ocupar 137 KB y entró entera en el contexto del agente):
+  // recortamos SIEMPRE cada snippet antes de devolverlo.
+  const clip = (s: unknown, n = 300): string =>
+    String(s ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, n);
+
   type WebResult = { title: string; url: string; snippet: string };
   const wiki = (lang: string): Promise<WebResult[]> =>
     fetch(`https://${lang}.wikipedia.org/w/api.php?action=query&list=search&srsearch=${wikiKwEnc}&format=json&srlimit=2`, {
@@ -120,9 +126,9 @@ async function keylessSearch(query: string, maxResults: number) {
       .then(r => (r.ok ? r.json() : null))
       .then((j: any) =>
         (j?.query?.search ?? []).map((s: any) => ({
-          title: s.title,
+          title: clip(s.title, 150),
           url: `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(String(s.title).replace(/ /g, '_'))}`,
-          snippet: String(s.snippet ?? '').replace(/<[^>]+>/g, ''),
+          snippet: clip(s.snippet),
         })),
       )
       .catch(() => []);
@@ -140,9 +146,9 @@ async function keylessSearch(query: string, maxResults: number) {
             if (t.Topics) collect(t.Topics);
             else if (t.FirstURL) {
               topics.push({
-                title: t.Text ?? t.FirstURL,
+                title: clip(t.Text ?? t.FirstURL, 150),
                 url: t.FirstURL,
-                snippet: t.Text ? String(t.Text).slice(0, 200) : '',
+                snippet: clip(t.Text),
               });
             }
           }
@@ -160,9 +166,9 @@ async function keylessSearch(query: string, maxResults: number) {
       .then(r => (r.ok ? r.json() : null))
       .then((j: any) =>
         (j?.items ?? []).map((i: any) => ({
-          title: i.full_name,
+          title: clip(i.full_name, 150),
           url: i.html_url,
-          snippet: i.description ?? '',
+          snippet: clip(i.description),
         })),
       )
       .catch(() => []),
@@ -175,9 +181,9 @@ async function keylessSearch(query: string, maxResults: number) {
         (j?.hits ?? [])
           .filter((h: any) => h.title)
           .map((h: any) => ({
-            title: h.title,
+            title: clip(h.title, 150),
             url: h.url ?? `https://news.ycombinator.com/item?id=${h.objectID}`,
-            snippet: h.story_text ? String(h.story_text).replace(/<[^>]+>/g, '').slice(0, 200) : '',
+            snippet: clip(h.story_text),
           })),
       )
       .catch(() => []),

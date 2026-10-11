@@ -1,41 +1,38 @@
 # Comparativa de 3 activos — DeepAgents
 
-## Comparativa a 1 año — AAPL vs MSFT vs S&P 500
+## Comparativa 1 año — AAPL vs MSFT vs S&P 500
 
-**Datos a 9-oct-2026 (Yahoo Finance), ventana de 12 meses con 251 sesiones diarias**
+Datos: series diarias de Yahoo Finance (251 cierres, ventana de 12 meses cerrada el **09-10-2026**). Cotizaciones con retardo de hasta 15 min.
 
-| Métrica | AAPL | MSFT | S&P 500 (^GSPC) |
+| Métrica | **AAPL** | **MSFT** | **^GSPC (S&P 500)** |
 |---|---|---|---|
-| **Rendimiento 1 año** | **+37,25%** | **+4,72%** | **+19,21%** |
-| **Volatilidad anualizada** | 24,48% | **32,84%** | **12,76%** |
-| Rentabilidad/riesgo | **1,52** | 0,14 | 1,51 |
-| Mínimo / máximo 12m | 245,27 / 341,07 USD | 352,83 / 542,07 USD | 6.343,72 / 7.818,93 pts |
-| Precio actual | 336,64 USD | 535,07 USD | 7.811,54 pts |
-| Distancia a máximo 12m | −1,5% | −1,3% | −0,4% |
-| Beta | 1,07 | 1,10 | 1,00 (ref.) |
-| P/E trailing / forward | 38,6 / 35,1 | 29,8 / 22,6 | — |
-| Consenso | buy (328,09 USD) | **strong_buy** (587,63 USD) | — |
+| Rentabilidad 1 año | **+37,25 %** | **+4,72 %** | **+19,21 %** |
+| Volatilidad anualizada | 24,48 % | **32,84 %** | **12,76 %** |
+| Retorno / volatilidad | 1,52 | 0,14 | 1,51 |
+| Mínimo 12 m | 245,27 $ | 352,83 $ | 6.343,72 pts |
+| Máximo 12 m | 341,07 $ | 542,07 $ | 7.818,93 pts |
+| Precio actual | 336,64 $ (-1,11 % día) | 535,07 $ (+2,38 % día) | 7.811,54 pts (+0,59 % día) |
+| Rango 52 sem. (amplitud) | 243,42 – 345,34 $ (~42 %) | 349,20 – 553,72 $ (~59 %) | 6.316,91 – 7.844,52 pts (~24 %) |
+| Beta (5 años, vs. mercado) | 1,069 | 1,099 | 1,00 (referencia) |
+| P/E trailing / forward | 38,6 / 35,1 | 29,8 / 22,6 | n/d |
+| Crecimiento ingresos (interanual) | +16,4 % | +17,7 % | n/d |
 
-*Fuente: Yahoo Finance (histórico diario y ficha fundamental). Volatilidad = desv. típica de retornos diarios × √252. Cotizaciones con posible retardo de hasta 15 min.*
+*Fuentes: Yahoo Finance — series históricas y cotización del 09-10-2026 (20:00 UTC, 21:29 UTC para el índice); fundamentales vía Yahoo Finance.*
 
-### Lectura
-- **Mejor retorno absoluto: AAPL (+37,25%)**, casi el doble que el índice y con la segunda volatilidad más baja de las acciones → mejor perfil rentabilidad/riesgo.
-- **Empate técnico ajustado a riesgo: AAPL (1,52) vs S&P 500 (1,51)**. El índice logra lo mismo con menos de la mitad de volatilidad. Eso es lo difícil de batir de forma sostenida.
-- **Más riesgo: MSFT**, con 32,84% de volatilidad (2,6× el índice, +34% sobre AAPL) y solo +4,72% de retorno. Su recorrido 12m implica un drawdown de ~35% desde máximos intradía.
-- **Matiz importante sobre MSFT**: hoy cotiza a −1,3% de su máximo de 52 semanas y con "strong_buy" y objetivo medio 587,63 USD (+10%). El mal año se concentró en la primera mitad del periodo; el punto de partida actual es el opuesto al de hace 12 meses.
-- **AAPL es el más caro**: P/E forward 35,1x y su precio objetivo medio (328,09) está **por debajo** del precio actual. El mercado ya descuenta mucho.
-- Recuerda que la volatilidad mide magnitud de movimientos, no dirección: beta alta no implica pérdida, pero aquí MSFT sí la materializó.
+## Lectura
 
-### Riesgos y catalizadores
-- **AAPL** — a favor: ingresos +16,4%, margen operativo 32,6%, mix de servicios. En contra: múltiplo exigente, consenso por debajo del precio, ROE inflado por recompras/apalancamiento.
-- **MSFT** — a favor: ingresos +17,7%, margen operativo 45,1%, recuperación ya en curso, recorrido al consenso. En contra: volatilidad, beta y dependencia del retorno del capex en IA.
-- **S&P 500** — a favor: diversificación y 12,8% de volatilidad. En contra: concentración en megacaps tech, es decir, llevas parte del mismo riesgo de AAPL/MSFT en dosis menor.
+**Mejor inversión: AAPL (+37,3 %).** Duplicó al índice y multiplicó por ~8 el retorno de MSFT. Su volatilidad (24,5 %) es alta en términos absolutos pero considerablemente menor que la de MSFT, y su ratio retorno/volatilidad (1,52) es prácticamente idéntico al del S&P 500 (1,51): ganó más, pero con más riesgo.
 
-### Conclusión
-**Mejor inversión: Apple** en términos absolutos (+37,25%); ajustada a riesgo, **Apple y el S&P 500 empatan** (1,52 vs 1,51), pero el índice lo consigue con mucha menos volatilidad, lo que lo hace más consistente. **Más riesgo: Microsoft** (32,84% de volatilidad, beta 1,10). Y si el criterio es "más sobrevalorada", esa etiqueta es para Apple, con 35x forward y analistas ya por debajo del precio.
+**Más riesgo: MSFT.** Es el que asume más riesgo por dos vías:
+- **Volatilidad realizada:** 32,8 % anualizada, la mayor de los tres y muy por encima del índice (12,8 %). Su rango de 52 semanas (~59 % de amplitud, de 352 a 553 $) confirma esa montaña rusa: hay un tramo de caída fuerte y recuperación durante el año.
+- **Beta:** 1,099, ligeramente superior a la de AAPL (1,069) y por encima de 1, es decir, amplifica los movimientos del mercado.
 
-Cautela: 251 sesiones son una muestra corta; la volatilidad realizada cambia bastante de un año a otro.
+**El dato incómodo de MSFT:** fue el que más riesgo asumió y el que menos rentabilidad entregó (+4,7 %), con un ratio retorno/volatilidad de solo 0,14. Asumió riesgo sin compensación. Ojo al matiz: el múltiplo actual (P/E forward 22,6 vs. 35,1 de AAPL) y la recomendación de consenso (**strong_buy**, precio objetivo medio 587,6 $) sugieren que el mercado espera recuperación —Apple, en cambio, cotiza ya por encima de su objetivo medio (328,1 $, recom. "buy").
 
-Informe guardado en **`./.agent-fs/informe-comparativa-aapl-msft-sp500.md`** y gráficos SVG en `./generated/`.
+## Veredicto
+
+- **Toro:** AAPL, por rentabilidad absoluta y por equilibrar retorno y riesgo. MSFT ofrece la mejor combinación de valoración relativamente barata + consenso, pero eso es una apuesta a futuro, no lo que pasó en estos 12 meses.
+- **Oso:** MSFT fue la peor combinación retorno-riesgo del trío en este periodo. Y el S&P 500 demuestra que en un año así, indexarse (12,8 % de vol, +19,2 %) fue superior a cargar MSFT, aunque inferior a concentrar en Apple.
+- **Regla práctica:** el índice ganó por riesgo asumido (ratio ~1,5 con la mitad de volatilidad que MSFT); el stock-picking solo compensó en el caso de Apple.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

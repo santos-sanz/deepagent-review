@@ -232,7 +232,7 @@ Auditoría del instrumento de medición:
    hit), el input NO cacheado de DeepAgents es mínimo (empresa-publica: 73 k brutos → 6,7 k
    efectivos; memoria: 211 tokens efectivos). Su loop hace menos llamadas que Mastra en la mayoría
    de escenarios (5 vs 6-12).
-3. **Runs profundos: el outlier real es cartera-fire.** 53 llamadas LLM, contexto del agente
+3. **Runs profundos: el outlier en la primera ejecución fue cartera-fire.** 53 llamadas LLM, contexto del agente
    principal creciendo hasta ~240 k tokens (la curva \`contextCurve\` muestra el harness resumiendo
    al superar el umbral: 242 k → reinicio) y 5,49 M de input bruto. Causas: (a) el historial
    completo se re-envía en cada paso; (b) deepseek-v4-flash es un modelo con razonamiento y su
@@ -244,16 +244,26 @@ Auditoría del instrumento de medición:
 5. **Tiempo: varianza dominada por gateway + reasoning.** El mismo escenario (cartera-fire, mismo
    código) tardó 70 s, 672 s y 824 s en tres ejecuciones; Mastra se mantiene estable (14-60 s).
    El fix de streaming eliminó los 524; la varianza restante es del modelo/gateway.
-6. **Fiabilidad**: el \`maxSteps\` default de Mastra trunca análisis largos (subirlo es
+6. **Reproducibilidad: el outlier se mueve entre runs.** En la segunda ejecución completa con
+   conteo exacto, cartera-fire fue eficiente (5 llamadas, 73 k input, 7,6 k no cacheados, 50 s)
+   y ROBUSTEZ fue la que entró en espiral (63 llamadas, 4,7 M input, 200 k no cacheados, 532 s).
+   Es decir: la espiral agéntica no es propiedad del escenario sino del comportamiento del modelo
+   en el loop abierto de DeepAgents — cuando deepseek-v4-flash decide iterar, itera mucho. Mastra
+   no muestra estas espirales: su loop converge antes y \`maxSteps\` acota el peor caso.
+7. **Fiabilidad**: el \`maxSteps\` default de Mastra trunca análisis largos (subirlo es
    imprescindible); la working memory de Mastra recuerda entre ejecuciones (por diseño, a vigilar
    en tests); el disclaimer es por código en Mastra (siempre) y por prompt+app en DeepAgents.
 
 **Veredicto revisado**: la diferencia de tokens y tiempo que motivó esta revisión era en su mayor
 parte un fallo de medición (corregido aquí). Lo que queda de diferencia real —acumulación de
 contexto en runs profundos— está mitigada por el prompt caching del gateway (~91-99%) y por el
-summarization del propio harness. Para este agente sobre deepseek-v4-flash vía NaN: coste y
-latencia comparables en tareas estándar; en runs profundos, Mastra mantiene el contexto más plano y
-estable, DeepAgents paga más input bruto (barato con caché) y depende más de la varianza del gateway.`;
+summarization del propio harness, pero el comportamiento del modelo bajo el loop abierto de
+DeepAgents es poco predecible entre runs: para producción conviene fijar un presupuesto
+(\`maxSteps\`/límite de llamadas o budget de tokens), que DeepAgents permite vía middleware y
+Mastra ya trae de serie. Para este agente sobre deepseek-v4-flash vía NaN: coste y latencia
+comparables en tareas estándar; en runs profundos, Mastra mantiene el contexto más plano y
+estable, DeepAgents paga más input bruto (barato con caché) y depende más de la varianza del
+gateway.`;
 
 const summary = `# Suite intensiva Mastra vs DeepAgents
 

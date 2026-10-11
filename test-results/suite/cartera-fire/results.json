@@ -2,8 +2,8 @@
   "scenario": "cartera-fire",
   "mastra": {
     "framework": "mastra",
-    "text": "Voy a construir dos cosas en paralelo: la cartera por clases con productos concretos y el cálculo FIRE neto de impuestos.Los datos base ya están. Ahora cruzo varios escenarios FIRE porque el plan depende mucho de cuánto ahorres al año y a qué edad quieras cortar.# Plan educativo: cartera + FIRE (residente fiscal en España)\n\nAntes de los números, una advertencia de metodología: **todo lo que sigue son salidas de modelos deterministas** con supuestos explícitos (retorno real 5%, regla de retirada 4%). No son predicciones. Los datos de producto provienen del catálogo de productos; **verifica ISIN, TER y disponibilidad en tu broker antes de operar**.\n\n---\n\n## 1. Cartera educativa propuesta (perfil riesgo 4/5, 20.000 €, horizonte 20-30 años)\n\nLa asignación sigue una lógica **núcleo-satélite** con máxima eficiencia fiscal española (fondos traspasables donde tiene sentido).\n\n| Clase de activo | Peso | Producto | ISIN | TER | Domicilio |\n|---|---|---|---|---|---|\n| RV global (núcleo) | 64% | Vanguard Global Stock Index Fund EUR Acc | IE00B03HD191 | 0,17% | UCITS-IE |\n| RV emergentes | 10% | iShares Core MSCI EM UCITS ETF (Acc) — EIMI | IE00B0M62X26 | 0,18% | UCITS-IE |\n| Renta fija global (cubierta EUR) | 16% | Vanguard Global Bond Index Fund EUR Hedged Acc | IE00B18GC888 | 0,15% | UCITS-IE |\n| Oro | 5% | iShares Physical Gold ETC — SGLN | IE00B579F325 | 0,12% | UCITS-IE |\n| Liquidez remunerada | 5% | Xtrackers II EUR Overnight Rate Swap — XEON | LU0290358497 | 0,10% | UCITS-LU |\n\n**Notas de diseño:**\n- El núcleo en **fondo, no ETF**, es deliberado: en España los traspasos entre fondos **no tributan** (art. 94 LIRPF), lo que te permite rebalancear durante 25 años sin peaje fiscal.\n- El ETF de emergentes y el monetario son ETFs → **tributan como acciones** y no traspasan con fondos. Pesos pequeños = impacto fiscal pequeño.\n- Con 20.000 € y riesgo 4/5, la liquidez del 5% (1.000 €) es insuficiente como fondo de emergencia real. **Mantén el colchón de emergencia fuera de esta cartera** (3-6 meses de gastos en cuenta remunerada o letras del Tesoro). El sleeve de liquidez aquí es para aportaciones graduales (DCA), no para imprevistos.\n\n---\n\n## 2. Plan FIRE neto de impuestos\n\n**Objetivo:** 2.500 €/mes netos = **30.000 €/año netos**.\n\nEl motor FIRE calcula el **corpus necesario neto de la fiscalidad de las retiradas**: al vender participaciones, solo tributa la fracción de ganancia (tu base de coste no tributa). Con aportaciones periódicas, tu base de coste es alta, y eso **reduce mucho el impuesto efectivo**.\n\n### Corpus objetivo (retorno real 5%, SWR 4%)\n\n| Métrica | Valor |\n|---|---|\n| Corpus necesario | **~818.000–845.000 €** |\n| Fracción de ganancia implícita | 40-54% según horizonte |\n| Tipo efectivo de retirada | **8,4-11,3%** (no el 19-21% nominal) |\n| Retirada bruta/mes al 4% | ~2.730 € |\n| **Retirada neta/mes** | **2.500 €** |\n\n> El punto clave que casi nadie calcula: para obtener 2.500 € **netos** necesitas retirar ~2.730 € **brutos**, porque el impuesto solo grava la ganancia. El ajuste es del +9%, no del +30%.\n\n### Escenarios de ahorro\n\n| Aportación anual (crecimiento) | Edad objetivo | Corpus proyectado | Neto/mes | ¿Objetivo? |\n|---|---|---|---|---|\n| 12.000 € (+300/año) | 55 | 528.253 € | 1.613 € | ❌ gap 290.507 € |\n| 12.000 € (+300/año) | 60 | 776.815 € | 2.333 € | ⚠️ gap 55.744 € |\n| 12.000 € (+300/año) | 65 | 1.102.338 € | 3.260 € | ✅ |\n| 18.000 € (+500/año) | 55 | 778.913 € | 2.384 € | ⚠️ gap 38.025 € |\n| **24.000 € (+600/año)** | **55** | **1.003.440 €** | **3.072 €** | ✅ |\n\n**Lectura directa:** con 1.000 €/mes (12.000 €/año) **no llegas** a FIRE a los 55 con 2.500 € netos. Tienes tres palancas:\n1. **Ahorrar más**: ~1.900-2.000 €/mes (+500 €/año creciente) te lleva a los 55.\n2. **Alargar a los 60**: con ~1.150 €/mes ya rozas el objetivo.\n3. **Bajar la renta objetivo** o aceptar ingresos parciales (semirretiro, \"coast FIRE\").\n\nSin saber tu capacidad de ahorro real, el escenario que mejor encaja con \"riesgo 4 y FIRE a los 55\" es el de **~2.000 €/mes**.\n\n---\n\n## 3. Fiscalidad española relevante (verifica tramos vigentes)\n\n**Escala del ahorro (base del ahorro, IRPF):**\n\n| Tramo | Tipo |\n|---|---|\n| 0 – 6.000 € | 19% |\n| 6.000 – 50.000 € | 21% |\n| 50.000 – 200.000 € | 23% |\n| 200.000 – 300.000 € | 27% |\n| > 300.000 € | 28% |\n\n- **Fondos de inversión (UCITS): traspaso sin peaje fiscal.** Puedes cambiar de fondo sin tributar; mantienes el valor y antigüedad de adquisición. Solo tributa al reembolsar a efectivo. Es el gran privilegio del sistema español y la razón del diseño de tu cartera.\n- **ETFs: tributan como acciones.** No traspasan ni con fondos ni entre sí. Se venden y punto.\n- **Acumulación > distribución.** Los vehículos de acumulación capitalizan dividendos internamente (Irlanda: 15% de retención sobre dividendos US vía tratado, frente al 30% sin tratado). Fiscalmente más eficiente.\n- **Compensación de pérdidas:** pérdidas de acciones/ETFs se compensan con ganancias de la misma categoría; las de fondos, con fondos. **No son intercambiables.**\n- **Regla antiaplicación:** no puedes recomprar el mismo ETF/acción en **2 meses** si materializas pérdida; en fondos el plazo es **1 año** (mismo fondo).\n- **Dividendos:** tributan en la base del ahorro (la exención de 1.500 € fue eliminada en 2015). Con crédito por doble imposición internacional.\n- **Planes de pensiones — ojo con FIRE:** deducen a tipo marginal (hasta 1.500 €/año en plan individual), pero (a) tributan como **rendimiento del trabajo** al retirar (progresivo, no escala del ahorro) y (b) están bloqueados hasta la jubilación reglamentaria, salvo supuestos tasados. **En conflicto directo con la jubilación anticipada.** Para FIRE, el vehículo líquido y traspasable (fondos) es el eje.\n- **Retiradas escalonadas:** acumular mucha venta en un año te sube de tramo (19 → 23 → 27%). Repartir las retiradas a lo largo del año mantiene el tipo bajo. Por eso el tipo efectivo del modelo (8-11%) es realista solo con retiradas planificadas.\n- **Impuesto de Patrimonio:** umbral estatal ~700.000 € (más 300.000 € de vivienda habitual) y bonificaciones autonómicas muy distintas (Madrid 100% bonificado, otras no). Con corpus de ~800.000 € **es un factor a vigilar** según tu comunidad.\n\n---\n\n## 4. Riesgos y catalizadores\n\n**Riesgos:**\n- **Riesgo de secuencia de retornos**: dos años malos al principio de la fase de retiro pueden romper un SWR del 4%. El colchón de liquidez y el orden de ventas importan tanto como el importe.\n- **SWR 4% discutible**: algunas metodologías sugieren 3,3-3,5% para horizontes de 40+ años. Con 3,5% el corpus necesario sube a ~935.000 €.\n- **Inflación**: el modelo asume 5% real. Si el retorno nominal es 7% con inflación 3%, el real es ~3,9%, y todo el plan se estira 3-5 años.\n- **Concentración de divisa**: ~65% de la cartera en activos con exposición USD. Sin cobertura, el EUR/USD añade volatilidad.\n- **Riesgo regulatorio/fiscal**: los trámites del ahorro y el tratamiento del traspaso pueden cambiar. Ya han cambiado varias veces.\n\n**Catalizadores:**\n- **Aportaciones crecientes**: cada 1.000 €/mes adicionales valen más que cualquier optimización de cartera a 25 años.\n- **Reequilibrio vía traspaso**: puedes mantener el perfil de riesgo sin pasar por caja, algo que un inversor en ETFs no puede.\n- **Aprovechar la escala del ahorro**: en FIRE las retiradas son bajas → tipo efectivo bajo. El sistema te favorece si planificas.\n- **Semirretiro / barista FIRE**: cubrir gastos básicos con trabajo parcial reduce el corpus necesario drásticamente.\n\n---\n\n## 5. Veredicto con matices\n\n**Toro:** el plan es viable, pero **no a los 55 con 1.000 €/mes**. El diseño fiscal español (traspaso de fondos + escala del ahorro baja en retiradas) es objetivamente ventajoso para FIRE comparado con casi cualquier otro país de la UE. Aportando ~2.000 €/mes, los 55 años con 2.500 € netos están al alcance.\n\n**Oso:** el punto frágil no es la cartera, es **la tasa de ahorro y el horizonte temporal**. Un SWR del 4% es agresivo para 40+ años de retiro; y el modelo asume 5% real sostenido, algo que no está garantizado. Además, la vivienda habitual (no mencionada) y el Impuesto de Patrimonio pueden cambiar el cálculo por completo.\n\n**Recomendación educativa:** empieza con la cartera (DCA de los 20.000 € en 6-12 meses), mantén el fondo de emergencia **fuera**, y prioriza subir la tasa de ahorro por encima de optimizar el TER. Con los números actuales, tu FIRE realista está entre los **57 y 62 años**, no a los 55.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-    "durationMs": 47239,
+    "text": "Voy a construir la propuesta de cartera y el cálculo FIRE con las herramientas deterministas.# Tu plan: cartera educativa + ruta FIRE (España, 35 años)\n\n**Perfil base asumido:** residente fiscal en España, 35 años, 20.000 € invertibles, riesgo 4/5, objetivo 2.500 €/mes netos. Como no me has dado tu capacidad de ahorro anual, he modelado varios escenarios (12.000 / 15.000 / 18.000 € al año) y te señalo cuál cierra el objetivo.\n\n---\n\n## 1. Cartera propuesta (perfil 4/5, 100% indexada)\n\nGenerada con la herramienta de carteras del catálogo (reglas deterministas + filtro de accesibilidad y fiscalidad española).\n\n| Clase de activo | Peso | Producto | ISIN | TER | Tipo |\n|---|---|---|---|---|---|\n| RV global (núcleo) | **64%** | Vanguard Global Stock Index Fund EUR Acc | IE00B03HD191 | 0,17% | Fondo |\n| RV emergentes | **10%** | iShares Core MSCI EM UCITS ETF Acc (EIMI) | IE00B0M62X26 | 0,18% | ETF |\n| Renta fija global cubierta EUR | **16%** | Vanguard Global Bond Index Fund EUR Hedged Acc | IE00B18GC888 | 0,15% | Fondo |\n| Oro físico | **5%** | iShares Physical Gold ETC (SGLN) | IE00B579F325 | 0,12% | ETC |\n| Liquidez remunerada (€STR) | **5%** | Xtrackers II EUR Overnight Rate Swap (XEON) | LU0290358497 | 0,10% | ETF monetario |\n\n**TER medio ponderado ≈ 0,16%** → coste anual de ~32 € sobre 20.000 €. Es un coste muy bajo; el enemigo aquí es la comisión de la plataforma, no el producto.\n\n**Cómo desplegar los 20.000 €** (ejemplo, no orden de compra):\n- 12.800 € → Vanguard Global Stock (núcleo, aportación periódica mensual)\n- 3.200 € → Vanguard Global Bond EUR Hedged\n- 2.000 € → iShares Core MSCI EM (EIMI)\n- 1.000 € → iShares Physical Gold (SGLN)\n- 1.000 € → Xtrackers €STR (XEON)\n\n⚠️ **Antes de ejecutar:** deja **fuera de esta cartera** un colchón de emergencia de 3-6 meses de gastos en cuenta remunerada o monetario. El 5% de liquidez de la cartera **no** es tu fondo de emergencia, es rebalanceo. Y verifica ISIN, TER y clase (Acc/Dist) en tu bróker/gestora antes de comprar: las clases cambian y el catálogo puede quedar desactualizado.\n\n**Dónde contratarlo (referencia, sin comisiones de esta herramienta):** los fondos Vanguard son accesibles vía MyInvestor, Openbank, Renta 4 o Indexa; los ETFs vía DeGiro, IBKR o Trade Republic. Ojo con las comisiones de custodia, que se comen el ahorro del TER bajo.\n\n---\n\n## 2. Plan FIRE neto de impuestos\n\nCalculadora determinista: SWR 4% sobre el corpus objetivo, fiscalidad del ahorro solo sobre la ganancia (la devolución de tu aportación no tributa), aportaciones crecientes en euros absolutos. **Todas las cifras están en euros de hoy (retorno ya neto de inflación).**\n\n| Escenario | Aportación anual (creciendo +500 €/año) | Edad objetivo | Corpus alcanzado | Retirada neta/mes | ¿Objetivo 2.500 €? |\n|---|---|---|---|---|---|\n| A | 12.000 € | 55 | 645.450 € | 1.948 € | ❌ Faltan ~183.000 € |\n| B | 12.000 € | **60** | 993.082 € | **2.944 €** | ✅ Con margen |\n| C | 15.000 € (+600 €/año), retorno real 5% | **57** | 834.146 € | **2.539 €** | ✅ Justo |\n| D | 18.000 € | **55** | 866.163 € | **2.613 €** | ✅ Justo |\n\n**Lecturas clave:**\n- **Corpus objetivo ≈ 828.000 €** (en euros de hoy) para 2.500 €/mes netos con SWR 4%.\n- El impuesto efectivo en la fase de retirada es del **~9,4%** (no el 21%): porque solo tributa la parte de ganancia del reembolso, y en tu caso esa fracción es del ~45%. En el escenario a 60 años sube al 11,1% (más ganancia acumulada).\n- **Estás a ~20-25 años del objetivo**, no a 10. Con 20.000 € de partida, la palanca real no es el capital inicial: es **cuánto ahorras cada año** y **cuánto tarda en no fallar el interés compuesto**.\n- El escenario A te lo digo claro: 12.000 €/año hasta los 55 no llega. O subes la aportación (18.000 €), o retrasas la edad (60), o bajas la renta objetivo.\n\n💡 Dos palancas que mejoran el plan: (1) cada 1.000 €/año extra de aportación sostenida recorta el objetivo final aproximadamente un año; (2) rebalancear con **traspasos entre fondos** en lugar de ventas te permite ajustar cartera **sin pasar por caja**.\n\n---\n\n## 3. Fiscalidad española relevante (IRPF, régimen general)\n\n**Durante la acumulación:**\n- **Traspaso entre fondos sin tributar (diferimiento fiscal):** el gran activo del inversor español. Puedes cambiar de fondo (y rebalancear) sin plusvalía. **Los ETFs NO son traspasables**: vender un ETF = hecho imponible aunque reinviertas al instante. Por eso el núcleo es fondo y los satélites ETF.\n- **Fondos de acumulación:** no reparten dividendos → no declaras dividendos año a año. Se difiere todo al reembolso. Los de reparto sí tributan cada año.\n- **Dividendos (si los hay):** tributan en base del ahorro, con **retención del 19%** en origen. En ETFs UCITS extranjeros, la retención en origen se sufre dentro del fondo (pérdida no recuperable, ya reflejada en el precio).\n- **Planes de pensiones:** aportación máxima deducible **1.500 €/año** (reducción en base general, no ahorro); en planes de empleo hasta 10.000 €. Para FIRE puro tienen un problema: el rescate tributa como rendimiento del trabajo, y si te retiras pronto con renta baja puede salir a cuenta, pero te inmoviliza el capital. No los he incluido en la cartera.\n- **Regla FIFO:** en fondos, los reembolsos siguen el orden de compra.\n\n**En la fase de retirada (base del ahorro, escala progresiva):**\n\n| Tramo de ganancia | Tipo |\n|---|---|\n| Hasta 6.000 € | 19% |\n| 6.001 – 50.000 € | 21% |\n| 50.001 – 200.000 € | 23% |\n| 200.001 – 300.000 € | 27% |\n| Más de 300.000 € | 28% |\n\n- Solo tributa la **ganancia** (valor de transmisión − valor de adquisición), no el principal.\n- **No hay compensación cruzada** entre base general (trabajo) y base del ahorro; las pérdidas patrimoniales se compensan entre sí con límite del 25% de los rendimientos de capital mobiliario del ejercicio y arrastre de 4 años.\n- **5.550 € de mínimo personal** ya van incluidos en la escala.\n- **Patrimonio:** el mínimo exento estatal es 700.000 € (más 300.000 € de vivienda habitual), pero está cedido a las comunidades: Madrid y Andalucía bonifican al 100%. Aún estás lejos del umbral, aunque es un impuesto que conviene vigilar a medida que el corpus crezca.\n- **Ejemplo práctico de tus 2.500 €/mes:** necesitas sacar ~2.750 €/mes brutos; de esos, solo ~1.239 € son ganancia → cuota ~260 €/mes (21% sobre 1.239 €). Tu retención efectiva real ≈ 9,5%.\n\n---\n\n## 4. Riesgos y catalizadores\n\n**Riesgos**\n- **Concentración en EE.UU.:** ~65-70% del MSCI World. No es una cartera \"global\" neutral en riesgo país.\n- **Divisa:** emergentes y oro cotizan en USD; puedes ganar en el activo y perder en el cambio.\n- **Riesgo de secuencia de retornos:** una mala racha justo al retirarte es más peligrosa que una mala rentabilidad promedio. La SWR 4% no es una garantía.\n- **Cambios fiscales:** la escala del ahorro y el impuesto de patrimonio se han movido varias veces en los últimos años.\n- **Comisiones ocultas de plataforma y custodia:** pueden duplicar tu coste real frente al TER.\n- **Retorno real asumido del 6%:** el desglose histórico lo respalda, pero el punto de partida de valoración de la bolsa hoy es exigente. El escenario C usa un 5% más prudente.\n\n**Catalizadores**\n- Traspaso sin peaje fiscal → rebalanceo y cambios de estrategia gratis.\n- Aportaciones crecientes: son el motor real del plan a 20-25 años.\n- Fondos de acumulación: cero fricción fiscal anual, más efecto compuesto.\n- Inflación cubierta por el núcleo de RV + oro a largo plazo.\n\n---\n\n## 5. Veredicto\n\n**Toro:** la cartera es sensata, baratísima (0,16% TER) y está optimizada para el régimen fiscal español. El objetivo es alcanzable, pero **a los 55 años no; el rango realista es 57-60**, salvo que eleves la aportación por encima de 15.000 €/año.\n\n**Oso:** con 20.000 € de partida, todo depende de tu tasa de ahorro, y no me la has dicho. Si no puedes aportar al menos ~12.000-15.000 €/año (1.000-1.250 €/mes), el objetivo de 2.500 €/mes se aleja bastante o exige trabajar más años. Y un 64% de RV global es un riesgo 4/5 coherente, pero aguantar dos crisis del -40% sin vender es el test psicológico real, no el backtest.\n\n**Mi sugerencia operativa:** simula tu escenario real con tu aportación anual concreta y la herramienta FIRE, y dime la cifra para afinarlo. Automatiza el ahorro mensual, no toques nada y revisa una vez al año.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).\n\n---\n\n¿Quieres que:\n1. rehaga el plan FIRE con **tu aportación anual real** (dime cuánto puedes ahorrar al mes),\n2. te genere el mismo análisis en **audio** para escucharlo,\n3. o simule el caso de una **posición concentrada** (RSU/stock options) si tienes acciones de tu empresa?",
+    "durationMs": 49335,
     "toolCalls": [
       {
         "name": "portfolioTool",
@@ -11,11 +11,7 @@
       },
       {
         "name": "firePlanTool",
-        "count": 5
-      },
-      {
-        "name": "knowledgeSearchTool",
-        "count": 1
+        "count": 4
       },
       {
         "name": "updateWorkingMemory",
@@ -25,62 +21,34 @@
     "usage": {
       "inputTokens": 0,
       "outputTokens": 0,
-      "totalTokens": 57883
+      "totalTokens": 49409
     },
     "turnMetrics": [
       {
-        "durationMs": 47239
+        "durationMs": 49335
       }
     ]
   },
   "deepagents": {
     "framework": "deepagents",
-    "text": "# Cartera + plan FIRE (España) — resumen\n\nHe delegado la verificación de la fiscalidad a un investigador (con fuentes AEAT/BOE) y he calculado el FIRE con la calculadora determinista neta de impuestos. Informe completo guardado en **`./.agent-fs/informe-cartera-fire-espana.md`**.\n\n## 1) La mala noticia primero: el número\n\nCapital objetivo FIRE para 2.500 €/mes netos ≈ **824.000 €** (SWR 4%, impuesto de retirada calculado solo sobre la fracción de ganancia → tipo efectivo ~9-11%).\n\n| Aportación anual (+300 €/año) | Llegas a 2.500 € netos... | Corpus a los 55 |\n|---|---|---|\n| 6.000 € | nunca a los 55 (972 €/mes) | 321.632 € |\n| 12.000 € | **a los ~60-61 años** | 557.875 € |\n| 18.000 € | 55 años casi (2.410 €/mes) | 794.118 € |\n| 19.500 € | **55 años sí (2.485 €/mes)** | 819.387 € |\n\nAl 12.000 €/año, para tocar los 2.500 €/mes netos a los 55 haría falta una aportación de equilibrio de ~**1.600 €/mes**. Y el retorno no te salva: pasando del 5,5% real al 7% real (optimista sostenido), la renta sube de 1.691 € a 1.958 €/mes — sigues lejos. **La palanca dominante es la tasa de ahorro, no la cartera.**\n\n## 2) Cartera educativa (riesgo 4/5, horizonte FIRE)\n\n| Clase | Peso | Producto | ISIN/ticker | TER |\n|---|---|---|---|---|\n| RV global (núcleo) | 64% | Vanguard Global Stock Index EUR Acc | IE00B03HD191 | 0,17% |\n| RV emergentes | 10% | iShares Core MSCI EM IMI UCITS ETF Acc | IE00B0M62X26 / EIMI | 0,18% |\n| RF global EUR cubierta | 16% | Vanguard Global Bond Index EUR Hedged Acc | IE00B18GC888 | 0,15% |\n| Oro | 5% | iShares Physical Gold ETC | IE00B579F325 / SGLN | 0,12% |\n| Liquidez €STR | 5% | Xtrackers II EUR Overnight Rate Swap 1C | LU0290358497 / XEON | 0,10% |\n\nTER medio ponderado ~**0,16%**. Contexto de precios (Yahoo Finance, 9-oct-2026 ~15:35 UTC, con retardo): XEON 150,47 € (+0,03%), SGLN 6.141 GBp (+1,69%), IWDA.AS 131,67 € (+0,53%).\n\n⚠️ **Aviso de verificación:** los ISIN/TER salen del catálogo del motor de recomendación; en esta sesión las búsquedas web no devolvieron las fichas oficiales, así que **confírmalos en el KIID antes de contratar**. Los datos que sí he validado con fuente son los de fiscalidad y las cotizaciones.\n\n## 3) Fiscalidad española clave (verificada, AEAT/BOE)\n\n- **Escala del ahorro:** 19% hasta 6.000 € / 21% hasta 50.000 / 23% hasta 200.000 / 27% hasta 300.000 / **30%** por encima. *Ojo: el tramo top es 30%, no 28%* (Ley 7/2024, vigente desde 1-1-2025).\n- **Fondos vs ETFs — el punto decisivo:** los **fondos UCITS son traspasables sin peaje fiscal** (diferimiento, no exención; mismo titular, el dinero no pasa por tu cuenta). Los **ETFs quedan expresamente excluidos** del traspaso, tanto en venta como entre sí (confirmado por AEAT y por la CNMV; también ETFs extranjeros desde 2022). En un plan de 20-25 años, esa flexibilidad fiscal vale más que unos pocos pbs de TER → el núcleo debe ser de **fondos**.\n- **Dividendos:** retención del 19% a cuenta; la antigua exención de los primeros 1.500 € **fue suprimida en 2015** (hoy 0 €). Por eso los vehículos de **acumulación** son más eficientes en acumulación.\n- **Planes de pensiones vs FIRE:** límite 1.500 €/año individual (+8.500 € si hay aportación empresarial; +4.250 € autónomos). Deduce en base **general** (a tu marginal), pero al rescatarlo **tributa como rendimiento del trabajo** y está condicionado a jubilación (incluida anticipada), cese total de actividad a los 60, o el supuesto de liquidez a 10 años. Para un FIRE a los 50-55 sin pensión, **la cartera traspasable de fondos es el vehículo líquido principal**; el plan de pensiones es complemento, no núcleo.\n- **RSU/options:** tributan como rendimiento del trabajo en el vesting (24-47% marginal) y la revalorización posterior como ganancia patrimonial al vender.\n- **Novedad 2026 a vigilar:** los nuevos **CAIFE/SIALPFE (\"Financia Europa\", RDL 26/2026 y 29/2026)** con diferimiento y exención parcial hasta 150.000 €. Aún pendiente del registro de IIC elegibles de la CNMV y de convalidación parlamentaria: **todavía no contratables**.\n\n## 4) Riesgos y catalizadores\n\n**A favor:** horizonte de 20-30 años; coste ~0,16%; diferimiento fiscal español; aportación creciente con el salario.\n**En contra:** hueco de aportación real (12.000 €/año → 60-61 años, no 55); **riesgo de secuencia** en la jubilación anticipada (necesitas 1-2 años de gasto en liquidez); inflación eurozona ~3,8% (sept-2026, prensa citando Eurostat; IPC España 2,67% en 2025, Banco Mundial) que tensiona valoraciones y al BCE; riesgo divisa (~70% USD en el global; EUR/USD 1,1206, 9-oct-2026, BCE) y concentración en megacaps de EE. UU.\n\n**Veredicto con matices:** plan viable, pero **no a los 55 con 12.000 €/año y 20.000 € de partida**. Las tres salidas: subir aportación, aceptar ~60-62 años, o complementar renta (alquiler, trabajo parcial). La cartera propuesta es sólida y barata; el cuello de botella es la tasa de ahorro.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).\n\n¿Quieres que profundice en algo — simular tu aportación real, un plan B con rentas complementarias, o la variante \"todo fondos\" traspasable?",
-    "durationMs": 824533,
+    "text": "He guardado el informe completo en `.agent-fs/informe-cartera-fire-espana.md`. Aquí va el resumen.\n\n---\n\n# 1. Cartera educativa (riesgo 4/5, horizonte 25 años)\n\n| Sleeve | Peso | Producto | ISIN / Ticker | TER |\n|---|---|---|---|---|\n| RV global (núcleo) | 64% | Vanguard Global Stock Index Fund EUR Acc | IE00B03HD191 | 0,17% |\n| RV emergentes (satélite) | 10% | iShares Core MSCI EM UCITS ETF Acc | IE00B0M62X26 (EIMI) | 0,18% |\n| Renta fija global EUR cubierta | 16% | Vanguard Global Bond Index Fund EUR Hedged Acc | IE00B18GC888 | 0,15% |\n| Oro físico (ETC) | 5% | iShares Physical Gold ETC | IE00B579F325 (SGLN) | 0,12% |\n| Liquidez remunerada (€STR) | 5% | Xtrackers II EUR Overnight Rate Swap | LU0290358497 (XEON) | 0,10% |\n\n**TER medio ponderado ≈ 0,16%** → unos 32 €/año con 20.000 €, ~1.300 €/año con 800.000 €.\n\nDecisiones deliberadas:\n- **Núcleo y renta fija en FONDO, satélites en ETF/ETC.** No es capricho: en España los fondos traspasan sin peaje fiscal, los ETFs no. Pones ahí el peso que querrás rotar con los años.\n- **Versiones de acumulación** en todo lo posible: difieres el impuesto de dividendos/cupones hasta la venta.\n- **Los 1.000 € de liquidez (5%) son colchón operativo, no fondo de emergencia.** Tu fondo de emergencia (3-6 meses de gastos) va aparte, en cuenta remunerada.\n- Sobre los 20.000 €: reparte en 4-6 entradas si te incomoda el lump-sum. Estadísticamente invertir de golpe gana ~2 de cada 3 veces, pero el DCA evita que vendas en el peor momento por pánico.\n\n# 2. Plan FIRE para 2.500 €/mes netos\n\nMotor: retorno real 5%, regla de retirada 4%, impuesto del ahorro aplicado **solo a la fracción de ganancia**.\n\n| Escenario | Aportación anual | Edad | Corpus alcanzado | Necesario | ¿Llega? |\n|---|---|---|---|---|---|\n| Conservador | 6.000 € | 55 | 329.857 € | 819.298 € | No (gap 489k) |\n| Moderado | 12.000 € | 60 | 913.177 € | 828.745 € | **Sí** |\n| Ambicioso | 18.000 € | 55 | 805.045 € | 816.227 € | No (por 11k) |\n| Ambicioso + | 18.800 € | 55 | 831.497 € | 816.279 € | **Sí** (por 15k) |\n| Agresivo | 18.000 € | 50 | 508.935 € | 801.576 € | No (gap 293k) |\n| Retorno 4% | 12.000 € | 55 | 547.831 € | 803.544 € | No (gap 256k) |\n\n**Los cuatro mensajes que importan:**\n\n1. **Tu número está en ~800-840k €**, no en los 750k que sugiere el cálculo naive. Para que te queden 2.500 € netos hay que **retirar en bruto 2.717-3.173 €/mes**.\n2. **La aportación pesa más que el retorno.** Duplicar de 6.000 a 12.000 €/año mueve el resultado de 330k a 913k. Bajar del 5% al 4% real te cuesta 256k. Optimiza tu tasa de ahorro antes que tu cartera.\n3. **FIRE a los 50 con este perfil es matemáticamente muy duro**: harían falta ~2.600 €/mes de aportación (31k/año) o un 7% real sostenido. Realista: **pleno hacia los 55-60**, o **coast FIRE** (dejar de aportar a los ~45 y dejar que componga solo).\n4. **El drag fiscal es bajo**: con DCA continuado la fracción de ganancia es 31-51% del corpus → impuesto efectivo por retirada de solo **6,4-10,6%**, muy lejos del 19-28% nominal.\n\nRiesgo a vigilar: **la secuencia de retornos**. Una caída fuerte en los primeros 5 años de retirada puede romper el plan aunque el promedio a 20 años sea bueno. Mitigación: 2 años de gastos en liquidez + flexibilidad para vender menos en años malos.\n\n# 3. Fiscalidad española relevante\n\n**Escala del ahorro (IRPF 2026, verificar tramos vigentes):** 19% hasta 6.000 €; 21% de 6.000 a 50.000 €; 23% hasta 200.000 €; 27% hasta 300.000 €; 28% por encima. Se aplica **solo a la ganancia**, así que repartir ventas entre años mantiene el tipo bajo.\n\n**Fondos vs ETFs.** El privilegio fiscal español: los **fondos UCITS traspasan sin peaje** (rotas sin declarar ni pagar). Los **ETFs tributan como acciones** y no traspasan ni con fondos ni entre sí. Además, las pérdidas de acciones/ETFs solo compensan con esa categoría, y las de fondos con fondos: compartimentos estancos.\n\n**Planes de pensiones y FIRE: mala combinación.** Deduces al marginal actual (límite 1.500 €/año individual; 10.000 € en planes de empresa), pero **tributan a la retirada como rendimiento del trabajo** (progresivo) y están **bloqueados hasta la jubilación ordinaria**. Para jubilación anticipada el vehículo es la cartera traspasable de fondos; el plan de pensiones solo como complemento o si tu marginal hoy es muy alto.\n\n**Otros puntos:** rendimientos de dividendos/cupones/intereses tributan cada año → otra razón para clases de acumulación. Sin impuesto de patrimonio relevante hasta ~700k € por persona (con variaciones autonómicas). Posible exit tax solo en supuestos de patrimonios muy altos (>1M €), que no es tu caso hoy.\n\n---\n\n**Caveats honestos:** los ISIN/TER vienen del catálogo educativo, verifica antes de comprar en tu broker y confirma que no haya comisión de suscripción. La cartera recomendada es generada por reglas deterministas sobre tu perfil, no asesoramiento personalizado. Cotización de referencia BCE (2026-10-09): 1 EUR = 1,1206 USD; oro y emergentes llevan riesgo divisa sin cubrir.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).\n\n¿Quieres que profundice en alguna vía? Puedo, por ejemplo: (a) simular **coast FIRE** (dejar de aportar a los 45), (b) añadir un plan de pensiones al mix y calcular el neto post-67, o (c) detallar la mecánica de retiradas por tramos para minimizar impuestos año a año.",
+    "durationMs": 49829,
     "toolCalls": [
-      {
-        "name": "write_todos",
-        "count": 3
-      },
-      {
-        "name": "fire_plan",
-        "count": 9
-      },
       {
         "name": "portfolio_recommendation",
         "count": 1
       },
       {
+        "name": "fire_plan",
+        "count": 7
+      },
+      {
         "name": "knowledge_search",
-        "count": 2
+        "count": 1
       },
       {
         "name": "fx_rates",
         "count": 1
-      },
-      {
-        "name": "quote",
-        "count": 4
-      },
-      {
-        "name": "market_news",
-        "count": 1
-      },
-      {
-        "name": "task(researcher-agent)",
-        "count": 1
-      },
-      {
-        "name": "macro_indicators",
-        "count": 1
-      },
-      {
-        "name": "asset_search",
-        "count": 1
-      },
-      {
-        "name": "web_search",
-        "count": 4
       },
       {
         "name": "write_file",
@@ -88,333 +56,45 @@
       }
     ],
     "usage": {
-      "input": 5489135,
-      "output": 82196,
-      "cacheRead": 5225472,
-      "uncachedInput": 263663,
-      "totalTokens": 5571331,
-      "calls": 53
+      "input": 72891,
+      "output": 6842,
+      "cacheRead": 65280,
+      "uncachedInput": 7611,
+      "totalTokens": 79733,
+      "calls": 5
     },
     "contextCurve": [
       10574,
-      12264,
-      16120,
-      19648,
-      3284,
-      4367,
-      8240,
-      13806,
-      19655,
-      23930,
-      26602,
-      27608,
-      30920,
-      32027,
-      36232,
-      41958,
-      45362,
-      51801,
-      66283,
-      70432,
-      76669,
-      81859,
-      124077,
-      128771,
-      132247,
-      138949,
-      146815,
-      150421,
-      158215,
-      161196,
-      164394,
-      171608,
-      175767,
-      178914,
-      182917,
-      185308,
-      193193,
-      197570,
-      199711,
-      206096,
-      208411,
-      215286,
-      225616,
-      230899,
-      233545,
-      233970,
-      237101,
-      28364,
-      29113,
-      29675,
-      30545,
-      35194,
-      35606
+      13824,
+      14956,
+      15633,
+      17904
     ],
     "perCall": [
       {
         "input": 10574,
-        "output": 1073,
+        "output": 1162,
         "cacheRead": 10496
       },
       {
-        "input": 12264,
-        "output": 747,
+        "input": 13824,
+        "output": 824,
         "cacheRead": 10496
       },
       {
-        "input": 16120,
-        "output": 2028,
-        "cacheRead": 12160
+        "input": 14956,
+        "output": 601,
+        "cacheRead": 13824
       },
       {
-        "input": 19648,
-        "output": 891,
-        "cacheRead": 16000
+        "input": 15633,
+        "output": 2452,
+        "cacheRead": 14848
       },
       {
-        "input": 3284,
-        "output": 1960,
-        "cacheRead": 2048
-      },
-      {
-        "input": 4367,
-        "output": 344,
-        "cacheRead": 3200
-      },
-      {
-        "input": 8240,
-        "output": 2035,
-        "cacheRead": 4352
-      },
-      {
-        "input": 13806,
-        "output": 387,
-        "cacheRead": 8192
-      },
-      {
-        "input": 19655,
-        "output": 891,
-        "cacheRead": 13696
-      },
-      {
-        "input": 23930,
-        "output": 426,
-        "cacheRead": 19584
-      },
-      {
-        "input": 26602,
-        "output": 1227,
-        "cacheRead": 23808
-      },
-      {
-        "input": 27608,
-        "output": 1756,
-        "cacheRead": 26496
-      },
-      {
-        "input": 30920,
-        "output": 1586,
-        "cacheRead": 27520
-      },
-      {
-        "input": 32027,
-        "output": 448,
-        "cacheRead": 30848
-      },
-      {
-        "input": 36232,
-        "output": 1842,
-        "cacheRead": 32000
-      },
-      {
-        "input": 41958,
-        "output": 481,
-        "cacheRead": 36224
-      },
-      {
-        "input": 45362,
-        "output": 1283,
-        "cacheRead": 41856
-      },
-      {
-        "input": 51801,
-        "output": 687,
-        "cacheRead": 45312
-      },
-      {
-        "input": 66283,
-        "output": 591,
-        "cacheRead": 51712
-      },
-      {
-        "input": 70432,
-        "output": 1159,
-        "cacheRead": 66176
-      },
-      {
-        "input": 76669,
-        "output": 2332,
-        "cacheRead": 70400
-      },
-      {
-        "input": 81859,
-        "output": 809,
-        "cacheRead": 76544
-      },
-      {
-        "input": 124077,
-        "output": 550,
-        "cacheRead": 81792
-      },
-      {
-        "input": 128771,
-        "output": 1720,
-        "cacheRead": 124032
-      },
-      {
-        "input": 132247,
-        "output": 1620,
-        "cacheRead": 128768
-      },
-      {
-        "input": 138949,
-        "output": 548,
-        "cacheRead": 132224
-      },
-      {
-        "input": 146815,
-        "output": 991,
-        "cacheRead": 138880
-      },
-      {
-        "input": 150421,
-        "output": 1995,
-        "cacheRead": 146688
-      },
-      {
-        "input": 158215,
-        "output": 2151,
-        "cacheRead": 150400
-      },
-      {
-        "input": 161196,
-        "output": 1972,
-        "cacheRead": 158208
-      },
-      {
-        "input": 164394,
-        "output": 2362,
-        "cacheRead": 161152
-      },
-      {
-        "input": 171608,
-        "output": 1511,
-        "cacheRead": 164352
-      },
-      {
-        "input": 175767,
-        "output": 2770,
-        "cacheRead": 171520
-      },
-      {
-        "input": 178914,
-        "output": 1559,
-        "cacheRead": 175744
-      },
-      {
-        "input": 182917,
-        "output": 1063,
-        "cacheRead": 178816
-      },
-      {
-        "input": 185308,
-        "output": 1759,
-        "cacheRead": 182912
-      },
-      {
-        "input": 193193,
-        "output": 2130,
-        "cacheRead": 185216
-      },
-      {
-        "input": 197570,
-        "output": 1309,
-        "cacheRead": 193152
-      },
-      {
-        "input": 199711,
-        "output": 1802,
-        "cacheRead": 197504
-      },
-      {
-        "input": 206096,
-        "output": 2023,
-        "cacheRead": 199680
-      },
-      {
-        "input": 208411,
-        "output": 948,
-        "cacheRead": 206080
-      },
-      {
-        "input": 215286,
-        "output": 2256,
-        "cacheRead": 208384
-      },
-      {
-        "input": 225616,
-        "output": 1510,
-        "cacheRead": 215168
-      },
-      {
-        "input": 230899,
-        "output": 2111,
-        "cacheRead": 225536
-      },
-      {
-        "input": 233545,
-        "output": 495,
-        "cacheRead": 230784
-      },
-      {
-        "input": 233970,
-        "output": 663,
-        "cacheRead": 233472
-      },
-      {
-        "input": 237101,
-        "output": 10643,
-        "cacheRead": 233856
-      },
-      {
-        "input": 28364,
-        "output": 906,
-        "cacheRead": 19584
-      },
-      {
-        "input": 29113,
-        "output": 549,
-        "cacheRead": 28288
-      },
-      {
-        "input": 29675,
-        "output": 308,
-        "cacheRead": 29056
-      },
-      {
-        "input": 30545,
-        "output": 4943,
-        "cacheRead": 29568
-      },
-      {
-        "input": 35194,
-        "output": 271,
-        "cacheRead": 30464
-      },
-      {
-        "input": 35606,
-        "output": 1775,
-        "cacheRead": 35072
+        "input": 17904,
+        "output": 1803,
+        "cacheRead": 15616
       }
     ]
   }
