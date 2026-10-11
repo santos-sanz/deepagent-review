@@ -1,123 +1,100 @@
 # Análisis cuantitativo de empresa cotizada — DeepAgents
 
-# Análisis Apple Inc. (AAPL) — NasdaqGS
-
-**Fecha y hora del dato de mercado: 9-oct-2026, 20:00 UTC (cierre).** Cotizaciones de Yahoo Finance, pueden ir con retardo de hasta 15 min.
+He recogido todos los datos en paralelo. Aquí va el análisis.
 
 ---
+
+# 🍎 Apple Inc. (AAPL) — Análisis
+
+**Fuente de datos:** Yahoo Finance (cotización con posible retardo de hasta 15 min) · **Fecha/hora del dato de mercado: 09-oct-2026, 20:00 UTC** (cierre del Nasdaq)
 
 ## 1. Cotización actual
-*Fuente: Yahoo Finance (quote), cierre 9-oct-2026*
 
-| Métrica | Valor |
-|---|---|
-| Precio | **336,64 USD** |
-| Variación diaria | −1,11 % (cierre previo 340,42) |
-| Rango del día | 330,70 – 338,61 |
-| Volumen | 37,9 M acciones |
-| Máx. 52 semanas | 345,34 |
-| Mín. 52 semanas | 243,42 |
-| Distancia al máximo 52s | −2,5 % |
+| Métrica | Valor | Fuente |
+|---|---|---|
+| Precio | **336,64 USD** | Yahoo Finance (09-oct-2026 20:00 UTC) |
+| Variación día | **−1,11 %** (−4,08 USD) | Yahoo Finance |
+| Cierre anterior | 340,42 USD | Yahoo Finance |
+| Rango del día | 330,70 – 338,61 USD | Yahoo Finance |
+| Volumen | 37,88 M | Yahoo Finance |
+| Rango 52 semanas | 243,42 – **345,34 USD** | Yahoo Finance |
+| Capitalización | **4,91 B USD** (~4,9 billones) | Yahoo Finance |
 
-Está a un 2,5 % del máximo anual: la acción cotiza prácticamente en zona de máximos.
-
----
+Cotiza a ~2,5 % de su máximo de 52 semanas.
 
 ## 2. Fundamentales clave
-*Fuente: Yahoo Finance (financials), datos de 9-oct-2026*
 
-| Métrica | Valor | Nota |
+| Métrica | Valor | Lectura |
 |---|---|---|
-| Capitalización | **4,91 B$** (4,913 billones USD) | |
-| Enterprise Value | 4,99 B$ | |
-| P/E trailing | **38,6x** | Muy por encima de su media histórica (~25-30x) |
-| P/E forward | 35,1x | El mercado espera crecimiento, no compresión de múltiplo |
-| Beta | 1,07 | Volatilidad ligeramente superior al mercado |
-| Margen bruto | 48,7 % | |
-| Margen operativo | 32,6 % | |
-| Margen neto | 27,6 % | |
-| **ROE** | **148,8 %** | Distorsionado: equity contable muy bajo por recompras masivas. No leerlo como eficiencia "real" |
-| Crecimiento de ingresos | +16,4 % i.a. | Sólido y por encima de su histórico reciente |
-| Deuda/Equity | 78,4 % | Caja 62,4 B$ vs deuda 84,3 B$; neta ≈ −22 B$ (posible de gestionar con su cash flow) |
-| Short float | 0,88 % | Posiciones cortas testimoniales |
-| **Precio objetivo medio** | **328,09 USD** | **Por DEBAJO del precio actual → potencial −2,5 % según analistas** |
-| Recomendación consenso | "buy" | Con promedio de objetivo a la baja: señal mixta |
+| P/E trailing | **38,6×** | Caro en absoluto |
+| P/E forward | **35,1×** | Se espera ligera mejora de beneficios |
+| EV | 4,99 B USD | Yahoo Finance |
+| Margen bruto | **48,7 %** | Nivel históricamente alto |
+| Margen operativo | **32,6 %** | Excelente |
+| Margen neto | **27,6 %** | Excelente |
+| ROE | **148,8 %** | Distorsionado por recompras agresivas (equity contable muy reducido) — no usar como señal de eficiencia pura |
+| Crecimiento de ingresos | **+16,4 %** | Muy sólido para una empresa de este tamaño |
+| Deuda/Equity | 78,4 % | Caja 62,4 B USD vs. deuda 84,3 B USD → **deuda neta ≈ 21,9 B USD**, perfectamente manejable |
+| Beta | 1,07 | Ligeramente más volátil que el mercado |
+| Precio objetivo medio | **328,09 USD** | ⚠️ **Por debajo** del precio actual (≈ −2,5 %) |
+| Recomendación consenso | *buy* | Yahoo Finance |
 
-**Punto clave:** el consenso recomienda comprar pero su precio objetivo (328 USD) está por debajo de la cotización (337 USD). Traducción: los analistas ven la empresa bien, pero creen que el precio ya lo descuenta.
-
----
+**Paradoja a señalar:** el consenso recomienda "compra" pero su precio objetivo medio está *por debajo* de la cotización. Eso sugiere objetivos ya revisados a la baja mientras la acción ha seguido subiendo.
 
 ## 3. Rendimiento y volatilidad a 1 año
-*Fuente: Yahoo Finance (historical_prices, serie diaria, 251 puntos)*
 
-| Métrica | Valor |
-|---|---|
-| **Rentabilidad 1 año** | **+37,25 %** |
-| Mínimo del periodo | 245,27 USD |
-| Máximo del periodo | 341,07 USD (cierre) |
-| **Volatilidad anualizada** | **24,48 %** |
+| Métrica | Valor | Fuente |
+|---|---|---|
+| Rentabilidad 1 año | **+37,25 %** | Yahoo Finance, serie diaria |
+| Rango del periodo | 245,27 – 341,07 USD | Yahoo Finance |
+| **Volatilidad anualizada** | **24,48 %** | Cálculo sobre serie diaria (251 sesiones) |
+| Puntos de la serie | 251 | Yahoo Finance |
 
-Contexto: +37 % en 12 meses con 24,5 % de volatilidad es un perfil de retorno/riesgo claramente favorable para una megacap. Pero conviene recordar que ese rendimiento ya está en el precio actual, y que el P/E de 38,6x es el que paga hoy quien entra.
+Gráfico generado en: `./generated/chart-AAPL-1791754101518.svg`
 
-Gráfico generado: `generated/chart-AAPL-1791750397694.svg`
+Un +37 % anual con 24,5 % de volatilidad implica un ratio rentabilidad/riesgo de aproximadamente **1,5** — bueno, aunque la volatilidad es superior a la media histórica del S&P 500.
 
----
+## 4. Últimos filings SEC relevantes
 
-## 4. Últimos filings relevantes (SEC)
-*Fuente: SEC EDGAR vía sec_filings, CIK 320193*
-
-| Form | Fecha presentación | Periodo | Contenido |
+| Form | Fecha presentación | Periodo | Enlace |
 |---|---|---|---|
-| 8-K/A | 1-sep-2026 | 17-abr-2026 | Enmienda de 8-K |
-| **10-Q** | **31-jul-2026** | **27-jun-2026** | Resultados trimestrales (Q3 fiscal) |
-| 8-K | 30-jul-2026 | 30-jul-2026 | Comunicación de resultados / guidance |
-| 10-Q | 1-may-2026 | 28-mar-2026 | Q2 fiscal |
-| 8-K | 30-abr-2026 | 30-abr-2026 | Resultados Q2 |
-| 8-K | 20-abr-2026 | 17-abr-2026 | Hecho relevante (materia del 8-K/A posterior) |
-| 8-K | 24-feb-2026 | 24-feb-2026 | Comunicación societaria |
-| 10-Q | 30-ene-2026 | 27-dic-2025 | Q1 fiscal 2026 |
+| **10-Q** | 31-jul-2026 | Trimestre cerrado 27-jun-2026 | [sec.gov](https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm) |
+| **8-K** | 30-jul-2026 | Resultados Q3 FY26 | [sec.gov](https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm) |
+| 10-Q | 01-may-2026 | Trimestre cerrado 28-mar-2026 | [sec.gov](https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm) |
+| 8-K/A | 01-sep-2026 | Enmienda (evento de 17-abr-2026) | [sec.gov](https://www.sec.gov/Archives/edgar/data/320193/000114036126035325/ef20081427_8ka.htm) |
 
-Los documentos completos están enlazados en SEC EDGAR. El **10-Q de julio** es la referencia fundamental más reciente; el **8-K del 30-jul** acompaña el guidance que el mercado castigó.
+Cronología coherente con un calendario fiscal cuyo Q4/FY26 se cierra a finales de septiembre y se reportará previsiblemente a finales de octubre. El 10-Q del 31-jul es el documento más fresco con cuentas auditadas/trimestrales.
 
-> Nota: no aparece un 10-K en la ventana consultada (último ejercicio cerrado sería septiembre 2026 y su 10-K suele presentarse en octubre-noviembre; el próximo resultado se comunicó para el **2-nov-2026**).
+## 5. Noticias recientes (Google News RSS)
 
----
-
-## 5. Noticias recientes (2-3 relevantes)
-*Fuente: Google News RSS vía market_news*
-
-1. **Recorte de pedidos del iPhone 18 Pro (~15 %) y caída de la acción** — TradingView / TIKR.com, 9-10 oct 2026. Los pedidos del modelo Pro se habrían reducido en torno al 15 %, con plazos de entrega desiguales. Es el detonante más inmediato de la caída diaria del −1,1 %.
-2. **Guidance decepcionante por tensiones en la cadena de suministro** — Reuters, 30-jul-2026. Apple publicó resultados (ingresos trimestrales de 109,4 B$ según TradingView) pero el guidance defraudó; Yahoo Finance recogió una rebaja de analistas tras el anuncio. Morningstar (31-jul) fue más matizada sobre el valor tras resultados.
-3. **Cambio de CEO: Tim Cook cede el testigo y la acción cae** — XTB.com, 31-ago-2026; el nuevo consejero delegado (**Ternus**) hará su debut en el spotlight con los resultados del **2-nov-2026** (The Apple Post / BigGo Finance, 7-oct-2026). Riesgo de transición de liderazgo en un momento de presión en márgenes y supply chain.
-
-Adicional: Morningstar (21-sep) se preguntaba si la acción "en máximos" puede seguir subiendo, y Simply Wall Street (8-oct) la veía sobrevalorada tras +145 % en cinco años. Sesgo cualitativo claramente más cauto en prensa reciente.
-
----
+1. **"Apple Stock Drops After Reports of Reduced iPhone 18 Production Orders"** — TIKR.com, 11-oct-2026. El detonante directo de la caída.
+2. **"Apple (AAPL) cae; los pedidos del 18 Pro se reducen 15 %; plazos de entrega dispares"** — TradingView, 10-oct-2026. Cifra concreta: **recorte del 15 % en pedidos del iPhone 18 Pro**.
+3. **"Las acciones de Apple (AAPL) parecen estar sobrevaloradas tras su subida del 145 % en los últimos cinco años"** — Simply Wall Street, 08-oct-2026. Debate de valoración.
+4. *(contexto positivo)* **"Key facts: Apple Inc. cuts iPhone 18 Pro orders; Q3 $109.4B; Ives $400"** — TradingView, 09-oct-2026. Ingresos trimestrales de **109,4 B USD** y objetivo de 400 USD de Dan Ives (Wedbush), frente a un consenso de 328 USD → **dispersión enorme entre analistas**.
 
 ## 6. Riesgos y catalizadores
 
-**Riesgos (lado oso)**
-- **Múltiplo exigente:** P/E 38,6x paga ya una ejecución perfecta; cualquier decepción se traduce en compresión.
-- **Precio objetivo consenso por debajo del precio actual** (328 vs 337 USD): poco margen de revalorización esperado a 12 meses.
-- **Cadena de suministro y recortes de pedidos** del iPhone 18 Pro (−15 % reportado): riesgo directo a ingresos del próximo trimestre.
-- **Presión en márgenes** señalada en el guidance de julio.
-- **Transición de CEO** (Cook → Ternus): incertidumbre estratégica a corto plazo.
+**Riesgos (oso)**
+- Múltiplo exigente: **38,6× trailing / 35,1× forward**. Poco margen de error.
+- **Recorte del 15 % en pedidos del iPhone 18 Pro** → riesgo de estimaciones a la baja para el próximo ciclo de producto.
+- Precio objetivo medio del consenso (328 USD) **ya por debajo** del precio actual.
+- Dependencia extrema del iPhone y de China en la cadena de suministro.
+- ROE del 148 % es artefacto contable por recompras, no señal de calidad diferencial.
 
-**Catalizadores (lado toro)**
-- **Crecimiento de ingresos del +16,4 %** y márgenes netos del 27,6 %: el negocio subyacente está acelerando, no estancado.
-- **Beta 1,07 y volatilidad del 24,5 %:** perfil de riesgo moderado para una tecnológica de este tamaño.
-- **Recompras masivas** (base del ROE del 148 %) sostienen el BPA incluso con crecimiento moderado.
-- **Caja de 62,4 B$** y short float del 0,88 %: balance sólido y ausencia de presión bajista especulativa.
-- **Resultados del 2-nov-2026:** primer gran evento con el nuevo CEO; puede despejar o agravar la incertidumbre.
+**Catalizadores (toro)**
+- Crecimiento de ingresos del **+16,4 %** con márgenes operativos del 32,6 %: combinación poco frecuente.
+- Expansión en IA *on-device* en Mac y servicios de mayor margen (incluido contenido deportivo, p. ej. F1 exclusivo en Apple TV en EE. UU.).
+- Generación de caja y recompras sostenidas que apuntalan el BPA.
+- Caída del día del −1,1 % es modesta para un titular negativo: el mercado no lo está tratando como un colapso de la tesis.
 
 ---
 
-## 7. Veredicto: **NEUTRAL con sesgo cauteloso** (no toro claro)
+## 🎯 Veredicto: **NEUTRAL con sesgo toro de largo plazo, cautela táctica**
 
-**Argumento toro:** negocio acelerando (+16 % en ingresos), márgenes excelentes, sin presión de cortos y con un balance que permite seguir recomprando. La acción ha dado +37 % en un año con una volatilidad del 24 %.
+**Toro:** negocio excepcional, crecimiento de doble dígito en ingresos con márgenes récord, caja neta controlada y beta contenida. Un inversor de largo plazo con horizonte >3 años tiene argumentos sólidos.
 
-**Argumento oso:** todo lo bueno ya está en el precio. Un P/E de 38,6x con objetivo de consenso **por debajo** de la cotización, guidance reciente flojo, recortes de pedidos del iPhone y una transición de CEO en marcha dejan la asimetría poco atractiva a estos niveles.
+**Oso:** a 38,6× beneficios y con el precio objetivo medio del consenso por debajo de la cotización, **el precio ya descuenta buena parte de las buenas noticias**. El recorte de pedidos del iPhone 18 Pro es un aviso de que la estimación de crecimiento puede revisarse a la baja.
 
-**En una frase:** gran empresa, precio exigente. Para posiciones ya existentes, mantener; para dinero nuevo a estos precios, no hay margen de seguridad y la prensa/consenso apuntan a valoración estirada.
+**En una frase:** gran empresa, cotización exigente y momento de corto plazo frágil — no es momento de comprar con urgencia, pero tampoco de tesis rota.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

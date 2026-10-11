@@ -1,37 +1,48 @@
 # Robustez ante datos inexistentes — DeepAgents
 
-He comprobado ambas cosas con las herramientas. Respuesta corta: **ninguna de las dos tiene cotización**, pero por razones muy distintas.
+## Respuesta corta
 
-## 1) TikTok (y su matriz ByteDance): no cotiza — no hay precio de bolsa
-
-**No existe ticker de TikTok ni de ByteDance.** ByteDance Ltd. es una sociedad **privada** (constituida en Islas Caimán como *variable interest entity* de la operativa china); TikTok es una filial/app, no una sociedad admitida a negociación. Lo confirmé en varias vías:
-
-- Búsqueda de activos (asset_search) para "TikTok", "ByteDance" y "TikTok US joint venture": **0 resultados**, no hay símbolo negociable.
-- Ficha corporativa: ByteDance aparece clasificada expresamente como *"Type: Private"* (Wikipedia/ByteDance, consultado hoy).
-- **No hay IPO anunciada ni completada, ni fecha pública.** Nikkei Asia publicó (jun. 2026) que ByteDance *aparca* la salida a bolsa. Históricamente ya archivó planes de IPO en 2021 por presiones regulatorias chinas.
-
-**Lo que sí existe son valoraciones de mercados privados** (ventas secundarias y recompras a empleados), que **no son un precio de cotización**:
-
-| Fecha | Valoración reportada de ByteDance | Contexto |
-|---|---|---|
-| Nov 2024 | ~330.000 M$ | Estimaciones de prensa (Reuters/WSJ) |
-| Ago 2025 | >330.000 M$ | Recompra a empleados (Reuters, 27-ago-2025) |
-| Nov 2025 | ~480.000 M$ | Venta secundaria a Capital Today (Music Business Worldwide / The Times) |
-| Feb 2026 | ~550.000 M$ | General Atlantic vende participación (Reuters/Yahoo, 25-feb-2026) |
-| Abr 2026 | >600.000 M$ | Récord en venta secundaria (SCMP, 8-abr-2026) |
-
-⚠️ Advertencia importante: **no he podido verificar con fuente primaria el precio por acción** de esas operaciones. El último dato sólido y reabrible es de **octubre de 2022: 155 $/acción** en la recompra a empleados (Reuters/Caixin). Cualquier web que te ofrezca "comprar acciones de TikTok" en el mercado minorista es, en el mejor caso, exposición indirecta o un instrumento no regulado.
-
-**Única vía cotizada con exposición real (y muy diluida): Oracle (NYSE: ORCL)**, que tiene el 15% del *TikTok USDS Joint Venture LLC* constituido en enero de 2026 junto a Silver Lake y MGX (fondo de Abu Dhabi), con ByteDance reteniendo el 19,9%. Oracle registró esa participación en ~2.000 M$ (Reuters, 11-mar-2026). Silver Lake, MGX, Susquehanna, General Atlantic, Dragoneer, etc., son fondos/family offices **privados** — ojo con el error habitual: *Dell Technologies (DELL) no es dueño* de la participación; la tiene la family office de Michael Dell, que es privada.
-
-## 2) XYZABC123: no existe
-
-Búsqueda de activo y búsqueda web para "XYZABC123": **cero resultados**. No es un ticker de ninguna acción, ETF, índice, cripto ni divisa en Yahoo Finance ni en fuentes públicas. Tiene toda la pinta de ser un identificador inventado o un placeholder de ejemplo (el patrón "XYZ + número" es típico de datos de prueba). **No voy a darte un precio inventado.**
-
-Si tienes el nombre real de la empresa o el ISIN, dímelo y lo busco. Y si lo has visto anunciado en algún sitio como "acción de TikTok" o como XYZABC123, pásame el enlace: es probable que sea un producto no regulado o una estafa de inversión.
+**Ninguno de los dos activos tiene cotización bursátil, y no es un problema de falta de datos: es que no existen como valores cotizados.**
 
 ---
 
-**En resumen:** la pregunta parte de una premisa que no se sostiene — no hay cotización de TikTok porque ByteDance nunca ha salido a bolsa, y XYZABC123 no es un activo identificable. Es un caso donde la respuesta honesta es "no hay dato fiable", y te explico exactamente por qué.
+### 1. TikTok: no cotiza en bolsa
+
+**No hay cotización que consultar**, y esto no es un vacío de datos ni un fallo de la herramienta. Razones verificadas:
+
+| Punto | Detalle | Fuente |
+|---|---|---|
+| Quién es el dueño | TikTok es una filial de **ByteDance**, compañía **privada** (no listada) con sede en China | Perfil societario / prensa |
+| Búsqueda de ticker | `asset_search("TikTok")` y `asset_search("ByteDance")` → **0 resultados** en Yahoo Finance | Yahoo Finance, consulta de hoy |
+| Perfil de mercado | `company_profile("TikTok")` devuelve `exchange: "privada / no listada"` | Fuente: web |
+| Situación IPO | Hay titulares sobre una eventual **salida a bolsa de la filial estadounidense** (TikTok Global / TikTok US) y sobre subastas privadas de acciones de ByteDance, pero **no hay una IPO ejecutada ni un ticker asignado** | Google News (titulares de nov. 2025 – jun. 2026, fechas no verificadas una a una) |
+
+**Lo que sí existe son valoraciones de mercado secundario, no cotizaciones:** los titulares apuntan a valoraciones de ByteDance en el entorno de **~480.000 M$** en subastas privadas de acciones (Yahoo Finanzas, nov. 2025). Eso es una **transacción OTC/privada entre inversores**, no un precio de bolsa: no hay mercado continuo, ni liquidez pública, ni cierre diario.
+
+⚠️ Aviso: el resultado de `web_search` para verificación adicional devolvió resultados pobres y no relacionados (Wikipedia, GitHub), así que **no doy por confirmado ningún detalle de la estructura de la posible IPO**. Si quieres certeza sobre ese punto, puedo encargar una investigación web más profunda.
+
+---
+
+### 2. XYZABC123: no existe
+
+**No hay precio porque el símbolo no corresponde a ningún activo.**
+
+- `asset_search("XYZABC123")` → **sin resultados**.
+- `quote("XYZABC123")` → **error HTTP 404 de Yahoo Finance**: *"No data found, symbol may be delisted"*.
+
+Ese mensaje de Yahoo es genérico: significa "no encuentro este símbolo", no que haya existido y se haya deslistado. `XYZABC123` tiene toda la pinta de ser un identificador de relleno o de ejemplo, no un ticker real.
+
+---
+
+### Por qué no puedo darte cifras aquí
+
+Mi regla es no inventar números. Podría escribirte "TikTok cotiza a X$" con una valoración secundaria sacada de un titular, y sería **una cifra falsa presentada como cotización**. No lo voy a hacer: una valoración en subasta privada, una estimación de banco de inversión y un precio de bolsa son tres cosas distintas y mezclarlas lleva a decisiones malas.
+
+Si te interesa la exposición a este sector, las vías reales son:
+- **Empresas comparables cotizadas** (Meta, Alphabet, Snap, Reddit, Kuaishou en HK, Tencent) — todas con datos de mercado fiables.
+- **Fondos con participación en ByteDance** en su cartera a través de mercados secundarios (algunos vehículos de capital privado), que **no cotizan a NAV público diario**.
+- **Esperar a la IPO**, si finalmente se ejecuta.
+
+Dime qué te interesa (comparables cotizados de redes sociales, o seguimiento de la IPO) y te lo preparo con datos verificados.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

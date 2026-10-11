@@ -1,36 +1,36 @@
 # Suite intensiva Mastra vs DeepAgents
 
-Fecha: 2026-10-11T20:57:22.445Z
+Fecha: 2026-10-11T21:28:58.900Z
 Modelo: deepseek-v4-flash (gateway NaN) en ambos · Mastra con `maxSteps: 24` (el default corta análisis largos)
 Tokens: usage EXACTO del gateway por llamada (fetch interceptor); para DeepAgents se desglosa bruto vs no cacheado (prompt caching del gateway)
 
 ## Escenarios
 
-- **memoria** — Memoria multi-turno: 2 turnos: el segundo exige recordar nombre, empresa y horizonte dichos en el primero.
 - **empresa-publica** — Análisis cuantitativo de empresa cotizada: Fuerza la cadena completa de tools de mercado: resolver símbolo, quote, fundamentales, histórico con volatilidad, filings SEC y noticias.
+- **robustez** — Robustez ante datos inexistentes: Tickers/empresas sin datos: mide si el agente admite el vacío o alucina cifras. Penalizable inventar datos.
 - **comparativa** — Comparativa de 3 activos: Exige matemática sobre series históricas (rentabilidad y volatilidad anualizada) y una síntesis comparativa honesta.
 - **macro-fx** — Macro y divisas con divulgación: Indicadores oficiales del Banco Mundial + tipos de cambio BCE + explicación divulgativa.
 - **cartera-fire** — Cartera educativa + plan FIRE: Tools deterministas (portfolio_recommendation, fire_plan): la matemática NO debe inventarla el modelo, debe venir de las tools.
-- **robustez** — Robustez ante datos inexistentes: Tickers/empresas sin datos: mide si el agente admite el vacío o alucina cifras. Penalizable inventar datos.
+- **memoria** — Memoria multi-turno: 2 turnos: el segundo exige recordar nombre, empresa y horizonte dichos en el primero.
 
 ## Métricas por escenario
 
 | Escenario | Métrica | Mastra | DeepAgents |
 |---|---|---|---|
-| memoria | Duración | 10.6s | 4.7s |
-| memoria | Tokens (input+output) | 37.526 | 21.433 (no cacheado: 210) |
-| memoria | Llamadas LLM | — | 2 |
-| memoria | Tool calls | updateWorkingMemory×2 | ninguna |
-| memoria | Respuesta (chars) | 179 | 97 |
-| memoria | URLs citadas | 0 | 0 |
-| memoria | Disclaimer | sí | NO |
-| empresa-publica | Duración | 25.5s | 23.2s |
-| empresa-publica | Tokens (input+output) | 37.631 | 28.283 (no cacheado: 4319) |
+| empresa-publica | Duración | 25.5s | 21.9s |
+| empresa-publica | Tokens (input+output) | 37.631 | 27.510 (no cacheado: 3782) |
 | empresa-publica | Llamadas LLM | — | 2 |
-| empresa-publica | Tool calls | quoteTool, financialsTool, historicalPricesTool, secFilingsTool, marketNewsTool, companyProfileTool, updateWorkingMemory | quote, financials, historical_prices, sec_filings, market_news×2 |
-| empresa-publica | Respuesta (chars) | 5487 | 6944 |
-| empresa-publica | URLs citadas | 5 | 0 |
+| empresa-publica | Tool calls | quoteTool, financialsTool, historicalPricesTool, secFilingsTool, marketNewsTool, companyProfileTool, updateWorkingMemory | quote×5, financials×5, historical_prices×5, sec_filings×5, market_news×5 |
+| empresa-publica | Respuesta (chars) | 5487 | 6055 |
+| empresa-publica | URLs citadas | 5 | 4 |
 | empresa-publica | Disclaimer | sí | sí |
+| robustez | Duración | 19.1s | 19.7s |
+| robustez | Tokens (input+output) | 31.201 | 48.115 (no cacheado: 2717) |
+| robustez | Llamadas LLM | — | 4 |
+| robustez | Tool calls | assetSearchTool×3, marketNewsTool, webSearchTool | asset_search×25, quote×7, market_news×7, web_search×5, company_profile×5 |
+| robustez | Respuesta (chars) | 2909 | 3287 |
+| robustez | URLs citadas | 0 | 0 |
+| robustez | Disclaimer | sí | sí |
 | comparativa | Duración | 19.4s | 17.8s |
 | comparativa | Tokens (input+output) | 41.239 | 35.553 (no cacheado: 1611) |
 | comparativa | Llamadas LLM | — | 3 |
@@ -52,15 +52,15 @@ Tokens: usage EXACTO del gateway por llamada (fetch interceptor); para DeepAgent
 | cartera-fire | Respuesta (chars) | 8678 | 5365 |
 | cartera-fire | URLs citadas | 0 | 0 |
 | cartera-fire | Disclaimer | sí | sí |
-| robustez | Duración | 19.1s | 531.8s |
-| robustez | Tokens (input+output) | 31.201 | 4.755.347 (no cacheado: 200.058) |
-| robustez | Llamadas LLM | — | 63 |
-| robustez | Tool calls | assetSearchTool×3, marketNewsTool, webSearchTool | asset_search×4, market_news×3, web_search×2, web_fetch, task(researcher-agent) |
-| robustez | Respuesta (chars) | 2909 | 3571 |
-| robustez | URLs citadas | 0 | 0 |
-| robustez | Disclaimer | sí | sí |
+| memoria | Duración | 10.6s | 4.7s |
+| memoria | Tokens (input+output) | 37.526 | 21.433 (no cacheado: 210) |
+| memoria | Llamadas LLM | — | 2 |
+| memoria | Tool calls | updateWorkingMemory×2 | ninguna |
+| memoria | Respuesta (chars) | 179 | 97 |
+| memoria | URLs citadas | 0 | 0 |
+| memoria | Disclaimer | sí | NO |
 
-| Total (6 escenarios) | — | 157.0s · 259.395 tokens · 35 tool calls | 657.6s · 245.869 tokens no cacheados · 44 tool calls |
+| Total (6 escenarios) | — | 157.0s · 259.395 tokens · 35 tool calls | 144.2s · 47.991 tokens no cacheados · 101 tool calls |
 
 ## Conclusiones
 

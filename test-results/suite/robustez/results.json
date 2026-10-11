@@ -31,418 +31,64 @@
   },
   "deepagents": {
     "framework": "deepagents",
-    "text": "He comprobado ambas cosas con las herramientas. Respuesta corta: **ninguna de las dos tiene cotización**, pero por razones muy distintas.\n\n## 1) TikTok (y su matriz ByteDance): no cotiza — no hay precio de bolsa\n\n**No existe ticker de TikTok ni de ByteDance.** ByteDance Ltd. es una sociedad **privada** (constituida en Islas Caimán como *variable interest entity* de la operativa china); TikTok es una filial/app, no una sociedad admitida a negociación. Lo confirmé en varias vías:\n\n- Búsqueda de activos (asset_search) para \"TikTok\", \"ByteDance\" y \"TikTok US joint venture\": **0 resultados**, no hay símbolo negociable.\n- Ficha corporativa: ByteDance aparece clasificada expresamente como *\"Type: Private\"* (Wikipedia/ByteDance, consultado hoy).\n- **No hay IPO anunciada ni completada, ni fecha pública.** Nikkei Asia publicó (jun. 2026) que ByteDance *aparca* la salida a bolsa. Históricamente ya archivó planes de IPO en 2021 por presiones regulatorias chinas.\n\n**Lo que sí existe son valoraciones de mercados privados** (ventas secundarias y recompras a empleados), que **no son un precio de cotización**:\n\n| Fecha | Valoración reportada de ByteDance | Contexto |\n|---|---|---|\n| Nov 2024 | ~330.000 M$ | Estimaciones de prensa (Reuters/WSJ) |\n| Ago 2025 | >330.000 M$ | Recompra a empleados (Reuters, 27-ago-2025) |\n| Nov 2025 | ~480.000 M$ | Venta secundaria a Capital Today (Music Business Worldwide / The Times) |\n| Feb 2026 | ~550.000 M$ | General Atlantic vende participación (Reuters/Yahoo, 25-feb-2026) |\n| Abr 2026 | >600.000 M$ | Récord en venta secundaria (SCMP, 8-abr-2026) |\n\n⚠️ Advertencia importante: **no he podido verificar con fuente primaria el precio por acción** de esas operaciones. El último dato sólido y reabrible es de **octubre de 2022: 155 $/acción** en la recompra a empleados (Reuters/Caixin). Cualquier web que te ofrezca \"comprar acciones de TikTok\" en el mercado minorista es, en el mejor caso, exposición indirecta o un instrumento no regulado.\n\n**Única vía cotizada con exposición real (y muy diluida): Oracle (NYSE: ORCL)**, que tiene el 15% del *TikTok USDS Joint Venture LLC* constituido en enero de 2026 junto a Silver Lake y MGX (fondo de Abu Dhabi), con ByteDance reteniendo el 19,9%. Oracle registró esa participación en ~2.000 M$ (Reuters, 11-mar-2026). Silver Lake, MGX, Susquehanna, General Atlantic, Dragoneer, etc., son fondos/family offices **privados** — ojo con el error habitual: *Dell Technologies (DELL) no es dueño* de la participación; la tiene la family office de Michael Dell, que es privada.\n\n## 2) XYZABC123: no existe\n\nBúsqueda de activo y búsqueda web para \"XYZABC123\": **cero resultados**. No es un ticker de ninguna acción, ETF, índice, cripto ni divisa en Yahoo Finance ni en fuentes públicas. Tiene toda la pinta de ser un identificador inventado o un placeholder de ejemplo (el patrón \"XYZ + número\" es típico de datos de prueba). **No voy a darte un precio inventado.**\n\nSi tienes el nombre real de la empresa o el ISIN, dímelo y lo busco. Y si lo has visto anunciado en algún sitio como \"acción de TikTok\" o como XYZABC123, pásame el enlace: es probable que sea un producto no regulado o una estafa de inversión.\n\n---\n\n**En resumen:** la pregunta parte de una premisa que no se sostiene — no hay cotización de TikTok porque ByteDance nunca ha salido a bolsa, y XYZABC123 no es un activo identificable. Es un caso donde la respuesta honesta es \"no hay dato fiable\", y te explico exactamente por qué.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-    "durationMs": 531760,
+    "text": "## Respuesta corta\n\n**Ninguno de los dos activos tiene cotización bursátil, y no es un problema de falta de datos: es que no existen como valores cotizados.**\n\n---\n\n### 1. TikTok: no cotiza en bolsa\n\n**No hay cotización que consultar**, y esto no es un vacío de datos ni un fallo de la herramienta. Razones verificadas:\n\n| Punto | Detalle | Fuente |\n|---|---|---|\n| Quién es el dueño | TikTok es una filial de **ByteDance**, compañía **privada** (no listada) con sede en China | Perfil societario / prensa |\n| Búsqueda de ticker | `asset_search(\"TikTok\")` y `asset_search(\"ByteDance\")` → **0 resultados** en Yahoo Finance | Yahoo Finance, consulta de hoy |\n| Perfil de mercado | `company_profile(\"TikTok\")` devuelve `exchange: \"privada / no listada\"` | Fuente: web |\n| Situación IPO | Hay titulares sobre una eventual **salida a bolsa de la filial estadounidense** (TikTok Global / TikTok US) y sobre subastas privadas de acciones de ByteDance, pero **no hay una IPO ejecutada ni un ticker asignado** | Google News (titulares de nov. 2025 – jun. 2026, fechas no verificadas una a una) |\n\n**Lo que sí existe son valoraciones de mercado secundario, no cotizaciones:** los titulares apuntan a valoraciones de ByteDance en el entorno de **~480.000 M$** en subastas privadas de acciones (Yahoo Finanzas, nov. 2025). Eso es una **transacción OTC/privada entre inversores**, no un precio de bolsa: no hay mercado continuo, ni liquidez pública, ni cierre diario.\n\n⚠️ Aviso: el resultado de `web_search` para verificación adicional devolvió resultados pobres y no relacionados (Wikipedia, GitHub), así que **no doy por confirmado ningún detalle de la estructura de la posible IPO**. Si quieres certeza sobre ese punto, puedo encargar una investigación web más profunda.\n\n---\n\n### 2. XYZABC123: no existe\n\n**No hay precio porque el símbolo no corresponde a ningún activo.**\n\n- `asset_search(\"XYZABC123\")` → **sin resultados**.\n- `quote(\"XYZABC123\")` → **error HTTP 404 de Yahoo Finance**: *\"No data found, symbol may be delisted\"*.\n\nEse mensaje de Yahoo es genérico: significa \"no encuentro este símbolo\", no que haya existido y se haya deslistado. `XYZABC123` tiene toda la pinta de ser un identificador de relleno o de ejemplo, no un ticker real.\n\n---\n\n### Por qué no puedo darte cifras aquí\n\nMi regla es no inventar números. Podría escribirte \"TikTok cotiza a X$\" con una valoración secundaria sacada de un titular, y sería **una cifra falsa presentada como cotización**. No lo voy a hacer: una valoración en subasta privada, una estimación de banco de inversión y un precio de bolsa son tres cosas distintas y mezclarlas lleva a decisiones malas.\n\nSi te interesa la exposición a este sector, las vías reales son:\n- **Empresas comparables cotizadas** (Meta, Alphabet, Snap, Reddit, Kuaishou en HK, Tencent) — todas con datos de mercado fiables.\n- **Fondos con participación en ByteDance** en su cartera a través de mercados secundarios (algunos vehículos de capital privado), que **no cotizan a NAV público diario**.\n- **Esperar a la IPO**, si finalmente se ejecuta.\n\nDime qué te interesa (comparables cotizados de redes sociales, o seguimiento de la IPO) y te lo preparo con datos verificados.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 19665,
     "toolCalls": [
       {
         "name": "asset_search",
-        "count": 4
+        "count": 25
+      },
+      {
+        "name": "quote",
+        "count": 7
       },
       {
         "name": "market_news",
-        "count": 3
+        "count": 7
       },
       {
         "name": "web_search",
-        "count": 2
+        "count": 5
       },
       {
-        "name": "web_fetch",
-        "count": 1
-      },
-      {
-        "name": "task(researcher-agent)",
-        "count": 1
+        "name": "company_profile",
+        "count": 5
       }
     ],
     "usage": {
-      "input": 4719098,
-      "output": 36249,
-      "cacheRead": 4519040,
-      "uncachedInput": 200058,
-      "totalTokens": 4755347,
-      "calls": 63
+      "input": 46621,
+      "output": 1494,
+      "cacheRead": 43904,
+      "uncachedInput": 2717,
+      "totalTokens": 48115,
+      "calls": 4
     },
     "contextCurve": [
       10539,
-      10661,
-      12746,
-      15407,
-      17654,
-      19435,
-      2971,
-      9854,
-      12994,
-      24126,
-      27204,
-      27993,
-      28595,
-      31658,
-      32928,
-      41351,
-      44658,
-      46442,
-      48308,
-      49157,
-      49858,
-      54774,
-      55410,
-      56649,
-      58111,
-      59315,
-      60721,
-      63250,
-      64165,
-      67071,
-      67920,
-      68996,
-      70465,
-      71705,
-      73360,
-      75136,
-      76252,
-      77225,
-      78251,
-      79505,
-      80473,
-      81551,
-      81974,
-      82644,
-      83821,
-      85235,
-      88347,
-      127531,
-      128453,
-      129564,
-      130300,
-      131784,
-      133912,
-      134700,
-      135930,
-      137090,
-      176413,
-      177875,
-      179100,
-      179885,
-      180619,
-      183925,
-      25152
+      10675,
+      12403,
+      13004
     ],
     "perCall": [
       {
         "input": 10539,
-        "output": 162,
+        "output": 175,
         "cacheRead": 10496
       },
       {
-        "input": 10661,
-        "output": 209,
+        "input": 10675,
+        "output": 227,
+        "cacheRead": 10496
+      },
+      {
+        "input": 12403,
+        "output": 162,
         "cacheRead": 10624
       },
       {
-        "input": 12746,
-        "output": 232,
-        "cacheRead": 10624
-      },
-      {
-        "input": 15407,
-        "output": 172,
-        "cacheRead": 12672
-      },
-      {
-        "input": 17654,
-        "output": 401,
-        "cacheRead": 15360
-      },
-      {
-        "input": 19435,
-        "output": 425,
-        "cacheRead": 17536
-      },
-      {
-        "input": 2971,
-        "output": 318,
-        "cacheRead": 2048
-      },
-      {
-        "input": 9854,
-        "output": 408,
-        "cacheRead": 2944
-      },
-      {
-        "input": 12994,
-        "output": 345,
-        "cacheRead": 9728
-      },
-      {
-        "input": 24126,
-        "output": 361,
-        "cacheRead": 12928
-      },
-      {
-        "input": 27204,
-        "output": 436,
-        "cacheRead": 24064
-      },
-      {
-        "input": 27993,
-        "output": 348,
-        "cacheRead": 27136
-      },
-      {
-        "input": 28595,
-        "output": 387,
-        "cacheRead": 27904
-      },
-      {
-        "input": 31658,
-        "output": 460,
-        "cacheRead": 28544
-      },
-      {
-        "input": 32928,
-        "output": 173,
-        "cacheRead": 31616
-      },
-      {
-        "input": 41351,
-        "output": 550,
-        "cacheRead": 32896
-      },
-      {
-        "input": 44658,
-        "output": 362,
-        "cacheRead": 41344
-      },
-      {
-        "input": 46442,
-        "output": 340,
-        "cacheRead": 44544
-      },
-      {
-        "input": 48308,
-        "output": 536,
-        "cacheRead": 46336
-      },
-      {
-        "input": 49157,
-        "output": 402,
-        "cacheRead": 48256
-      },
-      {
-        "input": 49858,
-        "output": 344,
-        "cacheRead": 49152
-      },
-      {
-        "input": 54774,
-        "output": 382,
-        "cacheRead": 49792
-      },
-      {
-        "input": 55410,
-        "output": 605,
-        "cacheRead": 54656
-      },
-      {
-        "input": 56649,
-        "output": 419,
-        "cacheRead": 55296
-      },
-      {
-        "input": 58111,
-        "output": 507,
-        "cacheRead": 56576
-      },
-      {
-        "input": 59315,
-        "output": 406,
-        "cacheRead": 57984
-      },
-      {
-        "input": 60721,
-        "output": 406,
-        "cacheRead": 59264
-      },
-      {
-        "input": 63250,
-        "output": 360,
-        "cacheRead": 60672
-      },
-      {
-        "input": 64165,
-        "output": 367,
-        "cacheRead": 63232
-      },
-      {
-        "input": 67071,
-        "output": 493,
-        "cacheRead": 64128
-      },
-      {
-        "input": 67920,
-        "output": 388,
-        "cacheRead": 66944
-      },
-      {
-        "input": 68996,
-        "output": 869,
-        "cacheRead": 67840
-      },
-      {
-        "input": 70465,
-        "output": 381,
-        "cacheRead": 68992
-      },
-      {
-        "input": 71705,
-        "output": 783,
-        "cacheRead": 70400
-      },
-      {
-        "input": 73360,
-        "output": 374,
-        "cacheRead": 71680
-      },
-      {
-        "input": 75136,
-        "output": 1440,
-        "cacheRead": 73344
-      },
-      {
-        "input": 76252,
-        "output": 420,
-        "cacheRead": 75136
-      },
-      {
-        "input": 77225,
-        "output": 343,
-        "cacheRead": 76160
-      },
-      {
-        "input": 78251,
-        "output": 433,
-        "cacheRead": 77184
-      },
-      {
-        "input": 79505,
-        "output": 630,
-        "cacheRead": 78208
-      },
-      {
-        "input": 80473,
-        "output": 320,
-        "cacheRead": 79488
-      },
-      {
-        "input": 81551,
-        "output": 434,
-        "cacheRead": 80384
-      },
-      {
-        "input": 81974,
-        "output": 367,
-        "cacheRead": 81536
-      },
-      {
-        "input": 82644,
-        "output": 426,
-        "cacheRead": 81920
-      },
-      {
-        "input": 83821,
-        "output": 384,
-        "cacheRead": 82560
-      },
-      {
-        "input": 85235,
-        "output": 433,
-        "cacheRead": 83712
-      },
-      {
-        "input": 88347,
-        "output": 422,
-        "cacheRead": 85120
-      },
-      {
-        "input": 127531,
-        "output": 466,
-        "cacheRead": 88320
-      },
-      {
-        "input": 128453,
-        "output": 696,
-        "cacheRead": 127488
-      },
-      {
-        "input": 129564,
-        "output": 426,
-        "cacheRead": 128384
-      },
-      {
-        "input": 130300,
-        "output": 308,
-        "cacheRead": 129536
-      },
-      {
-        "input": 131784,
-        "output": 385,
-        "cacheRead": 130176
-      },
-      {
-        "input": 133912,
-        "output": 447,
-        "cacheRead": 131712
-      },
-      {
-        "input": 134700,
-        "output": 361,
-        "cacheRead": 133888
-      },
-      {
-        "input": 135930,
-        "output": 499,
-        "cacheRead": 134656
-      },
-      {
-        "input": 137090,
-        "output": 537,
-        "cacheRead": 135808
-      },
-      {
-        "input": 176413,
-        "output": 466,
-        "cacheRead": 137088
-      },
-      {
-        "input": 177875,
-        "output": 687,
-        "cacheRead": 176384
-      },
-      {
-        "input": 179100,
-        "output": 1376,
-        "cacheRead": 177792
-      },
-      {
-        "input": 179885,
-        "output": 603,
-        "cacheRead": 179072
-      },
-      {
-        "input": 180619,
-        "output": 363,
-        "cacheRead": 179840
-      },
-      {
-        "input": 183925,
-        "output": 7265,
-        "cacheRead": 180608
-      },
-      {
-        "input": 25152,
-        "output": 1201,
-        "cacheRead": 19328
+        "input": 13004,
+        "output": 930,
+        "cacheRead": 12288
       }
     ]
   }
