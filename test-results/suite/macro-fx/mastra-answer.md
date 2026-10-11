@@ -1,56 +1,45 @@
 # Macro y divisas con divulgación — Mastra
 
-## 1) Inflación en España y Alemania — IPC anual (%)
+Voy a reunir los datos oficiales de inflación (Banco Mundial) para España y Alemania, y el tipo de cambio EUR/USD actual.## Inflación anual (IPC, %) — fuente: Banco Mundial (World Development Indicators, indicador FP.CPI.TOTL.ZG)
 
-Datos oficiales del **Banco Mundial** (series armonizadas, media anual del IPC total; consulta 10-oct-2026). Son medias anuales, no el dato mensual puntual:
+| Año | 🇪🇸 España | 🇩🇪 Alemania | Zona euro (contexto) |
+|---|---|---|---|
+| 2022 | **8,39 %** | **6,87 %** | ~8,4 % (Eurostat) |
+| 2023 | 3,53 % | 5,95 % | ~5,4 % |
+| 2024 | 2,77 % | 2,26 % | ~2,4 % |
+| 2025 | 2,67 % | 2,17 % | ~2,1 % |
 
-| Año | 🇪🇸 España | 🇩🇪 Alemania |
+*Dato 2025 del Banco Mundial es la cifra anual consolidada; puede diferir ligeramente del HICP armonizado de Eurostat, que es la referencia que mira el BCE.*
+
+**Lectura de la serie:**
+- **Pico en 2022** por el shock energético post-pandemia e invasión de Ucrania. España sufrió un pico mayor (8,39 %) por su mayor peso de electricidad/gas en la cesta, aunque lo bajó **antes** que Alemania gracias a la "excepción ibérica" y las rebajas fiscales a la energía.
+- **Desinflación rápida y convergencia**: ambos países han vuelto al entorno del objetivo del 2 % en 2024–2025. Alemania hizo un ajuste más brusco (de 6,87 % a 2,17 %), España más gradual pero desde más arriba en 2022.
+- **Diferencial casi nulo** hoy (2,67 % vs 2,17 %), con España ligeramente por encima en 2025 — sobre todo por servicios y base de comparación energética.
+
+## EUR/USD hoy
+
+| Métrica | Valor | Fuente / fecha |
 |---|---|---|
-| 2022 | **8,39%** | **6,87%** |
-| 2023 | **3,53%** | **5,95%** |
-| 2024 | **2,77%** | **2,26%** |
-| 2025 | **2,67%** | **2,17%** |
+| EUR/USD | **1,1206** | BCE (Frankfurter), 09-10-2026 |
+| EUR/USD intradía | 1,1206 (–0,09 %) | Yahoo Finance, 09-10-2026 21:29 UTC (con retardo) |
+| Rango 52 semanas | 1,1162 – 1,2024 | Yahoo Finance |
+| Posición | Cerca del **mínimo de 52 semanas** | — |
 
-*Fuente: Banco Mundial, indicador FP.CPI.TOTL.ZG, años 2022-2025.*
+El euro cotiza débil: apenas un 0,4 % por encima de su mínimo anual. El dólar se ha mantenido fuerte por diferenciales de tipos y flujos hacia EE. UU.
 
-**Lectura rápida:** el pico fue 2022 (energía + guerra de Ucrania). Alemania sufrió más en 2023 por su mayor exposición energética/industrial; España desinflamó antes gracias al peso de servicios y a medidas fiscales sobre energía. En 2024-2025 ambos volvieron al entorno del objetivo del 2%.
+## Qué implica para la política monetaria del BCE
 
-⚠️ **Aviso de desfase:** esta base de datos del Banco Mundial no incluye aún el año 2026 (y para EE. UU. solo llega hasta 2024). Para lo que va de 2026 hay que tirar de fuentes primarias/prensa:
+1. **El BCE NO mira país por país.** Su mandato es la inflación **agregada de la zona euro** (HICP ~2 %). Que España y Alemania estén en el 2–2,7 % es coherente con un BCE en modo **normalización/pausa o recortes graduales**, no en modo restrictivo agresivo.
+2. **Espacio para bajar tipos, pero con matices.** Con la inflación en objetivo, la parte "fácil" del ajuste está hecha. El BCE vigila ahora la inflación de **servicios** (pegajosa) y el crecimiento salarial antes de recortar más rápido.
+3. **El euro débil es un riesgo al alza para la inflación.** Un EUR/USD cerca de mínimos anuales **encarece las importaciones** (energía, materias primas cotizadas en dólares) y **reimporta inflación**. Como la eurozona es gran importador neto de energía, esto actúa como freno a recortes demasiado rápidos: ayuda a explicar por qué el BCE prefiere ir con cautela.
+4. **Asimetría con la Fed.** Si la Fed mantiene tipos altos por una economía fuerte y el BCE recorta, el diferencial se amplía → más presión bajista sobre el euro → más inflación importada. Es el principal "círculo de retroalimentación" que limita al BCE.
+5. **Para el inversor**: euro débil favorece a exportadoras europeas (Alemania, IBEX con ingresos dólar) y encarece viajes/compras en USD; un giro a fortaleza del euro sería viento de cola para importadores y para renta fija europea en moneda local.
 
-- **España:** INE confirmó **3,2% en junio de 2026** (*EL PAÍS, 15-jul-2026*). En **septiembre de 2026 el IPC se habría disparado al 4,9%**, empujado por las gasolinas (*Expansión, 29-sep-2026*; *Rankia, 1-oct-2026*).
-- **Alemania:** no he podido obtener el dato de septiembre 2026 de Destatis en esta sesión (la búsqueda web devolvió resultados irrelevantes). No te doy una cifra que no puedo verificar.
+**Veredicto:** Desinflación consolidada y convergencia España-Alemania en torno al 2 % ⇒ el BCE tiene margen para seguir normalizando tipos, pero el euro débil (~1,12, cerca de mínimos de 52 semanas) y la inflación de servicios son los dos frenos que probablemente mantengan el ritmo de recortes **gradual y dependiente de datos**.
 
-## 2) EUR/USD hoy
+⚠️ Cotizaciones con posible retardo de hasta 15 min. Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).¿Quieres que profundice en algún punto? Puedo, por ejemplo:
+- Traer la serie **mensual de HICP armonizado de Eurostat** (más reciente y la que realmente usa el BCE) para ver el detalle 2024–2026.
+- Comparar con **EE. UU.** y el diferencial de tipos Fed–BCE, que es la clave del EUR/USD.
+- Hacer un **análisis técnico/gráfico del EUR/USD** (soportes, resistencias, tendencia de largo plazo).
 
-| Métrica | Valor |
-|---|---|
-| EUR/USD | **1,1206** (−0,09% en el día) |
-| Rango del día | 1,1192 – 1,1246 |
-| Rango 52 semanas | **1,1162 – 1,2024** |
-
-*Fuente: Yahoo Finance (EURUSD=X) y tipo de referencia BCE/Frankfurter, hora del dato 09-oct-2026 21:29 UTC. Cotizaciones con posible retardo de hasta 15 min.*
-
-El euro cotiza **pegado a su mínimo de 52 semanas** (~1,12), es decir, cerca de un 7% por debajo de su máximo anual (1,2024).
-
-## 3) Qué implica para la política monetaria del BCE
-
-Con la inflación de la eurozona repuntando y el conflicto en Oriente Medio presionando la energía, las noticias de los últimos meses apuntan a que **el BCE ha girado de bajista a restrictivo**:
-
-- **Subida de tipos en junio de 2026**: la primera en casi tres años, según *EL PAÍS* y *El Mundo* (11-jun-2026).
-- **Nueva subida de 25 pb en septiembre de 2026, hasta el 2,5%**, con el BCE admitiendo que "la inflación se mantendrá muy por encima del objetivo por mucho tiempo" (*El Economista* y *RTVE, 10-sep-2026*).
-- Efecto colateral ya visible en España: **euríbor por encima del 3,1%** (*Infobae, 8-sep-2026*), lo que encarece hipotecas variables.
-
-**Implicaciones de fondo (toro vs oso):**
-
-| Factor | Implicación |
-|---|---|
-| Inflación al 4,9% en España (sep-2026) | Tensiona al BCE hacia tipos más altos; riesgo de "segunda ronda" vía salarios |
-| BCE subiendo mientras la Fed... | Si la Fed no sube al mismo ritmo, el **diferencial de tipos juega a favor del USD** → explica el EUR/USD débil |
-| Euro débil (~1,12) | Alivia la competitividad exportadora europea, pero **importa inflación** (energía y bienes en USD) → refuerza la espiral |
-| Euríbor >3,1% | Viento de cara para bancos, viento en contra para hipotecados y consumo |
-
-**Conclusión equilibrada:** el escenario base apunta a un BCE en modo "esperar y ver, con sesgo hawkish": probablemente no baja tipos mientras la energía siga tensionada, pero tampoco tiene margen para subir mucho más sin ahogar el crecimiento europeo (Alemania especialmente frágil). La debilidad del euro es a la vez síntoma y causa del problema inflacionario.
-
-📌 *Nota de transparencia:* intenté contrastar los conceptos con mi base de conocimiento indexada (glosario BCE), pero la herramienta devolvió un error técnico (`no such table: knowledge`), así que la explicación anterior es de conocimiento general, no citada de un documento indexado.
-
-⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).
+Dime por dónde tiras.

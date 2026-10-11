@@ -1,66 +1,52 @@
 # Cartera educativa + plan FIRE — DeepAgents
 
-# Plan FIRE — Español, 35 años, riesgo 4/5
+# Cartera + plan FIRE (España) — resumen
 
-He guardado el informe completo en **./.agent-fs/informe-fire-espana-35a.md**. Resumen:
+He delegado la verificación de la fiscalidad a un investigador (con fuentes AEAT/BOE) y he calculado el FIRE con la calculadora determinista neta de impuestos. Informe completo guardado en **`./.agent-fs/informe-cartera-fire-espana.md`**.
 
-## 1. Cartera propuesta (20.000 €, perfil agresivo)
+## 1) La mala noticia primero: el número
 
-| Sleeve | Peso | Producto | ISIN | TER |
+Capital objetivo FIRE para 2.500 €/mes netos ≈ **824.000 €** (SWR 4%, impuesto de retirada calculado solo sobre la fracción de ganancia → tipo efectivo ~9-11%).
+
+| Aportación anual (+300 €/año) | Llegas a 2.500 € netos... | Corpus a los 55 |
+|---|---|---|
+| 6.000 € | nunca a los 55 (972 €/mes) | 321.632 € |
+| 12.000 € | **a los ~60-61 años** | 557.875 € |
+| 18.000 € | 55 años casi (2.410 €/mes) | 794.118 € |
+| 19.500 € | **55 años sí (2.485 €/mes)** | 819.387 € |
+
+Al 12.000 €/año, para tocar los 2.500 €/mes netos a los 55 haría falta una aportación de equilibrio de ~**1.600 €/mes**. Y el retorno no te salva: pasando del 5,5% real al 7% real (optimista sostenido), la renta sube de 1.691 € a 1.958 €/mes — sigues lejos. **La palanca dominante es la tasa de ahorro, no la cartera.**
+
+## 2) Cartera educativa (riesgo 4/5, horizonte FIRE)
+
+| Clase | Peso | Producto | ISIN/ticker | TER |
 |---|---|---|---|---|
-| RV global | 64% | Vanguard Global Stock Index EUR Acc (fondo) | IE00B03HD191 | 0,17% |
-| RV emergentes | 10% | iShares Core MSCI EM ETF Acc | IE00B0M62X26 | 0,18% |
-| Renta fija | 16% | Vanguard Global Bond EUR Hedged Acc (fondo) | IE00B18GC888 | 0,15% |
-| Oro | 5% | iShares Physical Gold ETC | IE00B579F325 | 0,12% |
-| Liquidez | 5% | Xtrackers EUR Overnight Rate (XEON) | LU0290358497 | 0,10% |
+| RV global (núcleo) | 64% | Vanguard Global Stock Index EUR Acc | IE00B03HD191 | 0,17% |
+| RV emergentes | 10% | iShares Core MSCI EM IMI UCITS ETF Acc | IE00B0M62X26 / EIMI | 0,18% |
+| RF global EUR cubierta | 16% | Vanguard Global Bond Index EUR Hedged Acc | IE00B18GC888 | 0,15% |
+| Oro | 5% | iShares Physical Gold ETC | IE00B579F325 / SGLN | 0,12% |
+| Liquidez €STR | 5% | Xtrackers II EUR Overnight Rate Swap 1C | LU0290358497 / XEON | 0,10% |
 
-TER medio ≈ **0,16%**. El núcleo va en **fondos** (no ETFs) a propósito: en España solo los traspasos entre fondos no tributan. Los ETFs no traspasan, ni entre sí ni con fondos.
+TER medio ponderado ~**0,16%**. Contexto de precios (Yahoo Finance, 9-oct-2026 ~15:35 UTC, con retardo): XEON 150,47 € (+0,03%), SGLN 6.141 GBp (+1,69%), IWDA.AS 131,67 € (+0,53%).
 
-## 2. Plan FIRE neto de impuestos
+⚠️ **Aviso de verificación:** los ISIN/TER salen del catálogo del motor de recomendación; en esta sesión las búsquedas web no devolvieron las fichas oficiales, así que **confírmalos en el KIID antes de contratar**. Los datos que sí he validado con fuente son los de fiscalidad y las cotizaciones.
 
-**Caso base — retirada a los 55 (20 años), aportando 18.000 €/año creciendo 750 €/año, 5% real, retirada del 4%:**
+## 3) Fiscalidad española clave (verificada, AEAT/BOE)
 
-| Métrica | Valor |
-|---|---|
-| Capital aportado | 522.500 € |
-| Corpus a los 55 | **844.242 €** |
-| Fracción de ganancia | 38% |
-| Impuesto efectivo de retirada | ~8,0% |
-| Retirada bruta | 2.814 €/mes |
-| **Retirada neta** | **2.589 €/mes** |
-| Corpus necesario para 2.500 € netos | 815.245 € |
+- **Escala del ahorro:** 19% hasta 6.000 € / 21% hasta 50.000 / 23% hasta 200.000 / 27% hasta 300.000 / **30%** por encima. *Ojo: el tramo top es 30%, no 28%* (Ley 7/2024, vigente desde 1-1-2025).
+- **Fondos vs ETFs — el punto decisivo:** los **fondos UCITS son traspasables sin peaje fiscal** (diferimiento, no exención; mismo titular, el dinero no pasa por tu cuenta). Los **ETFs quedan expresamente excluidos** del traspaso, tanto en venta como entre sí (confirmado por AEAT y por la CNMV; también ETFs extranjeros desde 2022). En un plan de 20-25 años, esa flexibilidad fiscal vale más que unos pocos pbs de TER → el núcleo debe ser de **fondos**.
+- **Dividendos:** retención del 19% a cuenta; la antigua exención de los primeros 1.500 € **fue suprimida en 2015** (hoy 0 €). Por eso los vehículos de **acumulación** son más eficientes en acumulación.
+- **Planes de pensiones vs FIRE:** límite 1.500 €/año individual (+8.500 € si hay aportación empresarial; +4.250 € autónomos). Deduce en base **general** (a tu marginal), pero al rescatarlo **tributa como rendimiento del trabajo** y está condicionado a jubilación (incluida anticipada), cese total de actividad a los 60, o el supuesto de liquidez a 10 años. Para un FIRE a los 50-55 sin pensión, **la cartera traspasable de fondos es el vehículo líquido principal**; el plan de pensiones es complemento, no núcleo.
+- **RSU/options:** tributan como rendimiento del trabajo en el vesting (24-47% marginal) y la revalorización posterior como ganancia patrimonial al vender.
+- **Novedad 2026 a vigilar:** los nuevos **CAIFE/SIALPFE ("Financia Europa", RDL 26/2026 y 29/2026)** con diferimiento y exención parcial hasta 150.000 €. Aún pendiente del registro de IIC elegibles de la CNMV y de convalidación parlamentaria: **todavía no contratables**.
 
-Llegas, con ~29.000 € de holgura. Sensibilidad:
+## 4) Riesgos y catalizadores
 
-| Escenario | Aportación | Retorno real | Edad | ¿Llega? |
-|---|---|---|---|---|
-| Base | 18.000 €/año | 5,0% | 55 | Sí |
-| Conservador | 18.000 €/año | 3,5% | 55 | **No, faltan 70.702 €** |
-| Menos aportación | 12.000 €/año | 5,0% | 60 | Sí |
-| Muy baja | 7.500 €/año | 5,0% | 65 | Sí |
+**A favor:** horizonte de 20-30 años; coste ~0,16%; diferimiento fiscal español; aportación creciente con el salario.
+**En contra:** hueco de aportación real (12.000 €/año → 60-61 años, no 55); **riesgo de secuencia** en la jubilación anticipada (necesitas 1-2 años de gasto en liquidez); inflación eurozona ~3,8% (sept-2026, prensa citando Eurostat; IPC España 2,67% en 2025, Banco Mundial) que tensiona valoraciones y al BCE; riesgo divisa (~70% USD en el global; EUR/USD 1,1206, 9-oct-2026, BCE) y concentración en megacaps de EE. UU.
 
-## 3. Fiscalidad española clave
-
-- **Escala del ahorro:** 19% / 21% / 23% / 27% / 28% (tramos 2025-2026, verifica vigencia).
-- **Solo tributa la ganancia**, no el importe retirado. De ahí que 815 k€ basten para rentas que un cálculo ingenuo situaría en ~900 k€.
-- **Traspaso entre fondos sin peaje** — el gran privilegio español; ETFs excluidos.
-- **Escalona las retiradas** para no saltar del 19-21% al 27-28%.
-- **Planes de pensiones: mal encaje con FIRE.** Deducen al aportar, pero tributan como rendimiento del trabajo (no escala del ahorro) y están bloqueados hasta la jubilación reglamentaria.
-- **Domicilio IE/LU** en todos los productos: retención del 15% en lugar del 30% sobre dividendos US.
-
-## 4. Contexto que condiciona el plan
-
-- **Banco Mundial (consultado 09-10-2026):** inflación 2025 2,67% (pico 8,39% en 2022), PIB +2,82%, desempleo 10,38%, deuda pública 105,64% del PIB (2024, último dato).
-- **Edad legal de jubilación: 67 años desde 2027** (Ley 27/2011). Una FIRE a los 55 implica **12 años sin pensión pública ni red**: todo capital propio.
-- La AIReF y Fedea advierten de que la reforma de pensiones no garantiza por sí sola la sostenibilidad (prensa, 2026). No planifiques los 2.500 € netos contando con la pensión.
-- **EUR/USD 1,1206** (BCE, 09-10-2026); en 2026 se movió ~1,20 → ~1,12. Riesgo divisa no compensado: por eso la renta fija va cubierta a EUR.
-- No he podido verificar el peso de España en el MSCI World con las herramientas, así que **no cito cifra**.
-
-## Riesgos / catalizadores
-- **Riesgo principal:** el plan depende de dos supuestos frágiles — 1.500 €/mes de aportación constante y 5% real. Al 3,5% real no llega.
-- **Riesgo fiscal:** la escala del ahorro y el régimen de traspasos son decisiones políticas, no derechos adquiridos.
-- **A favor:** estructura fiscalmente eficiente, TER bajo, y la aportación es la palanca que más adelanta la fecha de libertad.
-
-**Veredicto:** objetivo alcanzable en 20 años, pero sin margen para recortar mucho la aportación. Prioriza colchón de liquidez (6-12 meses) antes que optimizar productos.
+**Veredicto con matices:** plan viable, pero **no a los 55 con 12.000 €/año y 20.000 € de partida**. Las tres salidas: subir aportación, aceptar ~60-62 años, o complementar renta (alquiler, trabajo parcial). La cartera propuesta es sólida y barata; el cuello de botella es la tasa de ahorro.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).
+
+¿Quieres que profundice en algo — simular tu aportación real, un plan B con rentas complementarias, o la variante "todo fondos" traspasable?

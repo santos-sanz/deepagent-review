@@ -1,59 +1,59 @@
 # Macro y divisas con divulgación — DeepAgents
 
-## 1) Inflación: España vs. Alemania (IPC anual, %)
+## Inflación: España vs Alemania (últimos 3 años)
 
-Fuente: **Banco Mundial**, indicador FP.CPI.TOTL.ZG (inflación, IPC, variación anual %). Último año cerrado disponible: **2025**.
+**Datos oficiales anuales (IPC, variación media anual %) — Banco Mundial / INE / Destatis:**
 
-| Año | España | Alemania | Zona euro (contexto) |
+| Año | 🇪🇸 España | 🇩🇪 Alemania | Eurozona |
 |---|---|---|---|
-| 2022 | **8,39%** | **6,87%** | ~8,4% (pico energético) |
 | 2023 | **3,53%** | **5,95%** | ~5,4% |
 | 2024 | **2,77%** | **2,26%** | ~2,4% |
 | 2025 | **2,67%** | **2,17%** | ~2,1% |
 
-**Lectura de los últimos 3 años (2023–2025):**
-- **Desinflación clara y convergencia al objetivo del 2%** en ambos países. España bajó de 8,4% (2022) a ~2,7% (2025); Alemania de 6,9% a ~2,2%.
-- **Alemania fue más rígida en 2023** (5,95% vs. 3,53%): la energía pesó más y el *efecto base* de los paquetes fiscales de 2022 fue distinto. España amortiguó antes por la bajada de IVA energético y el "escudo" a la electricidad.
-- **Desde 2024 ambos convergen** en el entorno del 2–2,8%, con Alemania ligeramente por debajo de España en 2024-2025 (energía más barata y menor presión de servicios).
+*Fuente: Banco Mundial, indicador FP.CPI.TOTL.ZG (última actualización 2025); confirmado para Alemania 2025 por Destatis vía Forbes España (16-01-2026).*
 
-⚠️ Matiz importante: el Banco Mundial **no recoge aún 2026**. Según prensa de este año, la inflación de la **zona euro ha vuelto a repuntar hasta rozar el 3%** (La Vanguardia, 19-ago-2026), lo que cambia el relato respecto a 2024-2025. Conviene verificar con Eurostat/INE/Statistisches Bundesamt el dato mensual más reciente.
+**Lectura del trienio:**
+- Ambos países venían de un pico brutal en **2022** (España 8,39% / Alemania 6,87%) por el shock energético post-pandemia y la guerra de Ucrania.
+- **Alemania convergió más rápido**: del 5,95% en 2023 al 2,17% en 2025, ya en el objetivo del 2%.
+- **España bajó más despacio y desde abajo**: del 3,53% (2023) al 2,67% (2025). El diferencial se invirtió: ahora España es la más inflacionista de las grandes economías europeas.
 
-## 2) EUR/USD hoy
+**Ojo: 2026 ha roto la tendencia bajista.** Los últimos datos mensuales muestran un rebrote:
+- España: **4,9% anual en septiembre de 2026** — máxima en más de 3 años, empujada por carburantes; subyacente 3,1% (INE, vía RTVE/El País/El Economista, 29-09-2026).
+- Alemania: **3,3% anual en septiembre de 2026** (por encima del 3,1% esperado) — Destatis vía FXStreet, 30-09-2026. Antes: 2,9% en agosto (Europa Press, 10-09-2026).
+- Eurozona: **3,8% en septiembre de 2026**, máximo desde hace tres años (Eurostat vía El Economista, 02-10-2026).
 
-| Dato | Valor | Fuente y fecha |
-|---|---|---|
-| EUR/USD (tipo de referencia BCE) | **1,1206** | BCE (Frankfurter), **2026-10-09** |
-| Variación diaria | −0,09% | Yahoo Finance (EURUSD=X), 2026-10-09 |
-| Rango del día | 1,1192 – 1,1246 | Yahoo Finance |
-| Rango 52 semanas | 1,1162 – **1,2024** | Yahoo Finance |
+---
 
-*Cotizaciones de mercado con posible retardo (hasta ~15 min).*
+## EUR/USD hoy
 
-**Tendencia a 3 años** (tipo de referencia BCE):
-- Oct-2023: ~**1,05**
-- Oct-2024: ~**1,09**
-- Oct-2025: ~**1,16**
-- Oct-2026: ~**1,12**
+| Métrica | Valor |
+|---|---|
+| EUR/USD | **1,1206** |
+| Variación diaria | −0,09% |
+| Rango del día | 1,1192 – 1,1246 |
+| Rango 52 semanas | 1,1162 – 1,2024 |
+| Variación 12 meses | **−3,6%** |
+| Volatilidad anualizada (52s) | 12,3% |
 
-→ El euro se **apreció con fuerza** entre 2023 y 2025 (de 1,05 a máximos de ~1,20 en enero de 2026), y en 2026 ha **cedido** hacia la zona de 1,12-1,14. Hoy está en la parte baja del rango anual.
+*Fuente: Yahoo Finance (spot, con posible retardo), dato de mercado 09-10-2026 21:29 UTC. Tipo de referencia BCE (Frankfurter): 1,1206 USD/EUR, 09-10-2026.*
 
-## 3) Qué implica para la política monetaria del BCE
+El euro cotiza en la **zona baja de su rango anual**, a apenas medio céntimo del mínimo de 52 semanas. Es decir: pese a que el BCE ha vuelto a subir tipos, el dólar sigue fuerte (el USD/DKK marcó máximos de 16 meses, Admirals, 07-10-2026).
 
-**El cuadro ha dado la vuelta: del ciclo de bajadas a un endurecimiento leve.**
+Gráfico del último año: `./generated/chart-EURUSD_X-1791718074287.svg`
 
-- **2024-2025:** con la inflación convergiendo al 2% y el crecimiento flojo, el BCE bajó tipos hasta el **2,25%** (depósito).
-- **2026:** el repunte inflacionario (energía, guerra en Oriente Próximo) ha forzado un giro. En **junio de 2026** el BCE subió tipos por **primera vez en casi tres años** (EL PAÍS / El Mundo, 11-jun-2026) y en **septiembre de 2026** volvió a subir **25 pb hasta el 2,50%**, admitiendo que "la inflación se mantendrá muy por encima del objetivo por mucho tiempo" (El Economista, 10-sep-2026).
-- **Implicación práctica:** el BCE prioriza ahora contener la inflación sobre apuntalar el crecimiento. Con inflación ~3% y tipos en 2,5%, el **tipo real es ligeramente negativo o neutro**, lo que deja **margen (y presión) para más subidas** si el petróleo y los servicios siguen tensionados.
-- **Efecto en el EUR/USD:** unos tipos más altos en la eurozona *deberían* sostener al euro frente al dólar. Que el EUR/USD esté **en 1,12 pese a las subidas del BCE** sugiere que el mercado o (a) descuenta un BCE menos agresivo de lo que se teme, o (b) ve fortaleza/diferencial de tipos favorable a EE. UU. Los titulares de "¿esperan los inversores demasiadas subidas del BCE?" (Yahoo, 26-sep-2026) apuntan a esa duda.
+---
 
-**Catalizadores a vigilar**
-- Dato mensual de inflación de la eurozona (Eurostat) y núcleo de servicios.
-- Precio del petróleo/gas y conflicto en Oriente Próximo.
-- Comunicación del BCE (¿nueva subida o pausa?) y diferencial de tipos con la Fed.
-- Riesgo de euro fuerte: abarata importaciones (ayuda a la inflación) pero **golpea a los exportadores alemanes**, justo el motor económico más débil del bloque.
+## Qué implica para la política monetaria del BCE
 
-**Toro vs. oso (para el euro)**
-- 🐂 Toro: BCE en modo subida, inflación pegajosa, menor demanda de dólar refugio.
-- 🐻 Oso: frenazo del crecimiento alemán, Fed más restrictiva, y flujos hacia activos en USD.
+**El BCE ha girado de bajista a restrictivo otra vez:**
+1. En julio de 2026 **mantenía** el tipo de depósito en 2,25% (Idealista, 23-07-2026).
+2. En septiembre de 2026 **subió 25 pb hasta el 2,50%** — su segunda subida del año — admitiendo que "la inflación se mantendrá muy por encima del objetivo por mucho tiempo" (El Mundo / El Economista / El País, 10-09-2026).
+3. El mercado descuenta **posible nueva subida antes de fin de año** (Finect, 25-09-2026). Las actas publicadas el 08-10-2026 añaden preocupación por el repunte de la deuda pública (El País).
+
+**El dilema (matices toro/oso para el BCE):**
+- 🐂 **Argumento restrictivo:** IPC general en 3,8%, muy por encima del objetivo del 2%; España en 4,9% y Alemania acelerando. Si las expectativas de inflación se desanclan, subir más es lo coherente.
+- 🐻 **Argumento de pausa:** buena parte del rebrote es **energía y carburantes** (componente volátil), no demanda interna. Con la economía alemana rozando el estancamiento, subir tipos ahoga el crecimiento. Por eso Morningstar se pregunta si el BCE subirá en 2026 para bajar en 2027.
+
+**Traducción práctica:** un BCE en modo "tipos altos por más tiempo" sostiene al euro frente al dólar por el **diferencial de tipos** — pero el mercado hoy está premiando al USD, así que ese soporte no está funcionando. Para el inversor: el Euríbor y las cuentas remuneradas seguirán tensos (ya al 3,25% TAE en algunos bancos), y la renta fija de corta duración vuelve a ser atractiva en términos reales.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

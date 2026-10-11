@@ -68,10 +68,10 @@ const tools = [
   transcribeTool,
 ];
 
-export async function createAnalystAgent() {
+export async function createAnalystAgent(opts?: { fetch?: typeof fetch }) {
   return createDeepAgent({
     name: 'analyst-agent',
-    model: chatModel(),
+    model: chatModel({ fetch: opts?.fetch }),
     systemPrompt: SYSTEM_PROMPT,
     tools,
     subagents,

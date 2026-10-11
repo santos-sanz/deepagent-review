@@ -1,37 +1,36 @@
 # Comparativa de 3 activos — Mastra
 
-Voy a recuperar las series de 1 año de los tres activos en paralelo.# AAPL vs MSFT vs S&P 500 — Rendimiento y volatilidad a 1 año
+Voy a recuperar los datos históricos de los tres activos.# Comparativa a 1 año: AAPL vs MSFT vs S&P 500
 
-**Datos:** Yahoo Finance, cierres diarios, ventana de 12 meses hasta el **9-oct-2026** (251 sesiones). Cotizaciones con posible retardo de hasta 15 min.
-
-## Tabla comparativa
+**Datos:** Yahoo Finance, vía herramientas `historical-prices` (serie diaria, 251 sesiones, cierre al **2026-10-09**, 20:00–21:29 UTC) y `quote` (mismo día). Cotizaciones con posible retardo de hasta 15 min.
 
 | Métrica | **AAPL** (Apple) | **MSFT** (Microsoft) | **^GSPC** (S&P 500) |
 |---|---|---|---|
-| Precio / nivel (09-oct-2026) | 336,64 USD | 535,07 USD | 7.811,54 pts |
-| Variación diaria | −1,11% | +2,38% | +0,59% |
-| **Rendimiento 1 año** | **+37,25%** | **+4,72%** | **+19,21%** |
-| **Volatilidad anualizada** | **24,48%** | **32,84%** | **12,76%** |
-| Mínimo 1 año | 245,27 | 352,83 | 6.343,72 |
-| Máximo 1 año | 341,07 | 542,07 | 7.818,93 |
-| Ratio rentab./volatilidad | **1,52** | 0,14 | **1,51** |
-| Máx. 52 sem. (contexto) | 345,34 | 553,72 | 7.844,52 |
+| Precio último cierre | 336,64 USD | 535,07 USD | 7.811,54 pts |
+| **Rentabilidad 1 año** | **+37,25 %** | +4,72 % | +19,21 % |
+| **Volatilidad anualizada** | 24,48 % | **32,84 %** | **12,76 %** |
+| Mínimo del periodo | 245,27 USD | 352,83 USD | 6.343,72 pts |
+| Máximo del periodo | 341,07 USD | 542,07 USD | 7.818,93 pts |
+| Rango 52 semanas | 243,42 – 345,34 | 349,20 – 553,72 | 6.316,91 – 7.844,52 |
+| Var. último día | −1,11 % | +2,38 % | +0,59 % |
+| Retorno/riesgo (1y) | **1,52** | 0,14 | 1,51 |
 
-*Fuente: Yahoo Finance (series históricas y cotizaciones), consultado 2026-10-10.*
+*Retorno/riesgo = rentabilidad ÷ volatilidad (cuánto retorno se obtuvo por cada punto de riesgo asumido).*
 
 ## Lectura de los datos
 
-- **Mejor inversión → AAPL.** +37,25% en el año, casi el doble que el S&P 500 (+19,21%) y muy por delante de MSFT (+4,72%). Nota que su máximo de 1 año (341,07) queda solo ~1,3% por encima del precio actual (336,64): el valor está en zona de máximos.
-- **Más riesgo → MSFT.** Es el que **mayor volatilidad anualizada** registró (32,84%), por delante de AAPL (24,48%) y muy por encima del índice (12,76%). Además es el peor parado en retorno, lo que da un ratio rentabilidad/riesgo de apenas 0,14 — el peor de los tres con diferencia. Su +2,38% intradía del 9-oct sugiere alta sensibilidad a noticias/resultados.
-- **El más eficiente en riesgo ajustado:** AAPL (1,52) y el S&P 500 (1,51) quedan prácticamente empatados. El índice logra casi la mitad del retorno de AAPL con la mitad de volatilidad — es la opción con mejor perfil "retorno por unidad de riesgo" de forma consistente.
-- **El propio índice es el menos volátil (12,76%)**, lógico: diversifica el riesgo idiosincrático de las acciones individuales.
+- **Rentabilidad**: AAPL arrasó (+37 %), el índice hizo un +19 % muy sólido, y MSFT se quedó prácticamente plano (+4,7 %) pese a estar a solo un 3 % de su máximo de 52 semanas. Ojo con la asimetría: AAPL está cerca de máximos, MSFT cotiza muy por debajo de su techo (553,72) y su mínimo anual (349,20) está a un −35 % del precio actual → el último año fue un recorrido muy volátil y sin premio.
+- **Riesgo**: el S&P 500 fue el más tranquilo con diferencia (12,76 % de volatilidad anualizada, la mitad que MSFT). MSFT fue el más agitado (32,84 %), seguido de AAPL (24,48 %). Es decir, **ser acción individual en tecnología costó entre 1,9x y 2,6x más volatilidad que el índice**.
+- **Contexto cualitativo**: los titulares del periodo apuntan a que MSFT sufrió por el fuerte *capex* en IA (Q1 con capex que se duplica) pese a crecer ARR de IA, mientras AAPL recibió el viento de cola del ciclo de iPhone y su rol percibido de "refugio" (fuentes: TradingView, TIKR.com, Bloomberg Línea, 2026).
 
-## Veredicto con matices
+## Conclusión
 
-**Toro (a favor de la bolsa en general y de las mega-caps):** el S&P 500 firmó un año sólido (+19%) con volatilidad moderada; AAPL combinó retorno alto y riesgo contenido, el mejor binomio del grupo.
+**¿Cuál fue la mejor inversión?** En retorno absoluto, **AAPL (+37,25 %)**. Si medimos calidad del retorno (retorno por unidad de riesgo), AAPL (1,52) y el S&P 500 (1,51) empatan técnicamente, pero **el índice consiguió el mismo retorno/riesgo con la mitad de volatilidad y sin riesgo específico de una sola compañía**: es la opción más eficiente de las tres.
 
-**Oso (cautela):** MSFT muestra la clásica trampa de "gran empresa ≠ buena inversión del año": mayor volatilidad y retorno mínimo. Y ojo con los sesgos de ventana — un año es una muestra corta; AAPL y los índices están cerca de máximos de 52 semanas, lo que no garantiza repetición. Rendimiento pasado no asegura resultados futuros.
+**¿Cuál asumiría más riesgo?** **MSFT**, con 32,84 % de volatilidad anualizada — claramente la más alta, y de hecho fue la que peor rentabilidad dio. El orden de riesgo fue: **MSFT > AAPL > S&P 500**. Cualquier inversión en las dos tecnológicas individuales implicó asumir riesgo idiosincrático (concentración, ejecución, capex de IA) que el índice diluye.
 
-**Resumen en una frase:** AAPL ganó el año y fue el más equilibrado; MSFT asumió más riesgo para menos retorno; el S&P 500 ofreció el mejor perfil de riesgo ajustado si prefieres diversificación y menos sobresaltos.
+**Matiz toro/oso**: 
+- 🐂 Toro: AAPL demostró que sigue siendo una máquina de rentabilidad con volatilidad *menor* que MSFT; el S&P 500 es el vehículo más eficiente para captar la tendencia sin apostar a una sola carta.
+- 🐻 Oso: MSFT está a 1 año prácticamente plano con la volatilidad más alta del grupo — un mal *trade-off* que puede revertir si el mercado vuelve a premiar el gasto en IA, pero también puede seguir castigando mientras el capex no se traduzca en beneficios. Y AAPL cotizando cerca de máximos históricos deja poco margen de seguridad.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

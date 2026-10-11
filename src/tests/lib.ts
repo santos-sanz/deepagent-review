@@ -1,10 +1,9 @@
 import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, copyFileSync, writeFileSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { BaseCallbackHandler } from '@langchain/core/callbacks/base';
 import { createAnalystAgent } from '../agent';
 import { msgText } from '../disclaimer';
-import { assertNanConfig } from '../nan';
+import { assertNanConfig, createUsageTrackingFetch } from '../nan';
 
 /**
  * Librería compartida para tests comparativos Mastra vs DeepAgents.
@@ -22,30 +21,13 @@ export type AgentResult = {
   durationMs: number;
   toolCalls: ToolStat[];
   usage?: Record<string, number>;
+  /** Tokens de input de cada llamada LLM (curva de crecimiento de contexto) */
+  contextCurve?: number[];
+  /** Usage exacto por llamada del gateway (input/output/cacheRead) */
+  perCall?: { input: number; output: number; cacheRead: number }[];
   llmCalls?: number;
   error?: string;
 };
-
-export class TokenCounter extends BaseCallbackHandler {
-  name = 'token-counter';
-  input = 0;
-  output = 0;
-  calls = 0;
-
-  handleLLMEnd(output: any) {
-    this.calls++;
-    const msg = output?.generations?.[0]?.[0]?.message;
-    const um = msg?.usage_metadata ?? output?.llmOutput?.tokenUsage;
-    if (um) {
-      this.input += um.input_tokens ?? um.promptTokens ?? 0;
-      this.output += um.output_tokens ?? um.completionTokens ?? 0;
-    }
-  }
-
-  get usage(): Record<string, number> {
-    return { inputTokens: this.input, outputTokens: this.output, totalTokens: this.input + this.output, llmCalls: this.calls };
-  }
-}
 
 export function prepareMastra(dir: string, repoEnvPath: string): void {
   if (!existsSync(dir)) {
@@ -141,8 +123,11 @@ export function runMastra(
 
 export async function runDeepAgents(prompts: string[], outDir: string): Promise<AgentResult> {
   mkdirSync(outDir, { recursive: true });
-  const counter = new TokenCounter();
-  const agent = await createAnalystAgent();
+  // Conteo EXACTO: interceptamos el fetch al gateway y leemos el `usage` que
+  // reporta la API en cada respuesta (LangChain infla el usage en streaming y
+  // su estimado por caracteres no cuenta los tool schemas).
+  const tracker = createUsageTrackingFetch();
+  const agent = await createAnalystAgent({ fetch: tracker.fetch });
   // Entre turnos solo sobreviven los mensajes de texto (user/assistant): mismo
   // patrón que el REPL. El loop de tools ocurre dentro de cada stream.
   let messages: any[] = [];
@@ -153,7 +138,7 @@ export async function runDeepAgents(prompts: string[], outDir: string): Promise<
   try {
     for (const prompt of prompts) {
       messages.push({ role: 'user', content: prompt });
-      const stream = await agent.stream({ messages }, { streamMode: 'updates', callbacks: [counter] });
+      const stream = await agent.stream({ messages }, { streamMode: 'updates' });
       for await (const update of stream) {
         for (const value of Object.values(update) as any[]) {
           for (const m of value?.messages ?? []) {
@@ -177,7 +162,9 @@ export async function runDeepAgents(prompts: string[], outDir: string): Promise<
       text: finalText,
       durationMs: Date.now() - start,
       toolCalls: [...toolCounts.entries()].map(([name, count]) => ({ name, count })),
-      usage: counter.usage,
+      usage: tracker.total(),
+      contextCurve: tracker.calls.map(c => c.input),
+      perCall: tracker.calls,
       error: e?.message ?? String(e),
     };
   }
@@ -187,7 +174,9 @@ export async function runDeepAgents(prompts: string[], outDir: string): Promise<
     text: finalText,
     durationMs: Date.now() - start,
     toolCalls: [...toolCounts.entries()].map(([name, count]) => ({ name, count })),
-    usage: counter.usage,
+    usage: tracker.total(),
+    contextCurve: tracker.calls.map(c => c.input),
+    perCall: tracker.calls,
   };
 }
 
