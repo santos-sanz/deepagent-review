@@ -1,0 +1,24 @@
+{
+  "framework": "mastra",
+  "text": "Te llamas Andrés, trabajas en NaN y tu horizonte de inversión llega hasta 2045.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+  "durationMs": 12117,
+  "toolCalls": [
+    {
+      "name": "updateWorkingMemory",
+      "count": 2
+    }
+  ],
+  "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 37483
+  },
+  "turnMetrics": [
+    {
+      "durationMs": 5732
+    },
+    {
+      "durationMs": 6385
+    }
+  ]
+}

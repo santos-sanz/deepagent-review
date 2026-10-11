@@ -1,0 +1,115 @@
+{
+  "scenario": "robustez",
+  "mastra": {
+    "framework": "mastra",
+    "text": "## Respuesta rápida\n\n**TikTok no cotiza en bolsa.** No existe ninguna acción de TikTok (ni de su matriz, ByteDance) con ticker ni precio público. Y **\"XYZABC123\" no es un símbolo válido**: no aparece en Yahoo Finance ni en ninguna fuente de mercado, así que **no hay datos fiables de ese \"precio actual\"** porque ese activo no existe en los mercados. Cualquier cifra que te diera sería inventada.\n\n---\n\n## Por qué no hay cotización de TikTok\n\n| Punto | Detalle |\n|---|---|\n| Estructura | ByteDance Ltd. es **privada** (fundada 2012, sede en Pekín; VIE en Islas Caimán). Wikipedia |\n| Cotización | **No hay IPO**. Sus acciones solo se mueven en mercados secundarios privados y recompras internas |\n| Por qué | Es una empresa china con fuerte escrutinio regulatorio (EE. UU., China), lo que complica un listing |\n| Dato clave reciente | El 22-ene-2026 se cerró el **joint venture de TikTok EE. UU.** (mayoría estadounidense, Oracle ~15%) — The Guardian, Deadline, Reuters |\n\n### Valuaciones de referencia (¡no son precio de cotización!)\n- **~550.000 M$**: propuesta de compra de acciones de General Atlantic, recogida por Forbes México / Yahoo, **25-feb-2026**.\n- **155.000 M$ de ingresos (2024)** y **~50.000 M$ de beneficio proyectado para 2025** (Bloomberg, 19-dic-2025, vía Wikipedia).\n- Participación de **Oracle en el JV de TikTok US valorada en ~2.000 M$** (Reuters, 11-mar-2026).\n\nEstas cifras son valoraciones de transacciones privadas o estimaciones de analistas, **no un precio de mercado continuo**, y suelen ir desactualizadas y con horquillas amplias.\n\n---\n\n## Cómo obtener exposición (vía indirecta)\n\nLa única forma de exposición \"boursátil\" es a través de empresas cotizadas vinculadas:\n\n| Vía | Ticker | Precio (Yahoo Finance, cierre 9-oct-2026) |\n|---|---|---|\n| Oracle (socio del JV en EE. UU.) | ORCL (NYSE) | **141,40 USD** (+4,59% ese día) |\n| Otros socios del JV / proveedores cloud | — | Depende del vehículo |\n\n⚠️ Ojo: ORCL es una empresa enorme de software/cloud; TikTok supone una fracción mínima de su valor y de su cotización. No es \"la acción de TikTok\".\n\n---\n\n## Sobre \"XYZABC123\"\n\n- Búsqueda en Yahoo Finance: **0 resultados**.\n- No cumple el formato de ningún ticker real (los símbolos suelen tener 1-5 caracteres + sufijo de mercado).\n- Conclusión: **es un código inexistente o inventado**. No puedo darte un precio fiable.\n\nSi tienes un código distinto (ISIN, ticker completo o nombre de empresa), pásamelo y lo busco de verdad.\n\n---\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 42999,
+    "toolCalls": [
+      {
+        "name": "assetSearchTool",
+        "count": 3
+      },
+      {
+        "name": "marketNewsTool",
+        "count": 3
+      },
+      {
+        "name": "webSearchTool",
+        "count": 2
+      },
+      {
+        "name": "webFetchTool",
+        "count": 1
+      },
+      {
+        "name": "quoteTool",
+        "count": 2
+      },
+      {
+        "name": "updateWorkingMemory",
+        "count": 1
+      }
+    ],
+    "usage": {
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 115806
+    },
+    "turnMetrics": [
+      {
+        "durationMs": 42999
+      }
+    ]
+  },
+  "deepagents": {
+    "framework": "deepagents",
+    "text": "## Respuesta corta\n\n**Ninguno de los dos datos existe.**\n\n1. **TikTok no cotiza en bolsa.** No hay acciones de TikTok (ni de su matriz ByteDance) en ningún mercado. No hay \"cotización\" que darte.\n2. **\"XYZABC123\" no es un ticker de nada.** He buscado el símbolo y no devuelve ningún activo; es un identificador inventado/sin correspondencia con ningún instrumento real.\n\n---\n\n## 1) TikTok: empresa privada, sin precio de mercado\n\n| Qué buscas | Situación real |\n|---|---|\n| Acciones TikTok en bolsa | **No existen** |\n| Matriz | **ByteDance Ltd.**, empresa **privada** (registrada en Cayman, sede operativa en China) |\n| Cotización / P/E / capitalización pública | **No disponible** — no hay mercado secundario público |\n| Datos fiables de valoración | Solo estimaciones de prensa y rondas privadas |\n\n**Por qué no hay cotización:**\n- ByteDance nunca ha hecho una OPV. No está registrada en SEC ni cotiza en HKEX, NYSE, Nasdaq ni en los mercados chinos.\n- Su capital está en manos de fundadores, empleados y fondos (KKR, Sequoia/HSG, General Atlantic, Tiger Global, etc.) que operan en **mercados privados** (Forge, Hiive, EquityZen), donde los precios son opacos, ilíquidos y con descuentos frente a valoraciones \"de titular\".\n\n**Contexto reciente (cualitativo, fuentes de prensa):**\n- En diciembre 2025 – enero 2026 se cerró el acuerdo para crear **TikTok USDS Joint Venture**, una entidad separada para operar en EE. UU., con participación de inversores como **Oracle, Silver Lake y MGX** (fuente: EL PAÍS 19-dic-2025; Bloomberg Línea 22-ene-2026; Xataka 23-ene-2026).\n- Esto ha reavivado la especulación sobre una eventual **IPO**, pero **a día de hoy sigue sin haber ni folleto registrado ni fecha confirmada**. Cualquier cifra de valoración que veas (se han citado rangos de cientos de miles de millones de dólares) proviene de estimaciones periodísticas, no de un precio de mercado verificado.\n\n**Única exposición bursátil \"pura\" al negocio TikTok:** ninguna directa. La vía más cercana es **Oracle (ORCL)**, que participa en la JV estadounidense:\n\n| Métrica | Valor |\n|---|---|\n| Precio ORCL | **141,40 USD** (Yahoo Finance, cierre 9-oct-2026, 20:03 UTC) |\n| Variación diaria | +4,59 % |\n| Rango 52 semanas | 114,50 – 322,54 USD |\n| Caída desde máximos | ≈ **-56 %** |\n\n⚠️ Ojo: Oracle es una empresa de software/nube; TikTok es una parte pequeña de su tesis. No es un \"proxy de TikTok\".\n\nTambién existen vehículos como **Destiny Tech100 (DXYZ)**, que ha declarado exposición a ByteDance, pero cotizan con primas/descuentos enormes sobre su NAV.\n\n---\n\n## 2) XYZABC123: no es un activo\n\nHe consultado el buscador de activos y no existe ninguna coincidencia. Un ticker real:\n- tiene 1–5 letras (a veces con sufijo de bolsa: `SAN.MC`, `7203.T`),\n- o es un par/cripto con formato específico (`BTC-USD`, `EURUSD=X`).\n\n`XYZABC123` no cumple ninguno de esos formatos. Si es un ticket interno, un ISIN parcial o un código de un test, no se puede resolver a un precio.\n\n---\n\n## Si quieres invertir en el \"tema TikTok\"\n\n| Alternativa | Naturaleza | Riesgo |\n|---|---|---|\n| Acciones de ByteDance | No accesibles al minorista | — |\n| Empresas de la JV (ORCL, etc.) | Cotizadas | Exposición diluida |\n| ETFs de China tech (KWEB, CQQQ) | Cotizados | Exposición indirecta y regulatoria |\n| Fondos de mercados privados (DXYZ) | Cerrados, con prima/descuento | Alta volatilidad, distribución limitada |\n| Pre-IPO en plataformas (Forge, Hiive) | Solo inversores acreditados | Iliquidez total |\n\n---\n\n**Veredicto honesto:** no puedo darte una cotización de TikTok porque no la hay, y no puedo darte el precio de XYZABC123 porque ese activo no existe. Prefiero decírtelo claro antes que inventar una cifra o darte el precio de otra cosa.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 30672,
+    "toolCalls": [
+      {
+        "name": "asset_search",
+        "count": 3
+      },
+      {
+        "name": "market_news",
+        "count": 2
+      },
+      {
+        "name": "web_search",
+        "count": 2
+      },
+      {
+        "name": "quote",
+        "count": 1
+      }
+    ],
+    "usage": {
+      "input": 80330,
+      "output": 2250,
+      "cacheRead": 74496,
+      "uncachedInput": 5834,
+      "totalTokens": 82580,
+      "calls": 6
+    },
+    "contextCurve": [
+      10539,
+      10661,
+      13422,
+      13708,
+      15924,
+      16076
+    ],
+    "perCall": [
+      {
+        "input": 10539,
+        "output": 168,
+        "cacheRead": 10496
+      },
+      {
+        "input": 10661,
+        "output": 262,
+        "cacheRead": 10496
+      },
+      {
+        "input": 13422,
+        "output": 212,
+        "cacheRead": 10624
+      },
+      {
+        "input": 13708,
+        "output": 169,
+        "cacheRead": 13312
+      },
+      {
+        "input": 15924,
+        "output": 193,
+        "cacheRead": 13696
+      },
+      {
+        "input": 16076,
+        "output": 1246,
+        "cacheRead": 15872
+      }
+    ]
+  }
+}

@@ -11,6 +11,7 @@
     "rag:index": "tsx src/rag-index.ts",
     "rag:search": "tsx src/test-rag.ts",
     "test:ipo": "tsx src/tests/ipo-anthropic.ts",
+    "test:suite": "tsx src/tests/suite.ts",
     "typecheck": "tsc --noEmit"
   },
   "repository": {

@@ -1,0 +1,114 @@
+# Cartera educativa + plan FIRE — Mastra
+
+Voy a construir dos cosas en paralelo: la cartera por clases con productos concretos y el cálculo FIRE neto de impuestos.Los datos base ya están. Ahora cruzo varios escenarios FIRE porque el plan depende mucho de cuánto ahorres al año y a qué edad quieras cortar.# Plan educativo: cartera + FIRE (residente fiscal en España)
+
+Antes de los números, una advertencia de metodología: **todo lo que sigue son salidas de modelos deterministas** con supuestos explícitos (retorno real 5%, regla de retirada 4%). No son predicciones. Los datos de producto provienen del catálogo de productos; **verifica ISIN, TER y disponibilidad en tu broker antes de operar**.
+
+---
+
+## 1. Cartera educativa propuesta (perfil riesgo 4/5, 20.000 €, horizonte 20-30 años)
+
+La asignación sigue una lógica **núcleo-satélite** con máxima eficiencia fiscal española (fondos traspasables donde tiene sentido).
+
+| Clase de activo | Peso | Producto | ISIN | TER | Domicilio |
+|---|---|---|---|---|---|
+| RV global (núcleo) | 64% | Vanguard Global Stock Index Fund EUR Acc | IE00B03HD191 | 0,17% | UCITS-IE |
+| RV emergentes | 10% | iShares Core MSCI EM UCITS ETF (Acc) — EIMI | IE00B0M62X26 | 0,18% | UCITS-IE |
+| Renta fija global (cubierta EUR) | 16% | Vanguard Global Bond Index Fund EUR Hedged Acc | IE00B18GC888 | 0,15% | UCITS-IE |
+| Oro | 5% | iShares Physical Gold ETC — SGLN | IE00B579F325 | 0,12% | UCITS-IE |
+| Liquidez remunerada | 5% | Xtrackers II EUR Overnight Rate Swap — XEON | LU0290358497 | 0,10% | UCITS-LU |
+
+**Notas de diseño:**
+- El núcleo en **fondo, no ETF**, es deliberado: en España los traspasos entre fondos **no tributan** (art. 94 LIRPF), lo que te permite rebalancear durante 25 años sin peaje fiscal.
+- El ETF de emergentes y el monetario son ETFs → **tributan como acciones** y no traspasan con fondos. Pesos pequeños = impacto fiscal pequeño.
+- Con 20.000 € y riesgo 4/5, la liquidez del 5% (1.000 €) es insuficiente como fondo de emergencia real. **Mantén el colchón de emergencia fuera de esta cartera** (3-6 meses de gastos en cuenta remunerada o letras del Tesoro). El sleeve de liquidez aquí es para aportaciones graduales (DCA), no para imprevistos.
+
+---
+
+## 2. Plan FIRE neto de impuestos
+
+**Objetivo:** 2.500 €/mes netos = **30.000 €/año netos**.
+
+El motor FIRE calcula el **corpus necesario neto de la fiscalidad de las retiradas**: al vender participaciones, solo tributa la fracción de ganancia (tu base de coste no tributa). Con aportaciones periódicas, tu base de coste es alta, y eso **reduce mucho el impuesto efectivo**.
+
+### Corpus objetivo (retorno real 5%, SWR 4%)
+
+| Métrica | Valor |
+|---|---|
+| Corpus necesario | **~818.000–845.000 €** |
+| Fracción de ganancia implícita | 40-54% según horizonte |
+| Tipo efectivo de retirada | **8,4-11,3%** (no el 19-21% nominal) |
+| Retirada bruta/mes al 4% | ~2.730 € |
+| **Retirada neta/mes** | **2.500 €** |
+
+> El punto clave que casi nadie calcula: para obtener 2.500 € **netos** necesitas retirar ~2.730 € **brutos**, porque el impuesto solo grava la ganancia. El ajuste es del +9%, no del +30%.
+
+### Escenarios de ahorro
+
+| Aportación anual (crecimiento) | Edad objetivo | Corpus proyectado | Neto/mes | ¿Objetivo? |
+|---|---|---|---|---|
+| 12.000 € (+300/año) | 55 | 528.253 € | 1.613 € | ❌ gap 290.507 € |
+| 12.000 € (+300/año) | 60 | 776.815 € | 2.333 € | ⚠️ gap 55.744 € |
+| 12.000 € (+300/año) | 65 | 1.102.338 € | 3.260 € | ✅ |
+| 18.000 € (+500/año) | 55 | 778.913 € | 2.384 € | ⚠️ gap 38.025 € |
+| **24.000 € (+600/año)** | **55** | **1.003.440 €** | **3.072 €** | ✅ |
+
+**Lectura directa:** con 1.000 €/mes (12.000 €/año) **no llegas** a FIRE a los 55 con 2.500 € netos. Tienes tres palancas:
+1. **Ahorrar más**: ~1.900-2.000 €/mes (+500 €/año creciente) te lleva a los 55.
+2. **Alargar a los 60**: con ~1.150 €/mes ya rozas el objetivo.
+3. **Bajar la renta objetivo** o aceptar ingresos parciales (semirretiro, "coast FIRE").
+
+Sin saber tu capacidad de ahorro real, el escenario que mejor encaja con "riesgo 4 y FIRE a los 55" es el de **~2.000 €/mes**.
+
+---
+
+## 3. Fiscalidad española relevante (verifica tramos vigentes)
+
+**Escala del ahorro (base del ahorro, IRPF):**
+
+| Tramo | Tipo |
+|---|---|
+| 0 – 6.000 € | 19% |
+| 6.000 – 50.000 € | 21% |
+| 50.000 – 200.000 € | 23% |
+| 200.000 – 300.000 € | 27% |
+| > 300.000 € | 28% |
+
+- **Fondos de inversión (UCITS): traspaso sin peaje fiscal.** Puedes cambiar de fondo sin tributar; mantienes el valor y antigüedad de adquisición. Solo tributa al reembolsar a efectivo. Es el gran privilegio del sistema español y la razón del diseño de tu cartera.
+- **ETFs: tributan como acciones.** No traspasan ni con fondos ni entre sí. Se venden y punto.
+- **Acumulación > distribución.** Los vehículos de acumulación capitalizan dividendos internamente (Irlanda: 15% de retención sobre dividendos US vía tratado, frente al 30% sin tratado). Fiscalmente más eficiente.
+- **Compensación de pérdidas:** pérdidas de acciones/ETFs se compensan con ganancias de la misma categoría; las de fondos, con fondos. **No son intercambiables.**
+- **Regla antiaplicación:** no puedes recomprar el mismo ETF/acción en **2 meses** si materializas pérdida; en fondos el plazo es **1 año** (mismo fondo).
+- **Dividendos:** tributan en la base del ahorro (la exención de 1.500 € fue eliminada en 2015). Con crédito por doble imposición internacional.
+- **Planes de pensiones — ojo con FIRE:** deducen a tipo marginal (hasta 1.500 €/año en plan individual), pero (a) tributan como **rendimiento del trabajo** al retirar (progresivo, no escala del ahorro) y (b) están bloqueados hasta la jubilación reglamentaria, salvo supuestos tasados. **En conflicto directo con la jubilación anticipada.** Para FIRE, el vehículo líquido y traspasable (fondos) es el eje.
+- **Retiradas escalonadas:** acumular mucha venta en un año te sube de tramo (19 → 23 → 27%). Repartir las retiradas a lo largo del año mantiene el tipo bajo. Por eso el tipo efectivo del modelo (8-11%) es realista solo con retiradas planificadas.
+- **Impuesto de Patrimonio:** umbral estatal ~700.000 € (más 300.000 € de vivienda habitual) y bonificaciones autonómicas muy distintas (Madrid 100% bonificado, otras no). Con corpus de ~800.000 € **es un factor a vigilar** según tu comunidad.
+
+---
+
+## 4. Riesgos y catalizadores
+
+**Riesgos:**
+- **Riesgo de secuencia de retornos**: dos años malos al principio de la fase de retiro pueden romper un SWR del 4%. El colchón de liquidez y el orden de ventas importan tanto como el importe.
+- **SWR 4% discutible**: algunas metodologías sugieren 3,3-3,5% para horizontes de 40+ años. Con 3,5% el corpus necesario sube a ~935.000 €.
+- **Inflación**: el modelo asume 5% real. Si el retorno nominal es 7% con inflación 3%, el real es ~3,9%, y todo el plan se estira 3-5 años.
+- **Concentración de divisa**: ~65% de la cartera en activos con exposición USD. Sin cobertura, el EUR/USD añade volatilidad.
+- **Riesgo regulatorio/fiscal**: los trámites del ahorro y el tratamiento del traspaso pueden cambiar. Ya han cambiado varias veces.
+
+**Catalizadores:**
+- **Aportaciones crecientes**: cada 1.000 €/mes adicionales valen más que cualquier optimización de cartera a 25 años.
+- **Reequilibrio vía traspaso**: puedes mantener el perfil de riesgo sin pasar por caja, algo que un inversor en ETFs no puede.
+- **Aprovechar la escala del ahorro**: en FIRE las retiradas son bajas → tipo efectivo bajo. El sistema te favorece si planificas.
+- **Semirretiro / barista FIRE**: cubrir gastos básicos con trabajo parcial reduce el corpus necesario drásticamente.
+
+---
+
+## 5. Veredicto con matices
+
+**Toro:** el plan es viable, pero **no a los 55 con 1.000 €/mes**. El diseño fiscal español (traspaso de fondos + escala del ahorro baja en retiradas) es objetivamente ventajoso para FIRE comparado con casi cualquier otro país de la UE. Aportando ~2.000 €/mes, los 55 años con 2.500 € netos están al alcance.
+
+**Oso:** el punto frágil no es la cartera, es **la tasa de ahorro y el horizonte temporal**. Un SWR del 4% es agresivo para 40+ años de retiro; y el modelo asume 5% real sostenido, algo que no está garantizado. Además, la vivienda habitual (no mencionada) y el Impuesto de Patrimonio pueden cambiar el cálculo por completo.
+
+**Recomendación educativa:** empieza con la cartera (DCA de los 20.000 € en 6-12 meses), mantén el fondo de emergencia **fuera**, y prioriza subir la tasa de ahorro por encima de optimizar el TER. Con los números actuales, tu FIRE realista está entre los **57 y 62 años**, no a los 55.
+
+⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).
