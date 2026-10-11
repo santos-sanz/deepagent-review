@@ -85,7 +85,8 @@ while (true) {
           const type = m?.getType?.();
           if (type === 'ai') {
             for (const tc of m.tool_calls ?? []) {
-              console.log(`  ↳ ${tc.name}(${JSON.stringify(tc.args ?? {}).slice(0, 140)})`);
+              const label = tc.name === 'task' ? `task(${tc.args?.subagent_type ?? '?'})` : tc.name;
+              console.log(`  ↳ ${label}(${JSON.stringify(tc.args ?? {}).slice(0, 140)})`);
             }
             const txt = msgText(m).trim();
             if (txt) finalText = txt;

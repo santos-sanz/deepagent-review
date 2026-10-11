@@ -10,6 +10,7 @@
     "extract": "tsx src/test-extract.ts",
     "rag:index": "tsx src/rag-index.ts",
     "rag:search": "tsx src/test-rag.ts",
+    "test:ipo": "tsx src/tests/ipo-anthropic.ts",
     "typecheck": "tsc --noEmit"
   },
   "repository": {

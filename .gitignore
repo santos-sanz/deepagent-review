@@ -3,4 +3,7 @@ node_modules/
 generated/
 .rag/
 .sessions/
+.tmp/
+.agent-fs/
 *.log
+mastra.db
