@@ -2,8 +2,8 @@
   "scenario": "robustez",
   "mastra": {
     "framework": "mastra",
-    "text": "## Respuesta rápida\n\n**TikTok no cotiza en bolsa.** No existe ninguna acción de TikTok (ni de su matriz, ByteDance) con ticker ni precio público. Y **\"XYZABC123\" no es un símbolo válido**: no aparece en Yahoo Finance ni en ninguna fuente de mercado, así que **no hay datos fiables de ese \"precio actual\"** porque ese activo no existe en los mercados. Cualquier cifra que te diera sería inventada.\n\n---\n\n## Por qué no hay cotización de TikTok\n\n| Punto | Detalle |\n|---|---|\n| Estructura | ByteDance Ltd. es **privada** (fundada 2012, sede en Pekín; VIE en Islas Caimán). Wikipedia |\n| Cotización | **No hay IPO**. Sus acciones solo se mueven en mercados secundarios privados y recompras internas |\n| Por qué | Es una empresa china con fuerte escrutinio regulatorio (EE. UU., China), lo que complica un listing |\n| Dato clave reciente | El 22-ene-2026 se cerró el **joint venture de TikTok EE. UU.** (mayoría estadounidense, Oracle ~15%) — The Guardian, Deadline, Reuters |\n\n### Valuaciones de referencia (¡no son precio de cotización!)\n- **~550.000 M$**: propuesta de compra de acciones de General Atlantic, recogida por Forbes México / Yahoo, **25-feb-2026**.\n- **155.000 M$ de ingresos (2024)** y **~50.000 M$ de beneficio proyectado para 2025** (Bloomberg, 19-dic-2025, vía Wikipedia).\n- Participación de **Oracle en el JV de TikTok US valorada en ~2.000 M$** (Reuters, 11-mar-2026).\n\nEstas cifras son valoraciones de transacciones privadas o estimaciones de analistas, **no un precio de mercado continuo**, y suelen ir desactualizadas y con horquillas amplias.\n\n---\n\n## Cómo obtener exposición (vía indirecta)\n\nLa única forma de exposición \"boursátil\" es a través de empresas cotizadas vinculadas:\n\n| Vía | Ticker | Precio (Yahoo Finance, cierre 9-oct-2026) |\n|---|---|---|\n| Oracle (socio del JV en EE. UU.) | ORCL (NYSE) | **141,40 USD** (+4,59% ese día) |\n| Otros socios del JV / proveedores cloud | — | Depende del vehículo |\n\n⚠️ Ojo: ORCL es una empresa enorme de software/cloud; TikTok supone una fracción mínima de su valor y de su cotización. No es \"la acción de TikTok\".\n\n---\n\n## Sobre \"XYZABC123\"\n\n- Búsqueda en Yahoo Finance: **0 resultados**.\n- No cumple el formato de ningún ticker real (los símbolos suelen tener 1-5 caracteres + sufijo de mercado).\n- Conclusión: **es un código inexistente o inventado**. No puedo darte un precio fiable.\n\nSi tienes un código distinto (ISIN, ticker completo o nombre de empresa), pásamelo y lo busco de verdad.\n\n---\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-    "durationMs": 42999,
+    "text": "Voy a verificar ambos casos con las herramientas antes de responder.Voy a ser claro con ambos casos, porque ninguna de las dos consultas tiene una respuesta de mercado real.\n\n## 1. TikTok — **no cotiza en bolsa**\n\nTikTok **no es una empresa cotizada**. No existe ninguna acción de TikTok en el NYSE, el Nasdaq ni en ningún otro parqué, y por tanto **no hay cotización** que consultar.\n\n**Quién está detrás:**\n- TikTok es la app de vídeo corto operada por **ByteDance**, una empresa **privada** (constituida en Islas Caimán, con sede operativa en China). ByteDance tampoco cotiza.\n- Los resultados de mis herramientas lo confirman: al buscar \"TikTok\" y \"ByteDance\", el único match fue un token cripto llamado *\"#1 Tiktok Squirrel\"* (irrelevante, nada que ver) y **cero resultados** para ByteDance como valor listado.\n\n**Qué sí existe (contexto, sin cifras de cotización):**\n- Hay un proceso geopolítico en EE. UU. con la ley de \"divest-or-ban\" y la creación de una posible **joint venture estadounidense** (con participación de inversores como Oracle y otros), pero eso es **capital privado**, no una acción que puedas comprar en un bróker.\n- Aunque una parte del negocio estadounidense se escindiera, seguiría siendo una **empresa privada** hasta que hiciera una OPV real.\n\n**Conclusión:** no hay precio \"actual\" de la acción de TikTok porque no hay acción. Cualquier cifra que veas por ahí es una **valoración estimada de empresa privada** (rondas de financiación, valoraciones de analistas), que es algo distinto y sujeta a mucha incertidumbre.\n\n> Si quieres exposición indirecta, la vía sería comprar valores cotizados con participación en ByteDance (fondos o algunas gestoras/tecnológicas chinas expuestas). Sobre esto **sí** puedo darte datos cuantitativos si me lo pides.\n\n## 2. XYZABC123 — **símbolo inexistente / no localizable**\n\n- La búsqueda del ticker `XYZABC123` devolvió **cero resultados**. No corresponde a ningún activo real en Yahoo Finance.\n- \"XYZABC123\" tiene toda la pinta de ser un **ticker de ejemplo/placeholder** o inventado. No tengo ningún dato fiable: ni precio, ni empresa, ni mercado.\n\n**Por qué no te doy una cifra:** no hay fuente que la respalde. Inventar un precio aquí violaría lo más básico: no fabricar datos.\n\n---\n\n### Resumen honesto\n\n| Consulta | ¿Cotiza? | Precio actual | Motivo |\n|---|---|---|---|\n| **TikTok** | ❌ No | No existe | Empresa privada (ByteDance); sin acciones listadas |\n| **XYZABC123** | ❌ No | No disponible | Ticker inexistente en las fuentes de mercado |\n\nSi tienes el **nombre real de la empresa** detrás de \"XYZABC123\" o el activo que querías consultar (¿era una acción concreta, un ETF, una cripto?), dímelo y lo busco correctamente. También, si te interesa, puedo analizar qué **empresas cotizadas** dan exposición indirecta a ByteDance/TikTok.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 19115,
     "toolCalls": [
       {
         "name": "assetSearchTool",
@@ -11,104 +11,438 @@
       },
       {
         "name": "marketNewsTool",
-        "count": 3
-      },
-      {
-        "name": "webSearchTool",
-        "count": 2
-      },
-      {
-        "name": "webFetchTool",
         "count": 1
       },
       {
-        "name": "quoteTool",
-        "count": 2
-      },
-      {
-        "name": "updateWorkingMemory",
+        "name": "webSearchTool",
         "count": 1
       }
     ],
     "usage": {
       "inputTokens": 0,
       "outputTokens": 0,
-      "totalTokens": 115806
+      "totalTokens": 31201
     },
     "turnMetrics": [
       {
-        "durationMs": 42999
+        "durationMs": 19115
       }
     ]
   },
   "deepagents": {
     "framework": "deepagents",
-    "text": "## Respuesta corta\n\n**Ninguno de los dos datos existe.**\n\n1. **TikTok no cotiza en bolsa.** No hay acciones de TikTok (ni de su matriz ByteDance) en ningún mercado. No hay \"cotización\" que darte.\n2. **\"XYZABC123\" no es un ticker de nada.** He buscado el símbolo y no devuelve ningún activo; es un identificador inventado/sin correspondencia con ningún instrumento real.\n\n---\n\n## 1) TikTok: empresa privada, sin precio de mercado\n\n| Qué buscas | Situación real |\n|---|---|\n| Acciones TikTok en bolsa | **No existen** |\n| Matriz | **ByteDance Ltd.**, empresa **privada** (registrada en Cayman, sede operativa en China) |\n| Cotización / P/E / capitalización pública | **No disponible** — no hay mercado secundario público |\n| Datos fiables de valoración | Solo estimaciones de prensa y rondas privadas |\n\n**Por qué no hay cotización:**\n- ByteDance nunca ha hecho una OPV. No está registrada en SEC ni cotiza en HKEX, NYSE, Nasdaq ni en los mercados chinos.\n- Su capital está en manos de fundadores, empleados y fondos (KKR, Sequoia/HSG, General Atlantic, Tiger Global, etc.) que operan en **mercados privados** (Forge, Hiive, EquityZen), donde los precios son opacos, ilíquidos y con descuentos frente a valoraciones \"de titular\".\n\n**Contexto reciente (cualitativo, fuentes de prensa):**\n- En diciembre 2025 – enero 2026 se cerró el acuerdo para crear **TikTok USDS Joint Venture**, una entidad separada para operar en EE. UU., con participación de inversores como **Oracle, Silver Lake y MGX** (fuente: EL PAÍS 19-dic-2025; Bloomberg Línea 22-ene-2026; Xataka 23-ene-2026).\n- Esto ha reavivado la especulación sobre una eventual **IPO**, pero **a día de hoy sigue sin haber ni folleto registrado ni fecha confirmada**. Cualquier cifra de valoración que veas (se han citado rangos de cientos de miles de millones de dólares) proviene de estimaciones periodísticas, no de un precio de mercado verificado.\n\n**Única exposición bursátil \"pura\" al negocio TikTok:** ninguna directa. La vía más cercana es **Oracle (ORCL)**, que participa en la JV estadounidense:\n\n| Métrica | Valor |\n|---|---|\n| Precio ORCL | **141,40 USD** (Yahoo Finance, cierre 9-oct-2026, 20:03 UTC) |\n| Variación diaria | +4,59 % |\n| Rango 52 semanas | 114,50 – 322,54 USD |\n| Caída desde máximos | ≈ **-56 %** |\n\n⚠️ Ojo: Oracle es una empresa de software/nube; TikTok es una parte pequeña de su tesis. No es un \"proxy de TikTok\".\n\nTambién existen vehículos como **Destiny Tech100 (DXYZ)**, que ha declarado exposición a ByteDance, pero cotizan con primas/descuentos enormes sobre su NAV.\n\n---\n\n## 2) XYZABC123: no es un activo\n\nHe consultado el buscador de activos y no existe ninguna coincidencia. Un ticker real:\n- tiene 1–5 letras (a veces con sufijo de bolsa: `SAN.MC`, `7203.T`),\n- o es un par/cripto con formato específico (`BTC-USD`, `EURUSD=X`).\n\n`XYZABC123` no cumple ninguno de esos formatos. Si es un ticket interno, un ISIN parcial o un código de un test, no se puede resolver a un precio.\n\n---\n\n## Si quieres invertir en el \"tema TikTok\"\n\n| Alternativa | Naturaleza | Riesgo |\n|---|---|---|\n| Acciones de ByteDance | No accesibles al minorista | — |\n| Empresas de la JV (ORCL, etc.) | Cotizadas | Exposición diluida |\n| ETFs de China tech (KWEB, CQQQ) | Cotizados | Exposición indirecta y regulatoria |\n| Fondos de mercados privados (DXYZ) | Cerrados, con prima/descuento | Alta volatilidad, distribución limitada |\n| Pre-IPO en plataformas (Forge, Hiive) | Solo inversores acreditados | Iliquidez total |\n\n---\n\n**Veredicto honesto:** no puedo darte una cotización de TikTok porque no la hay, y no puedo darte el precio de XYZABC123 porque ese activo no existe. Prefiero decírtelo claro antes que inventar una cifra o darte el precio de otra cosa.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
-    "durationMs": 30672,
+    "text": "He comprobado ambas cosas con las herramientas. Respuesta corta: **ninguna de las dos tiene cotización**, pero por razones muy distintas.\n\n## 1) TikTok (y su matriz ByteDance): no cotiza — no hay precio de bolsa\n\n**No existe ticker de TikTok ni de ByteDance.** ByteDance Ltd. es una sociedad **privada** (constituida en Islas Caimán como *variable interest entity* de la operativa china); TikTok es una filial/app, no una sociedad admitida a negociación. Lo confirmé en varias vías:\n\n- Búsqueda de activos (asset_search) para \"TikTok\", \"ByteDance\" y \"TikTok US joint venture\": **0 resultados**, no hay símbolo negociable.\n- Ficha corporativa: ByteDance aparece clasificada expresamente como *\"Type: Private\"* (Wikipedia/ByteDance, consultado hoy).\n- **No hay IPO anunciada ni completada, ni fecha pública.** Nikkei Asia publicó (jun. 2026) que ByteDance *aparca* la salida a bolsa. Históricamente ya archivó planes de IPO en 2021 por presiones regulatorias chinas.\n\n**Lo que sí existe son valoraciones de mercados privados** (ventas secundarias y recompras a empleados), que **no son un precio de cotización**:\n\n| Fecha | Valoración reportada de ByteDance | Contexto |\n|---|---|---|\n| Nov 2024 | ~330.000 M$ | Estimaciones de prensa (Reuters/WSJ) |\n| Ago 2025 | >330.000 M$ | Recompra a empleados (Reuters, 27-ago-2025) |\n| Nov 2025 | ~480.000 M$ | Venta secundaria a Capital Today (Music Business Worldwide / The Times) |\n| Feb 2026 | ~550.000 M$ | General Atlantic vende participación (Reuters/Yahoo, 25-feb-2026) |\n| Abr 2026 | >600.000 M$ | Récord en venta secundaria (SCMP, 8-abr-2026) |\n\n⚠️ Advertencia importante: **no he podido verificar con fuente primaria el precio por acción** de esas operaciones. El último dato sólido y reabrible es de **octubre de 2022: 155 $/acción** en la recompra a empleados (Reuters/Caixin). Cualquier web que te ofrezca \"comprar acciones de TikTok\" en el mercado minorista es, en el mejor caso, exposición indirecta o un instrumento no regulado.\n\n**Única vía cotizada con exposición real (y muy diluida): Oracle (NYSE: ORCL)**, que tiene el 15% del *TikTok USDS Joint Venture LLC* constituido en enero de 2026 junto a Silver Lake y MGX (fondo de Abu Dhabi), con ByteDance reteniendo el 19,9%. Oracle registró esa participación en ~2.000 M$ (Reuters, 11-mar-2026). Silver Lake, MGX, Susquehanna, General Atlantic, Dragoneer, etc., son fondos/family offices **privados** — ojo con el error habitual: *Dell Technologies (DELL) no es dueño* de la participación; la tiene la family office de Michael Dell, que es privada.\n\n## 2) XYZABC123: no existe\n\nBúsqueda de activo y búsqueda web para \"XYZABC123\": **cero resultados**. No es un ticker de ninguna acción, ETF, índice, cripto ni divisa en Yahoo Finance ni en fuentes públicas. Tiene toda la pinta de ser un identificador inventado o un placeholder de ejemplo (el patrón \"XYZ + número\" es típico de datos de prueba). **No voy a darte un precio inventado.**\n\nSi tienes el nombre real de la empresa o el ISIN, dímelo y lo busco. Y si lo has visto anunciado en algún sitio como \"acción de TikTok\" o como XYZABC123, pásame el enlace: es probable que sea un producto no regulado o una estafa de inversión.\n\n---\n\n**En resumen:** la pregunta parte de una premisa que no se sostiene — no hay cotización de TikTok porque ByteDance nunca ha salido a bolsa, y XYZABC123 no es un activo identificable. Es un caso donde la respuesta honesta es \"no hay dato fiable\", y te explico exactamente por qué.\n\n⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).",
+    "durationMs": 531760,
     "toolCalls": [
       {
         "name": "asset_search",
-        "count": 3
+        "count": 4
       },
       {
         "name": "market_news",
-        "count": 2
+        "count": 3
       },
       {
         "name": "web_search",
         "count": 2
       },
       {
-        "name": "quote",
+        "name": "web_fetch",
+        "count": 1
+      },
+      {
+        "name": "task(researcher-agent)",
         "count": 1
       }
     ],
     "usage": {
-      "input": 80330,
-      "output": 2250,
-      "cacheRead": 74496,
-      "uncachedInput": 5834,
-      "totalTokens": 82580,
-      "calls": 6
+      "input": 4719098,
+      "output": 36249,
+      "cacheRead": 4519040,
+      "uncachedInput": 200058,
+      "totalTokens": 4755347,
+      "calls": 63
     },
     "contextCurve": [
       10539,
       10661,
-      13422,
-      13708,
-      15924,
-      16076
+      12746,
+      15407,
+      17654,
+      19435,
+      2971,
+      9854,
+      12994,
+      24126,
+      27204,
+      27993,
+      28595,
+      31658,
+      32928,
+      41351,
+      44658,
+      46442,
+      48308,
+      49157,
+      49858,
+      54774,
+      55410,
+      56649,
+      58111,
+      59315,
+      60721,
+      63250,
+      64165,
+      67071,
+      67920,
+      68996,
+      70465,
+      71705,
+      73360,
+      75136,
+      76252,
+      77225,
+      78251,
+      79505,
+      80473,
+      81551,
+      81974,
+      82644,
+      83821,
+      85235,
+      88347,
+      127531,
+      128453,
+      129564,
+      130300,
+      131784,
+      133912,
+      134700,
+      135930,
+      137090,
+      176413,
+      177875,
+      179100,
+      179885,
+      180619,
+      183925,
+      25152
     ],
     "perCall": [
       {
         "input": 10539,
-        "output": 168,
+        "output": 162,
         "cacheRead": 10496
       },
       {
         "input": 10661,
-        "output": 262,
-        "cacheRead": 10496
-      },
-      {
-        "input": 13422,
-        "output": 212,
+        "output": 209,
         "cacheRead": 10624
       },
       {
-        "input": 13708,
-        "output": 169,
-        "cacheRead": 13312
+        "input": 12746,
+        "output": 232,
+        "cacheRead": 10624
       },
       {
-        "input": 15924,
-        "output": 193,
-        "cacheRead": 13696
+        "input": 15407,
+        "output": 172,
+        "cacheRead": 12672
       },
       {
-        "input": 16076,
-        "output": 1246,
-        "cacheRead": 15872
+        "input": 17654,
+        "output": 401,
+        "cacheRead": 15360
+      },
+      {
+        "input": 19435,
+        "output": 425,
+        "cacheRead": 17536
+      },
+      {
+        "input": 2971,
+        "output": 318,
+        "cacheRead": 2048
+      },
+      {
+        "input": 9854,
+        "output": 408,
+        "cacheRead": 2944
+      },
+      {
+        "input": 12994,
+        "output": 345,
+        "cacheRead": 9728
+      },
+      {
+        "input": 24126,
+        "output": 361,
+        "cacheRead": 12928
+      },
+      {
+        "input": 27204,
+        "output": 436,
+        "cacheRead": 24064
+      },
+      {
+        "input": 27993,
+        "output": 348,
+        "cacheRead": 27136
+      },
+      {
+        "input": 28595,
+        "output": 387,
+        "cacheRead": 27904
+      },
+      {
+        "input": 31658,
+        "output": 460,
+        "cacheRead": 28544
+      },
+      {
+        "input": 32928,
+        "output": 173,
+        "cacheRead": 31616
+      },
+      {
+        "input": 41351,
+        "output": 550,
+        "cacheRead": 32896
+      },
+      {
+        "input": 44658,
+        "output": 362,
+        "cacheRead": 41344
+      },
+      {
+        "input": 46442,
+        "output": 340,
+        "cacheRead": 44544
+      },
+      {
+        "input": 48308,
+        "output": 536,
+        "cacheRead": 46336
+      },
+      {
+        "input": 49157,
+        "output": 402,
+        "cacheRead": 48256
+      },
+      {
+        "input": 49858,
+        "output": 344,
+        "cacheRead": 49152
+      },
+      {
+        "input": 54774,
+        "output": 382,
+        "cacheRead": 49792
+      },
+      {
+        "input": 55410,
+        "output": 605,
+        "cacheRead": 54656
+      },
+      {
+        "input": 56649,
+        "output": 419,
+        "cacheRead": 55296
+      },
+      {
+        "input": 58111,
+        "output": 507,
+        "cacheRead": 56576
+      },
+      {
+        "input": 59315,
+        "output": 406,
+        "cacheRead": 57984
+      },
+      {
+        "input": 60721,
+        "output": 406,
+        "cacheRead": 59264
+      },
+      {
+        "input": 63250,
+        "output": 360,
+        "cacheRead": 60672
+      },
+      {
+        "input": 64165,
+        "output": 367,
+        "cacheRead": 63232
+      },
+      {
+        "input": 67071,
+        "output": 493,
+        "cacheRead": 64128
+      },
+      {
+        "input": 67920,
+        "output": 388,
+        "cacheRead": 66944
+      },
+      {
+        "input": 68996,
+        "output": 869,
+        "cacheRead": 67840
+      },
+      {
+        "input": 70465,
+        "output": 381,
+        "cacheRead": 68992
+      },
+      {
+        "input": 71705,
+        "output": 783,
+        "cacheRead": 70400
+      },
+      {
+        "input": 73360,
+        "output": 374,
+        "cacheRead": 71680
+      },
+      {
+        "input": 75136,
+        "output": 1440,
+        "cacheRead": 73344
+      },
+      {
+        "input": 76252,
+        "output": 420,
+        "cacheRead": 75136
+      },
+      {
+        "input": 77225,
+        "output": 343,
+        "cacheRead": 76160
+      },
+      {
+        "input": 78251,
+        "output": 433,
+        "cacheRead": 77184
+      },
+      {
+        "input": 79505,
+        "output": 630,
+        "cacheRead": 78208
+      },
+      {
+        "input": 80473,
+        "output": 320,
+        "cacheRead": 79488
+      },
+      {
+        "input": 81551,
+        "output": 434,
+        "cacheRead": 80384
+      },
+      {
+        "input": 81974,
+        "output": 367,
+        "cacheRead": 81536
+      },
+      {
+        "input": 82644,
+        "output": 426,
+        "cacheRead": 81920
+      },
+      {
+        "input": 83821,
+        "output": 384,
+        "cacheRead": 82560
+      },
+      {
+        "input": 85235,
+        "output": 433,
+        "cacheRead": 83712
+      },
+      {
+        "input": 88347,
+        "output": 422,
+        "cacheRead": 85120
+      },
+      {
+        "input": 127531,
+        "output": 466,
+        "cacheRead": 88320
+      },
+      {
+        "input": 128453,
+        "output": 696,
+        "cacheRead": 127488
+      },
+      {
+        "input": 129564,
+        "output": 426,
+        "cacheRead": 128384
+      },
+      {
+        "input": 130300,
+        "output": 308,
+        "cacheRead": 129536
+      },
+      {
+        "input": 131784,
+        "output": 385,
+        "cacheRead": 130176
+      },
+      {
+        "input": 133912,
+        "output": 447,
+        "cacheRead": 131712
+      },
+      {
+        "input": 134700,
+        "output": 361,
+        "cacheRead": 133888
+      },
+      {
+        "input": 135930,
+        "output": 499,
+        "cacheRead": 134656
+      },
+      {
+        "input": 137090,
+        "output": 537,
+        "cacheRead": 135808
+      },
+      {
+        "input": 176413,
+        "output": 466,
+        "cacheRead": 137088
+      },
+      {
+        "input": 177875,
+        "output": 687,
+        "cacheRead": 176384
+      },
+      {
+        "input": 179100,
+        "output": 1376,
+        "cacheRead": 177792
+      },
+      {
+        "input": 179885,
+        "output": 603,
+        "cacheRead": 179072
+      },
+      {
+        "input": 180619,
+        "output": 363,
+        "cacheRead": 179840
+      },
+      {
+        "input": 183925,
+        "output": 7265,
+        "cacheRead": 180608
+      },
+      {
+        "input": 25152,
+        "output": 1201,
+        "cacheRead": 19328
       }
     ]
   }

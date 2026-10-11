@@ -1,50 +1,39 @@
 # Robustez ante datos inexistentes — Mastra
 
-## Respuesta rápida
+Voy a verificar ambos casos con las herramientas antes de responder.Voy a ser claro con ambos casos, porque ninguna de las dos consultas tiene una respuesta de mercado real.
 
-**TikTok no cotiza en bolsa.** No existe ninguna acción de TikTok (ni de su matriz, ByteDance) con ticker ni precio público. Y **"XYZABC123" no es un símbolo válido**: no aparece en Yahoo Finance ni en ninguna fuente de mercado, así que **no hay datos fiables de ese "precio actual"** porque ese activo no existe en los mercados. Cualquier cifra que te diera sería inventada.
+## 1. TikTok — **no cotiza en bolsa**
 
----
+TikTok **no es una empresa cotizada**. No existe ninguna acción de TikTok en el NYSE, el Nasdaq ni en ningún otro parqué, y por tanto **no hay cotización** que consultar.
 
-## Por qué no hay cotización de TikTok
+**Quién está detrás:**
+- TikTok es la app de vídeo corto operada por **ByteDance**, una empresa **privada** (constituida en Islas Caimán, con sede operativa en China). ByteDance tampoco cotiza.
+- Los resultados de mis herramientas lo confirman: al buscar "TikTok" y "ByteDance", el único match fue un token cripto llamado *"#1 Tiktok Squirrel"* (irrelevante, nada que ver) y **cero resultados** para ByteDance como valor listado.
 
-| Punto | Detalle |
-|---|---|
-| Estructura | ByteDance Ltd. es **privada** (fundada 2012, sede en Pekín; VIE en Islas Caimán). Wikipedia |
-| Cotización | **No hay IPO**. Sus acciones solo se mueven en mercados secundarios privados y recompras internas |
-| Por qué | Es una empresa china con fuerte escrutinio regulatorio (EE. UU., China), lo que complica un listing |
-| Dato clave reciente | El 22-ene-2026 se cerró el **joint venture de TikTok EE. UU.** (mayoría estadounidense, Oracle ~15%) — The Guardian, Deadline, Reuters |
+**Qué sí existe (contexto, sin cifras de cotización):**
+- Hay un proceso geopolítico en EE. UU. con la ley de "divest-or-ban" y la creación de una posible **joint venture estadounidense** (con participación de inversores como Oracle y otros), pero eso es **capital privado**, no una acción que puedas comprar en un bróker.
+- Aunque una parte del negocio estadounidense se escindiera, seguiría siendo una **empresa privada** hasta que hiciera una OPV real.
 
-### Valuaciones de referencia (¡no son precio de cotización!)
-- **~550.000 M$**: propuesta de compra de acciones de General Atlantic, recogida por Forbes México / Yahoo, **25-feb-2026**.
-- **155.000 M$ de ingresos (2024)** y **~50.000 M$ de beneficio proyectado para 2025** (Bloomberg, 19-dic-2025, vía Wikipedia).
-- Participación de **Oracle en el JV de TikTok US valorada en ~2.000 M$** (Reuters, 11-mar-2026).
+**Conclusión:** no hay precio "actual" de la acción de TikTok porque no hay acción. Cualquier cifra que veas por ahí es una **valoración estimada de empresa privada** (rondas de financiación, valoraciones de analistas), que es algo distinto y sujeta a mucha incertidumbre.
 
-Estas cifras son valoraciones de transacciones privadas o estimaciones de analistas, **no un precio de mercado continuo**, y suelen ir desactualizadas y con horquillas amplias.
+> Si quieres exposición indirecta, la vía sería comprar valores cotizados con participación en ByteDance (fondos o algunas gestoras/tecnológicas chinas expuestas). Sobre esto **sí** puedo darte datos cuantitativos si me lo pides.
 
----
+## 2. XYZABC123 — **símbolo inexistente / no localizable**
 
-## Cómo obtener exposición (vía indirecta)
+- La búsqueda del ticker `XYZABC123` devolvió **cero resultados**. No corresponde a ningún activo real en Yahoo Finance.
+- "XYZABC123" tiene toda la pinta de ser un **ticker de ejemplo/placeholder** o inventado. No tengo ningún dato fiable: ni precio, ni empresa, ni mercado.
 
-La única forma de exposición "boursátil" es a través de empresas cotizadas vinculadas:
-
-| Vía | Ticker | Precio (Yahoo Finance, cierre 9-oct-2026) |
-|---|---|---|
-| Oracle (socio del JV en EE. UU.) | ORCL (NYSE) | **141,40 USD** (+4,59% ese día) |
-| Otros socios del JV / proveedores cloud | — | Depende del vehículo |
-
-⚠️ Ojo: ORCL es una empresa enorme de software/cloud; TikTok supone una fracción mínima de su valor y de su cotización. No es "la acción de TikTok".
+**Por qué no te doy una cifra:** no hay fuente que la respalde. Inventar un precio aquí violaría lo más básico: no fabricar datos.
 
 ---
 
-## Sobre "XYZABC123"
+### Resumen honesto
 
-- Búsqueda en Yahoo Finance: **0 resultados**.
-- No cumple el formato de ningún ticker real (los símbolos suelen tener 1-5 caracteres + sufijo de mercado).
-- Conclusión: **es un código inexistente o inventado**. No puedo darte un precio fiable.
+| Consulta | ¿Cotiza? | Precio actual | Motivo |
+|---|---|---|---|
+| **TikTok** | ❌ No | No existe | Empresa privada (ByteDance); sin acciones listadas |
+| **XYZABC123** | ❌ No | No disponible | Ticker inexistente en las fuentes de mercado |
 
-Si tienes un código distinto (ISIN, ticker completo o nombre de empresa), pásamelo y lo busco de verdad.
-
----
+Si tienes el **nombre real de la empresa** detrás de "XYZABC123" o el activo que querías consultar (¿era una acción concreta, un ETF, una cripto?), dímelo y lo busco correctamente. También, si te interesa, puedo analizar qué **empresas cotizadas** dan exposición indirecta a ByteDance/TikTok.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).

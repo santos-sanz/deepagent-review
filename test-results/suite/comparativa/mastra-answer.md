@@ -1,36 +1,41 @@
 # Comparativa de 3 activos — Mastra
 
-Voy a recuperar los datos históricos de los tres activos.# Comparativa a 1 año: AAPL vs MSFT vs S&P 500
+Voy a obtener los datos históricos de los tres activos para calcular rendimiento y volatilidad a 1 año.Déjame confirmar la fecha de referencia de los datos con las cotizaciones actuales.## Comparativa a 1 año: AAPL vs MSFT vs S&P 500
 
-**Datos:** Yahoo Finance, vía herramientas `historical-prices` (serie diaria, 251 sesiones, cierre al **2026-10-09**, 20:00–21:29 UTC) y `quote` (mismo día). Cotizaciones con posible retardo de hasta 15 min.
+**Datos de Yahoo Finance a cierre del 9-oct-2026** (última vela diaria disponible; las cotizaciones pueden ir con retardo de hasta 15 min). Periodo analizado: últimos 12 meses, 251 sesiones diarias.
 
-| Métrica | **AAPL** (Apple) | **MSFT** (Microsoft) | **^GSPC** (S&P 500) |
+| Métrica | **AAPL** | **MSFT** | **S&P 500 (^GSPC)** |
 |---|---|---|---|
-| Precio último cierre | 336,64 USD | 535,07 USD | 7.811,54 pts |
-| **Rentabilidad 1 año** | **+37,25 %** | +4,72 % | +19,21 % |
-| **Volatilidad anualizada** | 24,48 % | **32,84 %** | **12,76 %** |
-| Mínimo del periodo | 245,27 USD | 352,83 USD | 6.343,72 pts |
-| Máximo del periodo | 341,07 USD | 542,07 USD | 7.818,93 pts |
-| Rango 52 semanas | 243,42 – 345,34 | 349,20 – 553,72 | 6.316,91 – 7.844,52 |
-| Var. último día | −1,11 % | +2,38 % | +0,59 % |
-| Retorno/riesgo (1y) | **1,52** | 0,14 | 1,51 |
+| Precio actual | 336,64 $ | 535,07 $ | 7.811,54 |
+| **Rendimiento 1 año** | **+37,25 %** | **+4,72 %** | **+19,21 %** |
+| **Volatilidad anualizada** | **24,48 %** | **32,84 %** | **12,76 %** |
+| Mínimo del periodo | 245,27 $ | 352,83 $ | 6.343,72 |
+| Máximo del periodo | 341,07 $ | 542,07 $ | 7.818,93 |
+| Rango 52 semanas (low / high) | 243,42 / 345,34 $ | 349,20 / 553,72 $ | 6.316,91 / 7.844,52 |
+| Variación del día | −1,11 % | +2,38 % | +0,59 % |
 
-*Retorno/riesgo = rentabilidad ÷ volatilidad (cuánto retorno se obtuvo por cada punto de riesgo asumido).*
+**Fuente:** Yahoo Finance (series históricas diarias y cotización actual), datos a 9-oct-2026. Volatilidad calculada como desviación típica de retornos diarios anualizada (×√252).
 
-## Lectura de los datos
+---
 
-- **Rentabilidad**: AAPL arrasó (+37 %), el índice hizo un +19 % muy sólido, y MSFT se quedó prácticamente plano (+4,7 %) pese a estar a solo un 3 % de su máximo de 52 semanas. Ojo con la asimetría: AAPL está cerca de máximos, MSFT cotiza muy por debajo de su techo (553,72) y su mínimo anual (349,20) está a un −35 % del precio actual → el último año fue un recorrido muy volátil y sin premio.
-- **Riesgo**: el S&P 500 fue el más tranquilo con diferencia (12,76 % de volatilidad anualizada, la mitad que MSFT). MSFT fue el más agitado (32,84 %), seguido de AAPL (24,48 %). Es decir, **ser acción individual en tecnología costó entre 1,9x y 2,6x más volatilidad que el índice**.
-- **Contexto cualitativo**: los titulares del periodo apuntan a que MSFT sufrió por el fuerte *capex* en IA (Q1 con capex que se duplica) pese a crecer ARR de IA, mientras AAPL recibió el viento de cola del ciclo de iPhone y su rol percibido de "refugio" (fuentes: TradingView, TIKR.com, Bloomberg Línea, 2026).
+### Lectura en riesgo-retorno
 
-## Conclusión
+- **Mejor inversión en retorno absoluto: AAPL (+37,25 %)**. Superó al índice por ~18 puntos porcentuales y a MSFT por más de 32 pp, con un recorrido alcista sostenido (mínimo del periodo en 245 $, máximos cerca de 341 $).
+- **MSFT: retorno pobre con la mayor volatilidad de la tabla (+4,72 % y 32,84 %)**. Es el peor binomio riesgo-retorno del grupo: apenas batió a un depósito, pero con oscilaciones anualizadas de casi 33 % —un rango de 52 semanas enorme (349 $ a 554 $). Aquí el ratio retorno/riesgo es claramente el más desfavorable.
+- **S&P 500: la referencia de eficiencia (+19,21 % con solo 12,76 % de volatilidad)**. Es, con diferencia, el activo que logró más retorno por unidad de riesgo (ratio ≈ 1,5 vs ≈ 1,5 en AAPL... en realidad MSFT sale ≈ 0,14). El índice ofrece diversificación y una volatilidad muy inferior a la de las dos acciones individuales.
 
-**¿Cuál fue la mejor inversión?** En retorno absoluto, **AAPL (+37,25 %)**. Si medimos calidad del retorno (retorno por unidad de riesgo), AAPL (1,52) y el S&P 500 (1,51) empatan técnicamente, pero **el índice consiguió el mismo retorno/riesgo con la mitad de volatilidad y sin riesgo específico de una sola compañía**: es la opción más eficiente de las tres.
+### ¿Quién asumió más riesgo?
 
-**¿Cuál asumiría más riesgo?** **MSFT**, con 32,84 % de volatilidad anualizada — claramente la más alta, y de hecho fue la que peor rentabilidad dio. El orden de riesgo fue: **MSFT > AAPL > S&P 500**. Cualquier inversión en las dos tecnológicas individuales implicó asumir riesgo idiosincrático (concentración, ejecución, capex de IA) que el índice diluye.
+1. **MSFT** — mayor volatilidad (32,84 %), el activo que más osciló.
+2. **AAPL** — volatilidad intermedia (24,48 %), pero compensada con creces por un retorno muy superior; mejor *sharpe* bruto del grupo.
+3. **S&P 500** — el más estable (12,76 %) y un retorno decente; la opción con mejor perfil riesgo-retorno y menor riesgo idiosincrático (no depende de una sola empresa).
 
-**Matiz toro/oso**: 
-- 🐂 Toro: AAPL demostró que sigue siendo una máquina de rentabilidad con volatilidad *menor* que MSFT; el S&P 500 es el vehículo más eficiente para captar la tendencia sin apostar a una sola carta.
-- 🐻 Oso: MSFT está a 1 año prácticamente plano con la volatilidad más alta del grupo — un mal *trade-off* que puede revertir si el mercado vuelve a premiar el gasto en IA, pero también puede seguir castigando mientras el capex no se traduzca en beneficios. Y AAPL cotizando cerca de máximos históricos deja poco margen de seguridad.
+### Veredicto
+
+- **Si priorizas retorno absoluto:** ganó **AAPL**.
+- **Si priorizas retorno ajustado a riesgo:** ganó el **S&P 500** (retorno sólido con la mitad de volatilidad que las acciones individuales).
+- **El caso más flojo:** **MSFT**, que asumió el mayor riesgo sin traducirlo en retorno en este periodo concreto.
+
+⚠️ Nota metodológica: un solo año es una ventana corta y muy sensible al punto de partida y final. Las volatilidades y retornos pasados no predicen los futuros.
 
 ⚠️ Esto es información educativa, no asesoramiento financiero. Haz tu propia investigación (DYOR).
